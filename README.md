@@ -13,21 +13,27 @@ This repo follows a video-to-lab learning loop:
 9. Sync progress to Notion
 
 ## Folder layout
-The repo is organized by phase, not by individual video number.
+The repo is organized by the revised phase plan, not by individual video number.
 
 - `00-account-billing/`
 - `01-iam/`
 - `02-aws-cli/`
-- `03-s3/`
-- `04-ec2/`
-- `05-ec2-automation/`
+- `03-ec2/`
+- `04-ec2-automation/`
+- `05-ec2-storage-ebs/`
 - `06-vpc-basics/`
-- `07-ec2-instance-profile-s3/`
-- `08-lambda/`
-- `09-final-project/`
+- `07-s3/`
+- `08-ec2-instance-profile-s3/`
+- `09-lambda/`
+- `10-dynamodb/`
+- `11-final-project/`
 - `cleanup-guides/`
 
 Each phase folder can hold one or more lab folders, notes, scripts, and cleanup guides as the playlist moves forward.
+
+## Current progress
+- Phase 1 is complete.
+- Phase 2 is next.
 
 ## Learning log
 Use [`aws-learning-log.md`](./aws-learning-log.md) as the local source of truth for progress.

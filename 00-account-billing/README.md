@@ -36,6 +36,10 @@ This phase is about protecting my AWS account before I start deeper hands-on wor
 - Do not share the root password.
 - Do not use the root account for daily practice.
 
+## IAM/admin user note
+- Create or use a normal IAM admin user for daily learning.
+- Keep the root user only for account-level tasks like billing and MFA setup.
+
 ## MFA checklist
 - Sign in as the root user.
 - Open the security settings for the root account.
@@ -138,4 +142,3 @@ This phase should be tracked in the `aws-learning` repo and in Notion.
 
 Suggested repo location:
 - `00-account-billing/`
-

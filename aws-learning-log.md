@@ -2,6 +2,8 @@
 
 Use this same structure in Notion so the repo and tracker stay in sync.
 
+Current status: Phase 1 is complete. Phase 2 is next.
+
 | Date | Video Topic | AWS Service | Hands-on Lab Done? | Cleanup Done? | Notes |
 |---|---|---|---|---|---|
 | 2026-06-21 | Beginner-Safe AWS Setup | Billing, Budgets, IAM, SNS/CloudWatch | Yes | Yes | Root safety, MFA, billing alert, budget, region, free-tier rules |

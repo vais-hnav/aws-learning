@@ -1,11 +1,10 @@
-# Phase 7: VPC Basics
+# Phase 6: VPC and Scalability
 
 Goal:
-Understand VPCs, subnets, route tables, internet gateways, security groups, and NACLs.
+Understand AWS networking basics and scaling concepts.
 
-Expected lab files when you build this phase:
+Phase work:
 - `diagrams.md`
 - `inspect-default-vpc.md`
-- `commands.md`
 - `notes.md`
 

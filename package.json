@@ -1,0 +1,10 @@
+{
+  "name": "aws-learning",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "notion:sync": "node scripts/sync-notion-tracker.mjs",
+    "notion:watch": "node scripts/watch-notion-tracker.mjs",
+    "notion:normalize": "node scripts/normalize-notion-titles.mjs"
+  }
+}

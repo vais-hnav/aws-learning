@@ -66,3 +66,18 @@ Leave that command running in a terminal, and every save to `aws-learning-log.md
 
 ## Safety rule
 Never commit your Notion token to git.
+
+## AWS CLI profile
+Use your normal local AWS CLI setup in `~/.aws`, not inside the repo.
+
+Recommended command:
+```bash
+aws configure --profile aws-learning
+```
+
+Then use it like:
+```bash
+AWS_PROFILE=aws-learning aws sts get-caller-identity
+```
+
+If you ever create a local `.aws/` folder inside this repo for experiments, it is ignored by git.

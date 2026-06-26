@@ -16,6 +16,7 @@ AWS_PROFILE=aws-learning aws sts get-caller-identity
 
 Expected lab files when you build this phase:
 - `check-aws-account.sh`
+- `list-iam-user-arns.py`
 - `commands.md`
 - `errors.md`
 - `cleanup.md`

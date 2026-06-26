@@ -69,6 +69,7 @@ Never commit your Notion token to git.
 
 ## AWS CLI profile
 Use your normal local AWS CLI setup in `~/.aws`, not inside the repo.
+That is the industry-standard approach for personal learning and lab work.
 
 Recommended command:
 ```bash
@@ -80,4 +81,5 @@ Then use it like:
 AWS_PROFILE=aws-learning aws sts get-caller-identity
 ```
 
-If you ever create a local `.aws/` folder inside this repo for experiments, it is ignored by git.
+Do not store real AWS credentials in this repository.
+If you need a different profile, create another profile in `~/.aws/config` and `~/.aws/credentials`.

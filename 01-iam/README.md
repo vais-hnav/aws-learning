@@ -9,3 +9,5 @@ Expected lab files when you build this phase:
 - `mistakes.md`
 - `cleanup.md`
 
+Phase notes:
+- [`phase-notes.md`](./phase-notes.md)

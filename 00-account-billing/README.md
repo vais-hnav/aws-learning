@@ -142,3 +142,6 @@ This phase should be tracked in the `aws-learning` repo and in Notion.
 
 Suggested repo location:
 - `00-account-billing/`
+
+Phase notes:
+- [`phase-notes.md`](./phase-notes.md)

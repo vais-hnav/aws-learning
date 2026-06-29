@@ -21,3 +21,6 @@ Expected lab files when you build this phase:
 - `commands.md`
 - `errors.md`
 - `cleanup.md`
+
+Phase notes:
+- [`phase-notes.md`](./phase-notes.md)

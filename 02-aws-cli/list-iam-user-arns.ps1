@@ -1,22 +1,15 @@
 param(
-    [string]$ProfileName = $env:AWS_PROFILE
+    [string]$ProfileName
 )
 
-$ErrorActionPreference = 'Stop'
+Import-Module AWS.Tools.IdentityManagement -ErrorAction Stop
 
-try {
-    Import-Module AWS.Tools.Common -ErrorAction Stop
-    Import-Module AWS.Tools.IdentityManagement -ErrorAction Stop
-
-    if ($ProfileName) {
-        Set-AWSCredential -ProfileName $ProfileName | Out-Null
-    }
-
-    Get-IAMUserList | ForEach-Object {
-        $_.Arn
-    }
+$cmdletArgs = @{}
+if ($ProfileName) {
+    $cmdletArgs.ProfileName = $ProfileName
 }
-catch {
-    Write-Error $_
-    exit 1
+
+$iamUsers = Get-IAMUserList @cmdletArgs
+foreach ($user in $iamUsers) {
+    Write-Host "USER: $($user.UserName) ARN: $($user.Arn)"
 }

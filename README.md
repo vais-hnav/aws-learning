@@ -33,10 +33,15 @@ Each phase folder can hold one or more lab folders, notes, scripts, and cleanup 
 
 ## Current progress
 - Phase 1 is complete.
-- Phase 2 is next.
+- Phase 2 is complete.
+- Phase 3 is complete locally.
+- Phase 4 is next.
 
 ## Learning log
 Use [`aws-learning-log.md`](./aws-learning-log.md) as the local source of truth for progress.
+
+## Note standard
+Use [`aws-note-standard.md`](./aws-note-standard.md) for every completed video from now on.
 
 ## Notion sync
 This repo includes a sync helper for your live Notion tracker:

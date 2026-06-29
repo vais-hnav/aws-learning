@@ -1,260 +1,234 @@
 # Phase 1 Notes
 
-This phase covered the foundation: what cloud computing is, what AWS is, how the account is created, how root security works, how regions are organized, and how billing safety protects the learning account.
+This phase covered AWS foundations, account setup, root security, regions, billing, budgets, and Free Tier safety.
 
 Note source:
-- These notes are based on the completed playlist video order/titles, the auto-generated Malayalam transcript context available from YouTube, and the hands-on setup work done in this repo.
-- They are paraphrased learning notes, not word-for-word transcripts.
+- Based on playlist video order/titles, available auto-generated Malayalam transcript context from YouTube, and the hands-on setup done in this repo.
+- Paraphrased learning notes, not verbatim transcripts.
 
 ## 1. AWS Full Course in Malayalam
 
-Video focus:
-- The course starts by setting the learning path for AWS beginners.
-- The important message is that AWS should be learned in small topics with hands-on practice, not by only watching videos.
-- The course introduces the idea that AWS has many services, but beginners should first understand the foundation: cloud basics, account setup, IAM, CLI, EC2, S3, Lambda, and cleanup.
+Concept:
+- The course sets up AWS as a phase-by-phase learning path, not a random list of services.
+- Main workflow: watch, build, understand, debug, clean up, write notes, commit.
+- AWS has many services, so the safe beginner path starts with account safety, IAM, CLI, EC2, S3, Lambda, and cleanup.
 
-What the instructor is trying to teach:
-- AWS is not one single tool. It is a large cloud platform made of many services.
-- A beginner needs a safe workflow before creating resources.
-- Learning AWS means understanding both the concept and the operational habit: create, verify, document, and delete.
+Video hands-on:
+- No AWS resource creation in this intro.
+- The instructor frames how the course will progress and why practice matters.
 
-Mental model:
-- Think of AWS as a collection of building blocks.
-- Each building block has a purpose, a cost model, permissions, and cleanup steps.
-- The right learning approach is to use one service at a time and keep notes for every action.
+My hands-on:
+- Created the `aws-learning` repo structure.
+- Set up phase folders, learning log, cleanup guides, and Notion tracking.
 
-Hands-on connection:
-- This repo became the learning proof for the course.
-- Each phase folder stores notes, commands, cleanup instructions, and mistakes.
-- The GitHub commits become evidence that a topic was not just watched, but practiced.
+Commands / files:
+- `README.md`
+- `aws-learning-log.md`
+- phase folders in this repo
+
+Warnings / cleanup:
+- No AWS cleanup needed.
+- Learning rule: no video is complete unless notes and cleanup are done.
 
 ## 2. What is Cloud Computing?
 
-Video focus:
-- Cloud computing means renting computing resources over the internet instead of owning and maintaining physical servers yourself.
-- The video explains the difference between local/on-premise infrastructure and cloud infrastructure.
+Concept:
+- Cloud computing means using compute, storage, networking, and other services over the internet instead of owning physical infrastructure.
+- AWS owns and manages the data centers; users request resources on demand.
+- Key ideas: on-demand access, scalability, elasticity, managed infrastructure, and pay-as-you-go pricing.
 
-What the instructor is explaining:
-- Traditionally, a company buys servers, storage, networking equipment, and data center space.
-- With cloud computing, AWS already owns and manages the physical infrastructure.
-- You request resources when needed, use them, and pay based on usage.
+Video hands-on:
+- Theory explanation only.
+- Compares traditional server ownership with cloud resource rental.
 
-Important ideas:
-- On-demand: create resources when you need them.
-- Elasticity: increase or decrease resources based on demand.
-- Pay as you go: cost depends on what you use.
-- Managed infrastructure: AWS handles the physical data centers, power, cooling, and hardware.
+My hands-on:
+- Added account safety notes because cloud resources are easy to create and can create cost quickly.
 
-Mental model:
-- Cloud computing is like using electricity from a provider instead of building your own power plant.
-- You still need to use it carefully because usage creates cost.
+Commands / files:
+- No AWS commands.
+- `00-account-billing/README.md`
 
-Hands-on connection:
-- Our account safety lab exists because cloud resources can be created quickly.
-- Fast creation is useful, but it also means mistakes can create charges quickly.
+Warnings / cleanup:
+- No AWS cleanup needed.
+- Cost habit starts here: always know what a service can charge for.
 
 ## 3. IaaS, PaaS, and SaaS
 
-Video focus:
-- The video explains the three major cloud service models: IaaS, PaaS, and SaaS.
-- The key lesson is responsibility: how much you manage versus how much the provider manages.
+Concept:
+- IaaS gives infrastructure such as virtual machines, disks, and networking. EC2 is the main beginner AWS example.
+- PaaS gives a managed platform where you deploy code with less server management.
+- SaaS gives ready-to-use software.
+- The main difference is responsibility: how much you manage versus how much the provider manages.
 
-IaaS:
-- Infrastructure as a Service gives you low-level infrastructure such as virtual machines, disks, and networking.
-- In AWS, EC2 is the easiest beginner example.
-- You control the operating system, packages, security updates, and application setup.
+Video hands-on:
+- Theory explanation only.
+- Explains the three cloud service models and where responsibility shifts.
 
-PaaS:
-- Platform as a Service gives you a managed platform where you deploy code without managing as much infrastructure.
-- You focus more on the application and less on the server.
-- Managed databases, app platforms, and serverless patterns are close to this idea.
+My hands-on:
+- Mapped future labs to the model: EC2 as IaaS, Lambda/serverless closer to managed platform style.
 
-SaaS:
-- Software as a Service is ready-to-use software.
-- You do not manage servers, runtime, or the application internals.
-- You just use the product.
+Commands / files:
+- No AWS commands.
+- `00-account-billing/phase-notes.md`
 
-Mental model:
-- IaaS gives maximum control and more responsibility.
-- PaaS reduces infrastructure work.
-- SaaS gives the least control but the easiest usage experience.
-
-Hands-on connection:
-- Later EC2 labs are IaaS-style because we launch and manage a virtual machine.
-- Lambda labs are closer to serverless/PaaS-style because we run code without managing a server.
+Warnings / cleanup:
+- No cleanup needed.
+- Remember: more control usually means more responsibility.
 
 ## 4. Introduction to AWS
 
-Video focus:
-- The video introduces AWS as Amazon's cloud platform.
-- It frames AWS as a large set of services for compute, storage, networking, databases, security, and application hosting.
+Concept:
+- AWS is Amazon's cloud platform with services for compute, storage, databases, networking, security, monitoring, and deployment.
+- AWS resources can be created from the Console, CLI, SDKs, or infrastructure-as-code tools.
+- AWS is global, and region choice matters.
 
-What the instructor is explaining:
-- AWS provides services that replace or extend traditional IT infrastructure.
-- You can create resources from the AWS Console, AWS CLI, SDKs, or infrastructure-as-code tools.
-- AWS is global, so resources can be created in different regions.
+Video hands-on:
+- Introduces AWS service categories and the idea that each major cloud feature is offered as a separate service.
 
-Important AWS categories:
-- Compute: EC2, Lambda.
-- Storage: S3, EBS.
-- Networking: VPC, security groups.
-- Security: IAM, MFA, policies, roles.
-- Monitoring and billing: CloudWatch, Billing, Budgets.
+My hands-on:
+- Organized the repo by AWS service/phase so learning stays structured.
 
-Mental model:
-- AWS is a toolbox.
-- You do not need every tool immediately.
-- As a beginner, start with account safety, identity, CLI, compute, storage, networking, and cleanup.
+Commands / files:
+- No AWS commands.
+- `README.md`
 
-Hands-on connection:
-- We created a phase-based repo so the AWS toolbox does not feel random.
-- Each AWS service gets its own folder and cleanup checklist.
+Warnings / cleanup:
+- No cleanup needed.
+- Do not try to learn every AWS service at once.
 
 ## 5. Create Free Tier AWS Account
 
-Video focus:
-- The video walks through creating an AWS account for beginner practice.
-- It emphasizes that the account starts with a root user, and that root user needs protection.
+Concept:
+- Creating an AWS account gives access to real cloud resources and real billing.
+- The root user is created first and has full account control.
+- Account creation usually includes email, account details, payment verification, phone verification, and support plan choice.
 
-What the instructor is explaining:
-- AWS account creation usually starts with an email address, account name, contact details, payment verification, phone verification, and support plan selection.
-- The root account has full control.
-- Even when an account is intended for free-tier practice, billing awareness matters from day one.
+Video hands-on:
+- Walks through creating a beginner AWS account.
+- Shows the signup flow and highlights that root access must be protected.
 
-Important account setup ideas:
-- Use a real email you can access.
-- Keep root password strong and private.
-- Do not share the root account.
-- Choose the basic/free support option unless you intentionally need paid support.
-- After account creation, immediately move into security setup and billing setup.
+My hands-on:
+- Completed account setup.
+- Added root account safety checklist and beginner account checklist.
 
-Mental model:
-- Creating an AWS account is not just signing up for a website.
-- It creates access to real cloud resources with real billing impact.
+Commands / files:
+- Console-only setup.
+- `00-account-billing/README.md`
 
-Hands-on connection:
-- Our lab added root account safety checks.
-- We made the learning repo before doing larger labs so each future action can be documented.
+Warnings / cleanup:
+- Choose the basic/free support option unless intentionally paying.
+- Do not use root for daily work after setup.
+- No resource cleanup, but billing and MFA setup are required before continuing.
 
 ## 6. How to Setup MFA to Root User
 
-Video focus:
-- The video explains why MFA is required for root account safety and shows how to enable it.
+Concept:
+- MFA adds a second login factor to the root account.
+- Root has full control, so password-only protection is not enough.
+- Root should be used only for account-level tasks.
 
-What the instructor is explaining:
-- Root user is the most powerful identity in an AWS account.
-- A password alone is not enough protection.
-- MFA adds a second factor, usually an authenticator app code, during login.
+Video hands-on:
+- Signs in as root.
+- Opens security credentials.
+- Adds an MFA device.
+- Scans the QR code or enters setup details in an authenticator app.
+- Confirms setup with consecutive MFA codes.
 
-Important MFA steps:
-- Sign in as root only for account-level security tasks.
-- Open security credentials.
-- Add an MFA device.
-- Scan the QR code or enter the setup key in an authenticator app.
-- Enter two consecutive MFA codes to confirm setup.
+My hands-on:
+- Enabled MFA for the root account.
+- Added MFA checklist to the Phase 1 docs.
+
+Commands / files:
+- Console-only setup.
+- `00-account-billing/README.md`
+
+Warnings / cleanup:
 - Store recovery information safely.
-
-Mental model:
-- Root user is like the master key to the whole AWS account.
-- MFA is the extra lock that protects the master key if the password leaks.
-
-Hands-on connection:
-- The phase completion gate required MFA to be enabled before continuing.
-- This protects every future lab because compromised root access would be very dangerous.
+- Do not remove MFA unless replacing it immediately.
+- No AWS resource cleanup needed.
 
 ## 7. AWS Regions and Availability Zones
 
-Video focus:
-- The video explains AWS global infrastructure: regions and availability zones.
+Concept:
+- A region is a geographic AWS location.
+- An Availability Zone is an isolated data center location inside a region.
+- Many resources are regional, so resources created in one region may not appear in another.
 
-What the instructor is explaining:
-- A region is a geographic area where AWS runs data centers.
-- An Availability Zone is an isolated location inside a region.
-- A region usually has multiple Availability Zones so applications can be designed for higher availability.
+Video hands-on:
+- Explains AWS global infrastructure.
+- Shows how region choice affects where resources are created and viewed.
 
-Important details:
-- Not every AWS service is available in every region.
-- Some services are global, but many resources are regional.
-- Region choice affects latency, cost, compliance, and where resources appear in the console.
-- Beginners should pick one default region while learning to avoid losing track of resources.
+My hands-on:
+- Chose one learning region for consistency.
+- Added region notes and cleanup habit: always check the selected region.
 
-Mental model:
-- Region is the city-level choice.
-- Availability Zone is the separate building or campus inside that region.
-- Resources in one region do not automatically appear in another region.
+Commands / files:
+- `00-account-billing/region-notes.md`
 
-Hands-on connection:
-- We chose a default learning region.
-- Our cleanup habit includes checking the correct region before assuming a resource is deleted.
+Warnings / cleanup:
+- No cleanup needed.
+- Wrong-region confusion is a common beginner mistake.
 
 ## 19. AWS Billing Basics: Manage Costs and Setup Zero Cost Budget
 
-Video focus:
-- The video teaches how to use billing tools early so AWS learning does not become expensive by accident.
+Concept:
+- Billing shows charges, usage, credits, forecasts, and cost trends.
+- Budgets send alerts; they do not automatically stop AWS resources.
+- A low or zero-cost budget helps catch mistakes early.
 
-What the instructor is explaining:
-- Billing is where you monitor charges, usage, credits, and forecasts.
-- Budgets are alerts, not hard stops.
-- A zero-cost or very low-cost budget helps beginners notice unexpected spending quickly.
+Video hands-on:
+- Opens Billing and Cost Management.
+- Reviews billing/cost areas.
+- Creates or demonstrates a budget alert flow.
+- Explains why beginners should monitor cost before creating more services.
 
-Important billing habits:
-- Check Billing and Cost Management regularly.
-- Create a budget with email alerts.
-- Watch free-tier usage and credit usage.
-- Understand that deleting a resource is the real cleanup step; budget alerts only warn you.
+My hands-on:
+- Created billing alert/budget checklist.
+- Added billing safety and daily cost check routine.
 
-Mental model:
-- A budget is like a smoke alarm.
-- It does not put out the fire automatically, but it warns you early.
+Commands / files:
+- Console-only setup.
+- `00-account-billing/billing-safety.md`
 
-Hands-on connection:
-- We created billing alert and budget checklist files.
-- This became a required phase gate before moving into IAM and CLI.
+Warnings / cleanup:
+- Budgets are alarms, not automatic brakes.
+- Cleanup still means deleting or stopping the actual AWS resources.
 
 ## 61. How to Create AWS Free Tier Account in 2026
 
-Video focus:
-- The later account video revisits account creation with the newer AWS Free Tier flow.
-- The point is to understand that the signup and free-tier model can change over time.
+Concept:
+- AWS Free Tier/account signup can change over time.
+- Newer signup flows may show Free and Paid plan choices.
+- Free plans/credits help beginners explore, but limits still apply.
 
-What the instructor is explaining:
-- AWS may show Free and Paid account plan choices during signup.
-- The Free account plan is safer for beginners because it limits surprise charges while exploring.
-- Some services and features may require upgrading to a Paid plan.
-- Even with credits or a free plan, you should still use budgets and cleanup habits.
+Video hands-on:
+- Revisits account creation using the newer Free Tier flow.
+- Explains the difference between safer beginner exploration and full paid access.
 
-Current AWS Free Tier note:
-- AWS documentation now describes a Free account plan with signup credits and a limited exploration period.
-- AWS also has a Paid account plan for full service access.
-- This means beginners should read the current AWS Free Tier page, not rely only on older 12-month assumptions.
-- Reference: https://aws.amazon.com/free/
-- Reference: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-plans.html
+My hands-on:
+- Updated safety notes to avoid relying only on older Free Tier assumptions.
+- Added official references:
+- https://aws.amazon.com/free/
+- https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-plans.html
 
-Mental model:
-- Free Tier is not a permission to ignore cost.
-- It is a beginner-friendly starting point with limits, credits, and rules.
+Commands / files:
+- `00-account-billing/free-tier-rules.md`
 
-Hands-on connection:
-- Our safety rules say to avoid expensive services for now.
-- We also keep a billing check routine even when using free-tier resources.
+Warnings / cleanup:
+- Free Tier is not unlimited.
+- Keep budgets and cleanup habits even when using credits/free-tier services.
 
-## Hands-on recap
+## Phase 1 Recap
 
-What we built:
-- Beginner-safe AWS account setup checklist.
-- Root account safety checklist.
-- MFA checklist.
-- Billing alert and budget checklist.
-- Region selection notes.
-- Free-tier safety rules.
-- Cleanup and billing check routine.
+Built:
+- Account safety checklist.
+- Root MFA checklist.
+- Billing and budget safety notes.
+- Region notes.
+- Free Tier rules.
 
-What I should be able to explain now:
-- What cloud computing is.
-- What AWS provides.
-- What IaaS, PaaS, and SaaS mean.
-- Why root user is dangerous for daily work.
-- Why MFA is required.
-- What regions and Availability Zones are.
-- Why budgets are alerts, not automatic cost blockers.
-- Why cleanup matters after every lab.
+Must remember:
+- Root is powerful and should not be used daily.
+- MFA and budgets are mandatory beginner safety steps.
+- Region awareness prevents lost resources.
+- Cleanup protects money.

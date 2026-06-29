@@ -1,172 +1,150 @@
 # Phase 2 Notes
 
-This phase covered AWS IAM: users, groups, policies, roles, access keys, and least privilege.
+This phase covered IAM users, groups, policies, roles, access keys, and least privilege.
 
 Note source:
-- These notes are based on the completed playlist video order/titles, the auto-generated Malayalam transcript context available from YouTube, and the IAM lab work in this repo.
-- They are paraphrased explanatory notes, not verbatim transcripts.
+- Based on playlist video order/titles, available auto-generated Malayalam transcript context from YouTube, and IAM lab work in this repo.
+- Paraphrased explanatory notes, not verbatim transcripts.
 
 ## 8. Introduction to IAM
 
-Video focus:
+Concept:
 - IAM means Identity and Access Management.
 - It controls who can access AWS and what actions they can perform.
+- IAM answers two questions: who is calling, and are they allowed?
+- IAM is global, so users/groups/policies are not tied to a single region.
 
-What the instructor is explaining:
-- The AWS root user should not be used for daily work.
-- IAM lets you create separate identities for people, applications, and AWS services.
-- Permissions are attached through policies.
-- IAM is a global service, so users and policies are not tied to only one region.
+Video hands-on:
+- Introduces IAM after account setup.
+- Shows IAM as the place for managing users, groups, roles, and permissions.
+- Explains why root should not be used for regular AWS work.
 
-Important IAM concepts:
-- Identity: who is making the request.
-- Permission: what that identity is allowed to do.
-- Policy: the JSON document that defines permissions.
-- Authentication: proving who you are.
-- Authorization: deciding what you can do after you are authenticated.
+My hands-on:
+- Created the IAM phase folder.
+- Documented least privilege as the rule for all future labs.
 
-Mental model:
-- IAM is the security gate for AWS.
-- Every AWS action asks two questions: who is calling, and are they allowed?
+Commands / files:
+- `01-iam/README.md`
+- `01-iam/explanation.md`
 
-Hands-on connection:
-- We created the IAM phase folder to separate identity learning from resource labs.
-- We kept the least-privilege idea as the rule for every future AWS action.
+Warnings / cleanup:
+- No billable AWS resource cleanup needed.
+- Do not use root as the daily working identity.
 
 ## 9. Creating IAM Policies
 
-Video focus:
-- The video explains how IAM policies are created and how a JSON policy grants permissions.
+Concept:
+- A policy is a JSON permission document.
+- Main fields: `Version`, `Statement`, `Effect`, `Action`, `Resource`, and optional `Sid`.
+- Policies can allow or deny API actions on specific resources.
+- Least privilege means granting only what the task needs.
 
-What the instructor is explaining:
-- A policy is a permission document.
-- AWS reads the policy to decide whether a request should be allowed or denied.
-- Policies can be AWS managed, customer managed, or inline.
+Video hands-on:
+- Opens IAM policies.
+- Creates or explains a policy document.
+- Shows how actions and resources define what access is granted.
 
-Policy fields to understand:
-- `Version`: policy language version. Most modern policies use `2012-10-17`.
-- `Statement`: one or more permission rules.
-- `Effect`: `Allow` or `Deny`.
-- `Action`: the AWS API operation, such as `s3:GetObject`.
-- `Resource`: the ARN of the resource the action applies to.
-- `Sid`: optional label to describe the statement.
+My hands-on:
+- Added `s3-read-only-policy.json`.
+- Added `ec2-describe-only-policy.json`.
+- Practiced bucket-level versus object-level S3 ARNs.
 
-Important lesson:
-- Broad permissions are easy but risky.
-- A beginner should avoid `Action: "*"` and `Resource: "*"` unless there is a very specific reason.
-- Least privilege means granting only the actions and resources needed for the task.
+Commands / files:
+- `01-iam/policies/s3-read-only-policy.json`
+- `01-iam/policies/ec2-describe-only-policy.json`
 
-Mental model:
-- A policy is a rule card.
-- It says: this identity can perform these actions on these resources.
-
-Hands-on connection:
-- We created read-only policy examples for S3 and EC2.
-- The S3 policy demonstrates that bucket-level actions and object-level actions use different ARNs.
+Warnings / cleanup:
+- Avoid broad `Action: "*"` and `Resource: "*"` patterns.
+- Remove test policies when no longer needed.
 
 ## 10. Creating IAM User
 
-Video focus:
-- The video shows how to create an IAM user for everyday AWS work.
-
-What the instructor is explaining:
-- IAM users represent human users or long-term identities.
-- A user can have console access, programmatic access, or both.
+Concept:
+- IAM users are long-term identities for people or programmatic access.
 - Console access uses a password.
-- Programmatic access uses access keys.
+- CLI/API access uses access keys.
+- Access keys are sensitive and must be treated like passwords.
 
-Important user setup ideas:
-- Do not use root for daily tasks.
-- Give the user only the permissions needed.
-- Use groups where possible instead of attaching many policies directly to each user.
-- Rotate or delete access keys that are not needed.
-- Never commit access keys to GitHub.
+Video hands-on:
+- Creates an IAM user.
+- Shows console/programmatic access choices.
+- Explains attaching permissions directly or through groups.
 
-Access key mental model:
-- An access key is like a username and password for API/CLI access.
-- If someone gets the key and secret, they may be able to use your AWS account from anywhere.
+My hands-on:
+- Used IAM users with named AWS CLI profiles.
+- Kept credentials in `~/.aws`, not inside the repo.
 
-Hands-on connection:
-- We used IAM users with AWS CLI profiles.
-- We also discussed storing credentials in `~/.aws`, not inside the repo.
+Commands / files:
+- `aws configure --profile user1`
+- `AWS_PROFILE=user1 aws sts get-caller-identity`
+
+Warnings / cleanup:
+- Never commit access keys.
+- Delete unused access keys.
+- Prefer group/role-based permission management where possible.
 
 ## 11. Creating IAM Groups
 
-Video focus:
-- The video explains how IAM groups simplify permission management.
-
-What the instructor is explaining:
+Concept:
 - A group is a collection of IAM users.
-- Policies can be attached to a group.
-- Every user in the group receives the group permissions.
-- Groups are useful when multiple users need the same access pattern.
+- Policies attached to a group apply to all users in that group.
+- Groups simplify permission management for teams.
 
-Why groups matter:
-- Without groups, permissions become messy because each user needs separate policy attachments.
-- With groups, access can be managed by role type, such as developers, read-only users, or admins.
-- Removing a user from a group removes those permissions.
+Video hands-on:
+- Creates or demonstrates IAM groups.
+- Adds users to groups.
+- Attaches policies to groups instead of repeating the same policy per user.
 
-Mental model:
-- A user is a person.
-- A group is a team.
-- A policy is the permission set assigned to that team.
+My hands-on:
+- Documented user/group/policy differences.
+- Used this model to reason about safer access management.
 
-Hands-on connection:
-- Our IAM notes keep user, group, and policy as separate concepts.
-- This prepares us for later labs where EC2, S3, and Lambda need different permissions.
+Commands / files:
+- Console IAM group workflow.
+- `01-iam/explanation.md`
+
+Warnings / cleanup:
+- Do not leave users in powerful groups unnecessarily.
+- Removing a user from a group removes that group's permissions.
 
 ## 14. IAM Roles
 
-Video focus:
-- The video introduces IAM roles and explains why they are different from IAM users.
+Concept:
+- A role is an identity that is assumed temporarily.
+- Roles are commonly used by AWS services such as EC2 or Lambda.
+- A role has a trust policy and a permissions policy.
+- Temporary credentials are safer than long-term access keys for services.
 
-What the instructor is explaining:
-- A role is an identity with permissions, but it is meant to be assumed temporarily.
-- Roles are often used by AWS services, applications, or federated users.
-- A role has two important parts: who can assume it, and what permissions it grants after assumption.
+Video hands-on:
+- Introduces roles after users/groups/policies.
+- Explains service access without storing access keys on servers.
+- Prepares for later EC2 instance profile work.
 
-Important role concepts:
-- Trust policy: defines who is allowed to assume the role.
-- Permissions policy: defines what the role can do.
-- Temporary credentials: AWS provides short-lived credentials when the role is assumed.
-- Service role: a role used by an AWS service such as EC2 or Lambda.
+My hands-on:
+- Added role explanation notes.
+- Connected IAM roles to the future EC2 instance profile S3 lab.
 
-Why roles are safer:
-- You do not need to store long-term access keys on an EC2 instance or inside application code.
-- AWS can give temporary credentials automatically to the service.
-- Temporary credentials reduce the damage if credentials leak.
+Commands / files:
+- Console IAM role workflow.
+- `01-iam/explanation.md`
 
-Mental model:
-- A user is a permanent identity.
-- A role is a temporary hat that an allowed person or service can wear.
-- While wearing the role, the identity gets the role's permissions.
+Warnings / cleanup:
+- A role needs both trust and permissions to work.
+- Do not put IAM user access keys on EC2 when a role can be used.
 
-Hands-on connection:
-- The later EC2 instance profile lab will use this idea.
-- Instead of putting access keys on EC2, the EC2 instance will receive permissions through a role.
+## Phase 2 Recap
 
-## Hands-on recap
-
-What we built:
-- Read-only S3 policy.
-- Read-only EC2 policy.
+Built:
+- S3 read-only policy.
+- EC2 describe-only policy.
 - IAM explanation notes.
 - Common IAM mistakes notes.
-- Cleanup checklist for IAM practice.
+- Cleanup checklist.
 
-What I should be able to explain now:
+Must remember:
 - Root user vs IAM user.
-- IAM user vs IAM role.
+- User vs role.
 - Group vs policy.
 - Trust policy vs permissions policy.
-- Why least privilege matters.
-- Why access keys are risky.
-- Why `AdministratorAccess` should not be the default beginner choice.
-
-Common mistakes to avoid:
-- Using root for daily work.
-- Giving every user admin access.
-- Creating access keys and forgetting them.
-- Storing credentials in a repo.
-- Confusing S3 bucket ARNs with S3 object ARNs.
-- Forgetting that a role needs both trust and permission rules.
+- Access keys are risky.
+- Least privilege is the default.

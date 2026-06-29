@@ -5,7 +5,8 @@ Understand virtual servers in AWS and host a simple website.
 
 Phase work:
 - `ec2-introduction/`
-- `nginx-webserver/`
+- `linux-ec2-instance/`
+- `apache-webserver/`
 
 Phase notes:
 - [`phase-notes.md`](./phase-notes.md)
@@ -24,3 +25,4 @@ Cost rule:
 - Do not leave EC2 instances running after practice.
 - For beginner labs, use only small/free-tier-eligible instance types when the AWS console confirms eligibility.
 - Avoid Dedicated Hosts, Dedicated Instances, large instance types, GPU instances, Elastic IPs, NAT Gateways, and Load Balancers for now.
+- Never commit `.pem` private key files.

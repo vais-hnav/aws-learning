@@ -12,7 +12,7 @@ Live playlist count at last check: `73 videos`
 
 Current learning position: `Phase 4 - EC2 Basics`
 
-Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, and `Phase 4 Video 15 watched`
+Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, and `Phase 4 videos 15-17 watched`
 
 ## How To Use This Plan
 
@@ -237,7 +237,7 @@ Build:
 - EC2 introduction lab
 - Linux EC2 launch lab
 - EC2 Instance Connect notes
-- Simple Nginx website lab
+- Simple Apache website lab
 - EC2 CLI launch notes
 - EC2 pricing notes
 - EC2 instance type selection notes
@@ -253,8 +253,8 @@ Safety rules:
 Next checkpoint:
 
 ```text
-Finish Video 16 next, then create the Linux EC2 launch lab.
-After the lab, confirm the instance is terminated and no extra EBS volume remains.
+Finish Video 18 next, then create the EC2 CLI automation lab.
+Before moving on, confirm the website instance is terminated unless you intentionally need it.
 ```
 
 ## Phase 5 - EC2 Pricing And Storage/EBS

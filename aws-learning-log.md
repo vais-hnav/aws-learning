@@ -16,7 +16,7 @@ Status values:
 - `Pending` means the video was watched, but the matching lab/check is still open.
 - `Theory-only` means no AWS resource lab is expected.
 
-Current status: Phase 1, Phase 2, and Phase 3 are complete. Phase 4 is in progress.
+Current status: Phase 1, Phase 2, and Phase 3 are complete. Phase 4 is in progress through video 17.
 
 | Phase | Video Topic | Watched Status | AWS Service | Lab Status | Date | Notes |
 |---|---|---|---|---|---|---|
@@ -38,8 +38,8 @@ Current status: Phase 1, Phase 2, and Phase 3 are complete. Phase 4 is in progre
 | Phase 3 - AWS CLI and Automation Basics | AWS CLI and PowerShell Real-World Example | Complete | AWS CLI/PowerShell | Complete | 2026-06-29 | PowerShell AWS tooling explored; Python boto3 chosen for scripting where useful. |
 | Phase 3 - AWS CLI and Automation Basics | Convert AWS Console Actions to CLI Code with AI | Complete | AWS CLI/Automation | Complete | 2026-06-29 | Console-to-CLI workflow reviewed and scripts documented. |
 | Phase 4 - EC2 Basics | Introduction to AWS EC2 Service | Complete | EC2 | Pending | 2026-06-29 | Video watched and EC2 intro lab prepared; read-only CLI checks still pending. |
-| Phase 4 - EC2 Basics | Create Linux EC2 Instance | Not started | EC2 | Not started |  | Next EC2 hands-on lab. |
-| Phase 4 - EC2 Basics | Host a Simple Website in Linux EC2 | Not started | EC2 | Not started |  | Nginx/web server lab. |
+| Phase 4 - EC2 Basics | Create Linux EC2 Instance | Complete | EC2 | Complete | 2026-06-30 | Linux EC2 launch, key pair, SSH connection, public IPv4, and cost cleanup notes. |
+| Phase 4 - EC2 Basics | Host a Simple Website in Linux EC2 | Complete | EC2 | Complete | 2026-06-30 | Apache HTTP Server installed on Linux EC2; sample index file uploaded with SCP and tested over HTTP. |
 | Phase 4 - EC2 Basics | Create EC2 Instances using AWS CLI | Not started | EC2/CLI | Not started |  | EC2 automation with CLI. |
 | Phase 4 - EC2 Basics | EC2 Instance Connect | Not started | EC2 | Not started |  | Browser-based connection workflow. |
 | Phase 4 - EC2 Basics | EC2 Instance Pricing | Not started | EC2/Pricing | Theory-only |  | Cost model notes only unless a safe demo is needed. |

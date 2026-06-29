@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "notion:sync": "node scripts/sync-notion-tracker.mjs",
-    "notion:watch": "node scripts/watch-notion-tracker.mjs",
-    "notion:normalize": "node scripts/normalize-notion-titles.mjs"
+    "notion:sync": "node notion-scripts/sync-notion-tracker.mjs",
+    "notion:watch": "node notion-scripts/watch-notion-tracker.mjs",
+    "notion:normalize": "node notion-scripts/normalize-notion-titles.mjs"
   }
 }

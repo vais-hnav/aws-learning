@@ -38,7 +38,24 @@ function getTextContent(richText = []) {
   return richText.map((item) => item.plain_text || '').join('').trim();
 }
 
+function normalizeTitle(title) {
+  return title.replace(/^Video\s+\d+\s*-\s*/i, '').trim();
+}
+
+function getTitlePropertyName(database) {
+  for (const [name, definition] of Object.entries(database.properties || {})) {
+    if (definition.type === 'title') {
+      return name;
+    }
+  }
+
+  throw new Error('Could not find the Notion title property.');
+}
+
 async function main() {
+  const database = await notionFetch(`databases/${databaseId}`);
+  const titlePropertyName = getTitlePropertyName(database);
+
   const result = await notionFetch(`databases/${databaseId}/query`, {
     method: 'POST',
     body: JSON.stringify({ page_size: 100 }),
@@ -48,10 +65,11 @@ async function main() {
 
   for (const page of result.results || []) {
     const props = page.properties || {};
-    const title = getTextContent(props.Name?.title || []);
-    const topic = getTextContent(props['Video Topic']?.rich_text || []);
+    const title = getTextContent(props[titlePropertyName]?.title || []);
+    const legacyTopic = getTextContent(props['Video Topic']?.rich_text || []);
+    const normalizedTitle = normalizeTitle(legacyTopic || title);
 
-    if (!topic || title === topic) {
+    if (!normalizedTitle || title === normalizedTitle) {
       continue;
     }
 
@@ -59,11 +77,11 @@ async function main() {
       method: 'PATCH',
       body: JSON.stringify({
         properties: {
-          Name: {
+          [titlePropertyName]: {
             title: [
               {
                 text: {
-                  content: topic,
+                  content: normalizedTitle,
                 },
               },
             ],
@@ -81,4 +99,3 @@ main().catch((error) => {
   console.error(error.message);
   process.exit(1);
 });
-

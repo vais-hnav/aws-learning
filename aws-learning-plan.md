@@ -4,6 +4,8 @@
 
 Playlist: https://www.youtube.com/playlist?list=PLoE0WgvMazmwyv78EAM_I39IWZtJ_lhtZ
 
+Notion dashboard: https://sage-handstand-5f9.notion.site/3860514ccd8e80d6879cfae61295e5cd?v=3860514ccd8e807eaa71000cd24b45a0&source=copy_link
+
 Last playlist check: `2026-06-29`
 
 Live playlist count at last check: `73 videos`
@@ -610,12 +612,15 @@ Before marking a phase complete, make sure the repo has:
 The Notion tracker should mirror this plan:
 
 - One row per video or lab topic
-- Phase name
+- Group by Phase
+- Keep rows in the same order as the plan
+- Video topic
+- Watched status
 - AWS service
-- Watch status
 - Lab status
-- Cleanup status
-- GitHub proof link
-- Notes link
+- Date
+- Notes
 
 GitHub remains the proof source. Notion is the live dashboard.
+
+[![Open Notion Dashboard](https://img.shields.io/badge/Open-Notion%20Dashboard-black?logo=notion&logoColor=white)](https://sage-handstand-5f9.notion.site/3860514ccd8e80d6879cfae61295e5cd?v=3860514ccd8e807eaa71000cd24b45a0&source=copy_link)

@@ -236,9 +236,9 @@ Build:
 
 - EC2 introduction lab
 - Linux EC2 launch lab
-- EC2 Instance Connect notes
+- EC2 Instance Connect lab
 - Simple Apache website lab
-- EC2 CLI launch notes
+- EC2 CLI automation lab in `04-ec2-automation/`
 - EC2 pricing notes
 - EC2 instance type selection notes
 - EC2 cleanup checklist
@@ -253,8 +253,8 @@ Safety rules:
 Next checkpoint:
 
 ```text
-Finish Video 18 next, then create the EC2 CLI automation lab.
-Before moving on, confirm the website instance is terminated unless you intentionally need it.
+Finish Video 21 next, then create EC2 pricing notes.
+Before moving on, confirm all practice EC2 instances are stopped or terminated.
 ```
 
 ## Phase 5 - EC2 Pricing And Storage/EBS

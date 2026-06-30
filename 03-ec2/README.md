@@ -7,6 +7,8 @@ Phase work:
 - `ec2-introduction/`
 - `linux-ec2-instance/`
 - `apache-webserver/`
+- `ec2-instance-connect/`
+- `../04-ec2-automation/`
 
 Phase notes:
 - [`phase-notes.md`](./phase-notes.md)

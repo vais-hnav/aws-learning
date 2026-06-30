@@ -16,7 +16,7 @@ Status values:
 - `Pending` means the video was watched, but the matching lab/check is still open.
 - `Theory-only` means no AWS resource lab is expected.
 
-Current status: Phase 1, Phase 2, and Phase 3 are complete. Phase 4 is in progress through video 17.
+Current status: Phase 1, Phase 2, and Phase 3 are complete. Phase 4 is in progress through video 20.
 
 | Phase | Video Topic | Watched Status | AWS Service | Lab Status | Date | Notes |
 |---|---|---|---|---|---|---|
@@ -27,7 +27,7 @@ Current status: Phase 1, Phase 2, and Phase 3 are complete. Phase 4 is in progre
 | Phase 1 - AWS Foundation | Create Free Tier AWS Account | Complete | Account/Billing | Complete | 2026-06-23 | Account created and Free Tier safety basics reviewed. |
 | Phase 1 - AWS Foundation | Set up MFA for Root User | Complete | Account/IAM | Complete | 2026-06-23 | Root MFA enabled and root account safety checklist completed. |
 | Phase 1 - AWS Foundation | AWS Regions and Availability Zones | Complete | Regions/AZs | Complete | 2026-06-24 | Region selection understood; default learning region documented. |
-| Phase 1 - AWS Foundation | AWS Billing Basics and Zero-Cost Budget | Complete | Billing/Budgets | Complete | 2026-06-25 | Billing alert and budget setup documented for cost safety. |
+| Phase 1 - AWS Foundation | AWS Billing Basics and Zero-Cost Budget | Complete | Billing/Budgets | Complete | 2026-07-01 | IAM billing access, bill summary, charges by service/Region, zero-spend budget, and monthly cost budget reviewed. |
 | Phase 1 - AWS Foundation | AWS Free Tier Account Changes in 2026 | Complete | Account/Billing | Theory-only | 2026-06-25 | Free Tier changes and beginner cost rules reviewed. |
 | Phase 2 - IAM | Introduction to IAM | Complete | IAM | Complete | 2026-06-26 | IAM identity, authentication, authorization, and least privilege. |
 | Phase 2 - IAM | Creating IAM Policies | Complete | IAM | Complete | 2026-06-26 | JSON policy structure, actions, resources, and permission scope. |
@@ -40,8 +40,8 @@ Current status: Phase 1, Phase 2, and Phase 3 are complete. Phase 4 is in progre
 | Phase 4 - EC2 Basics | Introduction to AWS EC2 Service | Complete | EC2 | Pending | 2026-06-29 | Video watched and EC2 intro lab prepared; read-only CLI checks still pending. |
 | Phase 4 - EC2 Basics | Create Linux EC2 Instance | Complete | EC2 | Complete | 2026-06-30 | Linux EC2 launch, key pair, SSH connection, public IPv4, and cost cleanup notes. |
 | Phase 4 - EC2 Basics | Host a Simple Website in Linux EC2 | Complete | EC2 | Complete | 2026-06-30 | Apache HTTP Server installed on Linux EC2; sample index file uploaded with SCP and tested over HTTP. |
-| Phase 4 - EC2 Basics | Create EC2 Instances using AWS CLI | Not started | EC2/CLI | Not started |  | EC2 automation with CLI. |
-| Phase 4 - EC2 Basics | EC2 Instance Connect | Not started | EC2 | Not started |  | Browser-based connection workflow. |
+| Phase 4 - EC2 Basics | Create EC2 Instances using AWS CLI | Complete | EC2/CLI | Complete | 2026-07-01 | EC2 CLI launch, default/explicit Region behavior, JSON output, instance IDs, stop/start commands, and cleanup safety documented. |
+| Phase 4 - EC2 Basics | EC2 Instance Connect | Complete | EC2 | Complete | 2026-07-01 | Browser-based Linux EC2 connection, default username, private-key simplification, IAM permission requirement, and cleanup notes documented. |
 | Phase 4 - EC2 Basics | EC2 Instance Pricing | Not started | EC2/Pricing | Theory-only |  | Cost model notes only unless a safe demo is needed. |
 | Phase 4 - EC2 Basics | Choose the Right EC2 Instance | Not started | EC2 | Theory-only |  | Instance family and sizing notes. |
 | Phase 4 - EC2 Basics | EC2 Cost Optimization | Not started | EC2/Pricing | Theory-only |  | Cost optimization concepts; no paid experiments planned. |

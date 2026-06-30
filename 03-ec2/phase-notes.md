@@ -135,3 +135,97 @@ Warnings / cleanup:
 - Upload the page as `index.html`.
 - Terminate the EC2 instance after testing unless you are intentionally keeping it.
 - Check for leftover EBS volumes after termination.
+
+## 18. Create EC2 Instances using AWS CLI
+
+Concept:
+- AWS CLI is used to create and manage AWS resources from the terminal.
+- Console is useful for learning visually; CLI is better for repeatable work and automation.
+- EC2 CLI commands use exact values such as AMI ID, instance type, key-pair name, Region code, and instance ID.
+- Region matters because AMI IDs, key pairs, and EC2 instances are regional.
+- AWS CLI output is usually JSON, and `run-instances` returns an `Instances` array because it can create more than one instance.
+
+Video description highlights:
+- The description says the video walks through creating Linux EC2 instances using AWS CLI.
+- It specifically calls out launching, starting, and stopping instances from the terminal.
+- It frames CLI usage as a productivity and automation skill for developers and system administrators.
+- The description references the AWS CLI docs for `run-instances`, `start-instances`, and `stop-instances`.
+
+Video hands-on:
+- Opens the command prompt after AWS CLI has already been configured.
+- Explains that organizations usually prefer CLI, scripts, or automation for repeated resource creation.
+- Chooses the target Region before creating the instance.
+- Opens the EC2 AMI catalog and copies an Amazon Linux AMI ID.
+- Uses a small Free Tier eligible instance type such as `t2.micro`.
+- Creates or reuses a key pair in the console, then passes only the key-pair name to the CLI.
+- Runs a minimal `aws ec2 run-instances` command with AMI ID, instance type, count, and key name.
+- Verifies the created instance in the EC2 console.
+- Explains that if `--region` is not passed, AWS CLI uses the default Region configured for the profile.
+- Reads the JSON response and explains why the response is an array.
+- Shows that `--count` can create multiple instances, but the beginner example keeps it minimal.
+- Uses the instance ID with `aws ec2 stop-instances`.
+- Waits for the state to become `stopped`.
+- Uses the same instance ID with `aws ec2 start-instances`.
+- Explains that multiple instance IDs can be passed to stop or start multiple instances.
+
+My hands-on:
+- Replaced the placeholder automation files with a beginner-safe EC2 CLI lab.
+- Added a dry-run-first launch script so the command can be checked before creating a paid resource.
+- Set the script count default to `1` for beginner safety.
+- Added stop, start, and terminate helpers using the instance ID.
+- Added command notes, explanation, cleanup, mistakes, and troubleshooting docs.
+
+Commands / files:
+- `aws ec2 run-instances`
+- `aws ec2 stop-instances --instance-ids INSTANCE_ID`
+- `aws ec2 start-instances --instance-ids INSTANCE_ID`
+- `04-ec2-automation/`
+
+Warnings / cleanup:
+- Confirm the Region before launching.
+- Do not use `--count` casually while learning.
+- Use the key-pair name in the CLI, not the `.pem` file path.
+- Stop/start proves the video command flow, but terminate after practice to finish cleanup.
+- Check EBS volumes and Elastic IPs after EC2 labs.
+
+## 20. EC2 Instance Connect
+
+Concept:
+- EC2 Instance Connect is a browser-based way to connect to supported Linux EC2 instances.
+- It is still SSH-based, but the AWS console handles the connection flow.
+- For Amazon Linux, the default username is usually `ec2-user`.
+- It avoids handling the local `.pem` private key during the connection step.
+- The signed-in IAM user still needs permission to use EC2 Instance Connect.
+
+Video description highlights:
+- The description says the video explains what EC2 Instance Connect is, its benefits, setup for Linux instances, a step-by-step connection demo, and required permissions.
+- It links to AWS documentation for EC2 Instance Connect and IAM-role/permission configuration.
+
+Video hands-on:
+- Uses a Linux EC2 instance that already exists.
+- Selects the instance in the EC2 console.
+- Checks the AMI details to confirm it is an Amazon Linux instance.
+- Clicks `Connect`.
+- Chooses the first tab, `EC2 Instance Connect`.
+- Keeps the default username shown by AWS for Amazon Linux.
+- Connects from the browser without selecting a local `.pem` private key.
+- Opens a browser terminal and runs Linux commands from there.
+- Explains that this is useful when SSH client/private-key setup is difficult.
+- Explains that an admin IAM user may work immediately, while a restricted user needs specific permissions.
+
+My hands-on:
+- Added the `ec2-instance-connect` lab.
+- Documented the console workflow, basic commands to run inside the browser terminal, permission requirements, cleanup, and common mistakes.
+
+Commands / files:
+- `whoami`
+- `pwd`
+- `ls`
+- `cat /etc/os-release`
+- `03-ec2/ec2-instance-connect/`
+
+Warnings / cleanup:
+- EC2 Instance Connect does not create a separate resource to delete.
+- The EC2 instance is still the resource that can cost money.
+- Close the browser terminal, then stop or terminate the EC2 instance.
+- If access fails, check IAM permissions and whether the instance is a supported Linux instance.

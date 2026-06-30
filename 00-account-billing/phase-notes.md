@@ -175,16 +175,32 @@ Concept:
 - Billing shows charges, usage, credits, forecasts, and cost trends.
 - Budgets send alerts; they do not automatically stop AWS resources.
 - A low or zero-cost budget helps catch mistakes early.
+- AWS costs are usage-based; different services charge in different ways.
+- IAM users may need both billing permissions and root-level billing access enabled before they can view billing pages.
+
+Video description highlights:
+- The description says this video focuses on avoiding surprise bills as a beginner.
+- It covers enabling billing permissions for IAM users.
+- It shows monthly bill summary, which services are contributing to cost, and budget notifications.
 
 Video hands-on:
 - Opens Billing and Cost Management.
-- Reviews billing/cost areas.
-- Creates or demonstrates a budget alert flow.
-- Explains why beginners should monitor cost before creating more services.
+- Shows that an admin IAM user can still be blocked from billing until root enables IAM/role access to billing information.
+- Logs in as root only for that account-level billing setting, then returns to the IAM user.
+- Reviews the monthly bill summary and explains month-to-date cost, previous-period comparison, and forecast.
+- Explains that EC2 can charge based on running time and that other services may charge by storage, requests, execution time, or other usage.
+- Opens detailed bills / bills by service to identify which AWS service created a charge.
+- Explains that costs can also be split by Region, which helps catch forgotten resources in another Region.
+- Uses the EC2 example to show that charges can come from instance usage, EBS volumes, or other related sub-items.
+- Creates a budget using the AWS-provided zero-spend budget template.
+- Adds an active email address for notifications so alerts are noticed quickly.
+- Also recommends a monthly cost budget so spending beyond the chosen limit triggers an email.
+- Reminds beginners to keep monitoring because learning cloud means creating more resources over time.
 
 My hands-on:
 - Created billing alert/budget checklist.
 - Added billing safety and daily cost check routine.
+- Refreshed the billing notes after the EC2 videos because EC2 is the first service in this path that can create meaningful charges.
 
 Commands / files:
 - Console-only setup.
@@ -193,6 +209,8 @@ Commands / files:
 Warnings / cleanup:
 - Budgets are alarms, not automatic brakes.
 - Cleanup still means deleting or stopping the actual AWS resources.
+- Billing pages can help find the source of a charge, but they do not remove the charge by themselves.
+- Root should be used only for account-level tasks, then daily work should return to an IAM user.
 
 ## 61. How to Create AWS Free Tier Account in 2026
 

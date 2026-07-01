@@ -6,6 +6,7 @@ Understand identity, permissions, users, groups, policies, roles, access keys, a
 Expected lab files when you build this phase:
 - `policies/`
 - `explanation.md`
+- `json-examples.md`
 - `mistakes.md`
 - `cleanup.md`
 

@@ -138,6 +138,7 @@ Built:
 - S3 read-only policy.
 - EC2 describe-only policy.
 - IAM explanation notes.
+- IAM JSON examples.
 - Common IAM mistakes notes.
 - Cleanup checklist.
 

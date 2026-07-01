@@ -9,6 +9,9 @@ Phase work:
 - `apache-webserver/`
 - `ec2-instance-connect/`
 - `ec2-cli-automation/`
+- `ec2-pricing/`
+- `ec2-instance-selection/`
+- `ec2-cost-optimization/`
 
 Phase notes:
 - [`phase-notes.md`](./phase-notes.md)
@@ -28,3 +31,4 @@ Cost rule:
 - For beginner labs, use only small/free-tier-eligible instance types when the AWS console confirms eligibility.
 - Avoid Dedicated Hosts, Dedicated Instances, large instance types, GPU instances, Elastic IPs, NAT Gateways, and Load Balancers for now.
 - Never commit `.pem` private key files.
+- Do not buy Savings Plans, Reserved Instances, Dedicated Hosts, or Capacity Reservations during beginner practice.

@@ -12,7 +12,7 @@ Live playlist count at last check: `73 videos`
 
 Current learning position: `Phase 4 - EC2 Basics`
 
-Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, and `Phase 4 videos 15-20 watched`
+Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, and `Phase 4 videos 15-23 watched`
 
 ## How To Use This Plan
 
@@ -245,8 +245,9 @@ Build:
 - EC2 Instance Connect lab
 - Simple Apache website lab
 - EC2 CLI automation lab in `phase-04-ec2-basics/ec2-cli-automation/`
-- EC2 pricing notes
-- EC2 instance type selection notes
+- EC2 pricing notes in `phase-04-ec2-basics/ec2-pricing/`
+- EC2 instance type selection notes in `phase-04-ec2-basics/ec2-instance-selection/`
+- EC2 cost optimization notes in `phase-04-ec2-basics/ec2-cost-optimization/`
 - EC2 cleanup checklist
 
 Safety rules:
@@ -259,8 +260,9 @@ Safety rules:
 Next checkpoint:
 
 ```text
-Finish Video 21 next, then create EC2 pricing notes.
+Start Phase 5 with Video 24 next.
 Before moving on, confirm all practice EC2 instances are stopped or terminated.
+Do not purchase Savings Plans, Reserved Instances, Dedicated Hosts, or Dedicated Instances during beginner practice.
 ```
 
 ## Phase 5 - EC2 Pricing And Storage/EBS

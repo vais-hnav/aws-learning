@@ -16,7 +16,7 @@ Status values:
 - `Pending` means the video was watched, but the matching lab/check is still open.
 - `Theory-only` means no AWS resource lab is expected.
 
-Current status: Phase 1, Phase 2, and Phase 3 are complete. Phase 4 is in progress through video 20.
+Current status: Phase 1, Phase 2, Phase 3, and Phase 4 videos are complete. Phase 5 is next.
 
 | Phase | Video Topic | Watched Status | AWS Service | Lab Status | Date | Notes |
 |---|---|---|---|---|---|---|
@@ -42,9 +42,9 @@ Current status: Phase 1, Phase 2, and Phase 3 are complete. Phase 4 is in progre
 | Phase 4 - EC2 Basics | Host a Simple Website in Linux EC2 | Complete | EC2 | Complete | 2026-06-30 | Apache HTTP Server installed on Linux EC2; sample index file uploaded with SCP and tested over HTTP. |
 | Phase 4 - EC2 Basics | Create EC2 Instances using AWS CLI | Complete | EC2/CLI | Complete | 2026-07-01 | EC2 CLI launch, default/explicit Region behavior, JSON output, instance IDs, stop/start commands, and cleanup safety documented. |
 | Phase 4 - EC2 Basics | EC2 Instance Connect | Complete | EC2 | Complete | 2026-07-01 | Browser-based Linux EC2 connection, default username, private-key simplification, IAM permission requirement, and cleanup notes documented. |
-| Phase 4 - EC2 Basics | EC2 Instance Pricing | Not started | EC2/Pricing | Theory-only |  | Cost model notes only unless a safe demo is needed. |
-| Phase 4 - EC2 Basics | Choose the Right EC2 Instance | Not started | EC2 | Theory-only |  | Instance family and sizing notes. |
-| Phase 4 - EC2 Basics | EC2 Cost Optimization | Not started | EC2/Pricing | Theory-only |  | Cost optimization concepts; no paid experiments planned. |
+| Phase 4 - EC2 Basics | EC2 Instance Pricing | Complete | EC2/Pricing | Theory-only | 2026-07-01 | EC2 pricing inputs, running-time billing, related EBS/IP costs, and cleanup checks documented. |
+| Phase 4 - EC2 Basics | Choose the Right EC2 Instance | Complete | EC2 | Theory-only | 2026-07-01 | Instance families, vCPU/memory/storage/network selection, right-sizing, and safe CLI inspection documented. |
+| Phase 4 - EC2 Basics | EC2 Cost Optimization | Complete | EC2/Pricing | Theory-only | 2026-07-01 | Good vs bad savings, purchasing options, Spot interruption risk, and beginner no-commitment rules documented. |
 | Phase 5 - EC2 Pricing and Storage/EBS | EC2 Savings Plans | Not started | EC2/Pricing | Theory-only |  | Required theory video; no Savings Plan purchase. |
 | Phase 5 - EC2 Pricing and Storage/EBS | EC2 Spot Instances | Not started | EC2/Pricing | Theory-only |  | Required theory video; no risky workload planned. |
 | Phase 5 - EC2 Pricing and Storage/EBS | Dedicated Host | Not started | EC2/Pricing | Theory-only |  | Required theory video; no Dedicated Host creation. |

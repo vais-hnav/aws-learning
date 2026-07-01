@@ -229,3 +229,115 @@ Warnings / cleanup:
 - The EC2 instance is still the resource that can cost money.
 - Close the browser terminal, then stop or terminate the EC2 instance.
 - If access fails, check IAM permissions and whether the instance is a supported Linux instance.
+
+## 21. How EC2 instance pricing is calculated
+
+Concept:
+- Cloud development adds cost awareness to normal software development.
+- EC2 cost depends on instance type, Region, operating system, running time, and purchasing option.
+- EC2-related bills can also include EBS volumes, snapshots, Elastic IPs, data transfer, and other connected services.
+- Stopped is not the same as deleted; storage can continue to cost money.
+- Budgets help notify, but they do not replace cleanup.
+
+Video description highlights:
+- The description says this is an introductory beginner video about how AWS calculates EC2 instance pricing.
+- It emphasizes that developers moving into cloud need to understand service billing and cost.
+- It uses a simple example rather than advanced pricing math.
+
+Video hands-on / walkthrough:
+- Focuses on pricing concepts rather than creating a new EC2 instance.
+- Explains that EC2 pricing is usage-based.
+- Frames cost as something developers must consider before and after launching resources.
+- Connects EC2 pricing back to billing/budget safety from the earlier billing video.
+
+My hands-on:
+- Added the `ec2-pricing` theory lab.
+- Documented EC2 pricing inputs, safe read-only CLI checks, cleanup checks, and common pricing mistakes.
+- Kept the lab resource-free to avoid accidental charges.
+
+Commands / files:
+- `phase-04-ec2-basics/ec2-pricing/`
+- `aws ec2 describe-instance-types`
+- `aws ec2 describe-instances`
+- `aws ec2 describe-volumes`
+- `aws ec2 describe-addresses`
+
+Warnings / cleanup:
+- Check pricing before launching non-Free-Tier or long-running instances.
+- Terminate completed EC2 practice instances.
+- Check EBS volumes and Elastic IPs after termination.
+- Budget alerts can be delayed, so direct resource cleanup still matters.
+
+## 22. How to Choose the Right AWS EC2 Instance
+
+Concept:
+- EC2 instance types are grouped into families for different workload patterns.
+- General purpose balances CPU, memory, and networking.
+- Compute optimized is for CPU-heavy workloads.
+- Memory optimized is for memory-heavy workloads.
+- Storage optimized is for storage I/O-heavy workloads.
+- Accelerated computing is for GPU or specialized hardware workloads.
+- Right-sizing means choosing enough capacity without paying for unused capacity.
+
+Video description highlights:
+- The description says the video covers EC2 instance families and specific instance types.
+- It calls out vCPU, memory, storage capacity, scaling up/down, and cost management.
+- It references the AWS EC2 instance types page.
+
+Video hands-on / walkthrough:
+- Explains the major EC2 instance families.
+- Compares instance selection by workload need instead of choosing randomly.
+- Connects instance choice to cost control.
+- Encourages scaling up or down as needed rather than over-provisioning from the start.
+
+My hands-on:
+- Added the `ec2-instance-selection` theory lab.
+- Added read-only CLI commands for inspecting instance type details.
+- Documented a beginner selection flow and common instance-selection mistakes.
+
+Commands / files:
+- `phase-04-ec2-basics/ec2-instance-selection/`
+- `aws ec2 describe-instance-types`
+
+Warnings / cleanup:
+- Do not choose large or specialized instance types for beginner labs.
+- Check Free Tier eligibility before launching.
+- Compare memory, vCPU, network, storage, and cost, not just the instance name.
+
+## 23. Save 90% on AWS EC2 Bills
+
+Concept:
+- Cost optimization is foundational cloud knowledge.
+- Not every saving is good; savings should not harm users or block future innovation.
+- EC2 purchasing options include On-Demand, Savings Plans, Reserved Instances, Spot Instances, Dedicated Hosts, Dedicated Instances, and Capacity Reservations.
+- Spot Instances can offer large discounts, but they can be interrupted.
+- Beginners should learn purchasing options without buying long-term commitments.
+
+Video description highlights:
+- The description says cost optimization is important and appears in Cloud Practitioner-style knowledge.
+- It warns that savings are bad if they hurt customer experience or future innovation.
+- It introduces EC2 purchasing options and says deeper discussion continues in upcoming videos.
+- It specifically mentions On-Demand, Savings Plans, Spot, Dedicated Hosts, Dedicated Instances, Reserved Instances, and Capacity Reservations.
+
+Video hands-on / walkthrough:
+- Focuses on cost-optimization concepts rather than creating resources.
+- Explains EC2 purchasing options at a high level.
+- Emphasizes choosing the right option based on usage plan.
+- Frames Spot as a discount option for flexible workloads, not critical always-on workloads.
+
+My hands-on:
+- Added the `ec2-cost-optimization` theory lab.
+- Documented purchasing options, beginner-safe rules, cost cleanup commands, and mistakes.
+- Marked this as no paid experiment: no Savings Plans, Reserved Instances, Dedicated Hosts, Dedicated Instances, or Capacity Reservations.
+
+Commands / files:
+- `phase-04-ec2-basics/ec2-cost-optimization/`
+- `aws ec2 describe-instances`
+- `aws ec2 describe-volumes`
+- `aws ec2 describe-addresses`
+
+Warnings / cleanup:
+- Do not buy commitments during beginner practice.
+- Use Spot only when a future lab explains interruption handling.
+- Remove idle resources before thinking about advanced purchasing options.
+- Budgets notify; cleanup actually removes cost sources.

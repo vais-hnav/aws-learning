@@ -1,4 +1,4 @@
-# Phase 1: AWS Basics, Account, Billing, Regions
+# Phase 1: AWS Foundation
 
 This phase covers the first safety setup videos in the playlist.
 
@@ -141,7 +141,7 @@ If I ever need to remove it:
 This phase should be tracked in the `aws-learning` repo and in Notion.
 
 Suggested repo location:
-- `00-account-billing/`
+- `phase-01-aws-foundation/`
 
 Phase notes:
 - [`phase-notes.md`](./phase-notes.md)

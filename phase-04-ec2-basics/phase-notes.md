@@ -35,7 +35,7 @@ Commands / files:
 - `AWS_PROFILE=user1 aws sts get-caller-identity`
 - `AWS_PROFILE=user1 aws ec2 describe-regions --output table`
 - `AWS_PROFILE=user1 aws ec2 describe-instances --output table`
-- `03-ec2/ec2-introduction/`
+- `phase-04-ec2-basics/ec2-introduction/`
 
 Warnings / cleanup:
 - EC2 can create charges.
@@ -86,7 +86,7 @@ Commands / files:
 - `ssh -i KEY_PATH ec2-user@PUBLIC_IPV4`
 - `chmod 400 KEY_PATH`
 - `AWS_PROFILE=user1 aws ec2 describe-instances --output table`
-- `03-ec2/linux-ec2-instance/`
+- `phase-04-ec2-basics/linux-ec2-instance/`
 
 Warnings / cleanup:
 - Do not commit `.pem` files.
@@ -127,7 +127,7 @@ Commands / files:
 - `sudo chown -R ec2-user:ec2-user /var/www/html`
 - `sudo service httpd start`
 - `scp -i KEY_PATH sample-index.html ec2-user@PUBLIC_IPV4:/var/www/html/index.html`
-- `03-ec2/apache-webserver/`
+- `phase-04-ec2-basics/apache-webserver/`
 
 Warnings / cleanup:
 - HTTP port `80` must be allowed in the security group.
@@ -179,7 +179,7 @@ Commands / files:
 - `aws ec2 run-instances`
 - `aws ec2 stop-instances --instance-ids INSTANCE_ID`
 - `aws ec2 start-instances --instance-ids INSTANCE_ID`
-- `04-ec2-automation/`
+- `phase-04-ec2-basics/ec2-cli-automation/`
 
 Warnings / cleanup:
 - Confirm the Region before launching.
@@ -222,7 +222,7 @@ Commands / files:
 - `pwd`
 - `ls`
 - `cat /etc/os-release`
-- `03-ec2/ec2-instance-connect/`
+- `phase-04-ec2-basics/ec2-instance-connect/`
 
 Warnings / cleanup:
 - EC2 Instance Connect does not create a separate resource to delete.

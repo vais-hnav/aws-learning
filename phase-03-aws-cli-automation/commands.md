@@ -25,17 +25,17 @@ What each one is for:
 
 Example Bash script:
 ```bash
-bash 02-aws-cli/check-aws-account.sh
+bash phase-03-aws-cli-automation/check-aws-account.sh
 ```
 
 Example Python script for IAM user ARNs:
 ```bash
-python3 02-aws-cli/list-iam-user-arns.py --profile user1
+python3 phase-03-aws-cli-automation/list-iam-user-arns.py --profile user1
 ```
 
 Or use the current profile:
 ```bash
-AWS_PROFILE=user1 python3 02-aws-cli/list-iam-user-arns.py
+AWS_PROFILE=user1 python3 phase-03-aws-cli-automation/list-iam-user-arns.py
 ```
 
 Before running the script, make sure `boto3` is installed:
@@ -45,11 +45,11 @@ python3 -m pip install boto3
 
 PowerShell version:
 ```powershell
-pwsh ./02-aws-cli/list-iam-user-arns.ps1 -ProfileName user1
+pwsh ./phase-03-aws-cli-automation/list-iam-user-arns.ps1 -ProfileName user1
 ```
 
 Or use the current `AWS_PROFILE` value:
 ```powershell
 $env:AWS_PROFILE = "user1"
-pwsh ./02-aws-cli/list-iam-user-arns.ps1
+pwsh ./phase-03-aws-cli-automation/list-iam-user-arns.ps1
 ```

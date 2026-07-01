@@ -46,7 +46,7 @@ My hands-on:
 
 Commands / files:
 - No AWS commands.
-- `00-account-billing/README.md`
+- `phase-01-aws-foundation/README.md`
 
 Warnings / cleanup:
 - No AWS cleanup needed.
@@ -69,7 +69,7 @@ My hands-on:
 
 Commands / files:
 - No AWS commands.
-- `00-account-billing/phase-notes.md`
+- `phase-01-aws-foundation/phase-notes.md`
 
 Warnings / cleanup:
 - No cleanup needed.
@@ -113,7 +113,7 @@ My hands-on:
 
 Commands / files:
 - Console-only setup.
-- `00-account-billing/README.md`
+- `phase-01-aws-foundation/README.md`
 
 Warnings / cleanup:
 - Choose the basic/free support option unless intentionally paying.
@@ -140,7 +140,7 @@ My hands-on:
 
 Commands / files:
 - Console-only setup.
-- `00-account-billing/README.md`
+- `phase-01-aws-foundation/README.md`
 
 Warnings / cleanup:
 - Store recovery information safely.
@@ -163,7 +163,7 @@ My hands-on:
 - Added region notes and cleanup habit: always check the selected region.
 
 Commands / files:
-- `00-account-billing/region-notes.md`
+- `phase-01-aws-foundation/region-notes.md`
 
 Warnings / cleanup:
 - No cleanup needed.
@@ -204,7 +204,7 @@ My hands-on:
 
 Commands / files:
 - Console-only setup.
-- `00-account-billing/billing-safety.md`
+- `phase-01-aws-foundation/billing-safety.md`
 
 Warnings / cleanup:
 - Budgets are alarms, not automatic brakes.
@@ -230,7 +230,7 @@ My hands-on:
 - https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-plans.html
 
 Commands / files:
-- `00-account-billing/free-tier-rules.md`
+- `phase-01-aws-foundation/free-tier-rules.md`
 
 Warnings / cleanup:
 - Free Tier is not unlimited.

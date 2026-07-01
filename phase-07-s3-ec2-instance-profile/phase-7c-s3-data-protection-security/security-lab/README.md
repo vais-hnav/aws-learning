@@ -15,7 +15,7 @@ Attach it to `user1` with:
 AWS_PROFILE=<admin-profile> aws iam put-user-policy \
   --user-name user1 \
   --policy-name Proj1S3DevReadOnly \
-  --policy-document file://07-s3/security-lab/user1-s3-read-only-policy.json
+  --policy-document file://phase-07-s3-ec2-instance-profile/phase-7c-s3-data-protection-security/security-lab/user1-s3-read-only-policy.json
 ```
 
 Test it with:

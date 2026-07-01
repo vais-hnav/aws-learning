@@ -1,4 +1,4 @@
-# Phase 3: AWS CLI
+# Phase 3: AWS CLI And Automation Basics
 
 Goal:
 Learn how to check your AWS identity and work safely from the terminal.

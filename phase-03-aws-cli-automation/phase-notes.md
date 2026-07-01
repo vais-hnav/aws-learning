@@ -30,7 +30,7 @@ Commands / files:
 - `aws configure list-profiles`
 - `AWS_PROFILE=user1 aws sts get-caller-identity`
 - `AWS_PROFILE=user1 aws s3 ls`
-- `02-aws-cli/check-aws-account.sh`
+- `phase-03-aws-cli-automation/check-aws-account.sh`
 
 Warnings / cleanup:
 - No AWS resources created.
@@ -55,10 +55,10 @@ My hands-on:
 - Ran the scripts to list IAM user ARNs.
 
 Commands / files:
-- `pwsh ./02-aws-cli/list-iam-user-arns.ps1 -ProfileName user1`
-- `python3 02-aws-cli/list-iam-user-arns.py --profile user1`
-- `02-aws-cli/list-iam-user-arns.ps1`
-- `02-aws-cli/list-iam-user-arns.py`
+- `pwsh ./phase-03-aws-cli-automation/list-iam-user-arns.ps1 -ProfileName user1`
+- `python3 phase-03-aws-cli-automation/list-iam-user-arns.py --profile user1`
+- `phase-03-aws-cli-automation/list-iam-user-arns.ps1`
+- `phase-03-aws-cli-automation/list-iam-user-arns.py`
 
 Warnings / cleanup:
 - `Get-IAMUserList` requires the AWS PowerShell IAM module.
@@ -82,9 +82,9 @@ My hands-on:
 - Updated command/error docs for the CLI phase.
 
 Commands / files:
-- `02-aws-cli/commands.md`
-- `02-aws-cli/errors.md`
-- `02-aws-cli/cleanup.md`
+- `phase-03-aws-cli-automation/commands.md`
+- `phase-03-aws-cli-automation/errors.md`
+- `phase-03-aws-cli-automation/cleanup.md`
 
 Warnings / cleanup:
 - Do not blindly run AI-generated commands.

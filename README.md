@@ -38,23 +38,31 @@ Watch video
 
 ```text
 aws-learning/
-├── 00-account-billing/
-├── 01-iam/
-├── 02-aws-cli/
-├── 03-ec2/
-├── 04-ec2-automation/
-├── 05-ec2-storage-ebs/
-├── 06-vpc-basics/
-├── 07-s3/
-├── 08-ec2-instance-profile-s3/
-├── 09-lambda/
-├── 10-dynamodb/
-├── 11-final-project/
+├── phase-01-aws-foundation/
+├── phase-02-iam/
+├── phase-03-aws-cli-automation/
+├── phase-04-ec2-basics/
+│   └── ec2-cli-automation/
+├── phase-05-ec2-pricing-storage-ebs/
+├── phase-06-vpc-scalability/
+├── phase-07-s3-ec2-instance-profile/
+│   ├── phase-7a-s3-basics/
+│   ├── phase-7b-s3-storage-lifecycle/
+│   ├── phase-7c-s3-data-protection-security/
+│   └── phase-7d-ec2-instance-profile-s3/
+├── phase-08-lambda-serverless/
+│   ├── phase-8a-lambda-basics-operations/
+│   ├── phase-8b-serverless-app-patterns/
+│   └── phase-8c-python-file-processing/
+├── phase-09-dynamodb/
+├── phase-10-final-project/
 ├── cleanup-guides/
 ├── notion-scripts/
 ├── aws-learning-log.md
 └── aws-learning-plan.md
 ```
+
+Top-level learning folders are named by phase so the repo matches the roadmap and Notion tracker.
 
 ## Lab Format
 

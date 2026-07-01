@@ -24,8 +24,8 @@ My hands-on:
 - Documented least privilege as the rule for all future labs.
 
 Commands / files:
-- `01-iam/README.md`
-- `01-iam/explanation.md`
+- `phase-02-iam/README.md`
+- `phase-02-iam/explanation.md`
 
 Warnings / cleanup:
 - No billable AWS resource cleanup needed.
@@ -50,8 +50,8 @@ My hands-on:
 - Practiced bucket-level versus object-level S3 ARNs.
 
 Commands / files:
-- `01-iam/policies/s3-read-only-policy.json`
-- `01-iam/policies/ec2-describe-only-policy.json`
+- `phase-02-iam/policies/s3-read-only-policy.json`
+- `phase-02-iam/policies/ec2-describe-only-policy.json`
 
 Warnings / cleanup:
 - Avoid broad `Action: "*"` and `Resource: "*"` patterns.
@@ -101,7 +101,7 @@ My hands-on:
 
 Commands / files:
 - Console IAM group workflow.
-- `01-iam/explanation.md`
+- `phase-02-iam/explanation.md`
 
 Warnings / cleanup:
 - Do not leave users in powerful groups unnecessarily.
@@ -126,7 +126,7 @@ My hands-on:
 
 Commands / files:
 - Console IAM role workflow.
-- `01-iam/explanation.md`
+- `phase-02-iam/explanation.md`
 
 Warnings / cleanup:
 - A role needs both trust and permissions to work.

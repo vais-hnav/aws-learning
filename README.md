@@ -19,7 +19,9 @@ A hands-on AWS learning repository built around a video-to-lab workflow. Each ph
 | Phase 1 | Account, billing, budget, regions, Free Tier | Complete |
 | Phase 2 | IAM users, groups, policies, roles | Complete |
 | Phase 3 | AWS CLI, profiles, scripts, automation basics | Complete |
-| Phase 4 | EC2 basics | In progress |
+| Phase 4 | EC2 basics | Complete |
+| Phase 5A | EC2 pricing models | Complete |
+| Phase 5B | EBS storage | In progress |
 
 ## Learning Workflow
 
@@ -44,6 +46,8 @@ aws-learning/
 ├── phase-04-ec2-basics/
 │   └── ec2-cli-automation/
 ├── phase-05-ec2-pricing-storage-ebs/
+│   ├── phase-5a-ec2-pricing-models/
+│   └── phase-5b-ebs-storage/
 ├── phase-06-vpc-scalability/
 ├── phase-07-s3-ec2-instance-profile/
 │   ├── phase-7a-s3-basics/

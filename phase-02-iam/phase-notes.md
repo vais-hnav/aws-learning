@@ -3,7 +3,7 @@
 This phase covered IAM users, groups, policies, roles, access keys, and least privilege.
 
 Note source:
-- Based on playlist video order/titles, available auto-generated Malayalam transcript context from YouTube, and IAM lab work in this repo.
+- Based on playlist video order/titles, available auto-generated transcript context from YouTube, and IAM lab work in this repo.
 - Paraphrased explanatory notes, not verbatim transcripts.
 
 ## 8. Introduction to IAM

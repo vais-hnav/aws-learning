@@ -3,10 +3,10 @@
 This phase covered AWS foundations, account setup, root security, regions, billing, budgets, and Free Tier safety.
 
 Note source:
-- Based on playlist video order/titles, available auto-generated Malayalam transcript context from YouTube, and the hands-on setup done in this repo.
+- Based on playlist video order/titles, available auto-generated transcript context from YouTube, and the hands-on setup done in this repo.
 - Paraphrased learning notes, not verbatim transcripts.
 
-## 1. AWS Full Course in Malayalam
+## 1. AWS Full Course
 
 Concept:
 - The course sets up AWS as a phase-by-phase learning path, not a random list of services.

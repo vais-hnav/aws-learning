@@ -16,11 +16,11 @@ Status values:
 - `Pending` means the video was watched, but the matching lab/check is still open.
 - `Theory-only` means no AWS resource lab is expected.
 
-Current status: Phase 1, Phase 2, Phase 3, and Phase 4 videos are complete. Phase 5 is next.
+Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, and Phase 5B videos 28-31 are complete. Phase 5B videos 32-33 are next.
 
 | Phase | Video Topic | Watched Status | AWS Service | Lab Status | Date | Notes |
 |---|---|---|---|---|---|---|
-| Phase 1 - AWS Foundation | AWS Full Course in Malayalam | Complete | AWS Overview | Theory-only | 2026-06-21 | Course roadmap, AWS learning approach, and why hands-on practice matters. |
+| Phase 1 - AWS Foundation | AWS Full Course | Complete | AWS Overview | Theory-only | 2026-06-21 | Course roadmap, AWS learning approach, and why hands-on practice matters. |
 | Phase 1 - AWS Foundation | What is Cloud Computing? | Complete | Cloud Concepts | Theory-only | 2026-06-21 | Cloud computing basics, on-demand infrastructure, scalability, and managed services. |
 | Phase 1 - AWS Foundation | IaaS, PaaS, and SaaS | Complete | Cloud Models | Theory-only | 2026-06-22 | Compared cloud service models and understood where AWS services fit. |
 | Phase 1 - AWS Foundation | Introduction to AWS | Complete | AWS Overview | Theory-only | 2026-06-22 | AWS global platform, service categories, and beginner learning path. |
@@ -45,16 +45,16 @@ Current status: Phase 1, Phase 2, Phase 3, and Phase 4 videos are complete. Phas
 | Phase 4 - EC2 Basics | EC2 Instance Pricing | Complete | EC2/Pricing | Theory-only | 2026-07-01 | EC2 pricing inputs, running-time billing, related EBS/IP costs, and cleanup checks documented. |
 | Phase 4 - EC2 Basics | Choose the Right EC2 Instance | Complete | EC2 | Theory-only | 2026-07-01 | Instance families, vCPU/memory/storage/network selection, right-sizing, and safe CLI inspection documented. |
 | Phase 4 - EC2 Basics | EC2 Cost Optimization | Complete | EC2/Pricing | Theory-only | 2026-07-01 | Good vs bad savings, purchasing options, Spot interruption risk, and beginner no-commitment rules documented. |
-| Phase 5 - EC2 Pricing and Storage/EBS | EC2 Savings Plans | Not started | EC2/Pricing | Theory-only |  | Required theory video; no Savings Plan purchase. |
-| Phase 5 - EC2 Pricing and Storage/EBS | EC2 Spot Instances | Not started | EC2/Pricing | Theory-only |  | Required theory video; no risky workload planned. |
-| Phase 5 - EC2 Pricing and Storage/EBS | Dedicated Host | Not started | EC2/Pricing | Theory-only |  | Required theory video; no Dedicated Host creation. |
-| Phase 5 - EC2 Pricing and Storage/EBS | Dedicated Instance | Not started | EC2/Pricing | Theory-only |  | Required theory video; no Dedicated Instance creation. |
-| Phase 5 - EC2 Pricing and Storage/EBS | EC2 Storage Options: EBS, S3, EFS | Not started | EC2/EBS/S3/EFS | Theory-only |  | Storage comparison notes. |
-| Phase 5 - EC2 Pricing and Storage/EBS | IOPS vs Throughput vs Latency | Not started | Storage Performance | Theory-only |  | Performance concept notes. |
-| Phase 5 - EC2 Pricing and Storage/EBS | EBS Volumes Hands-on Lab | Not started | EBS | Not started |  | Safe EBS volume lab. |
-| Phase 5 - EC2 Pricing and Storage/EBS | Format and Mount EBS Volumes in Linux | Not started | EBS/Linux | Not started |  | Linux mount workflow lab. |
-| Phase 5 - EC2 Pricing and Storage/EBS | EBS Volume Types | Not started | EBS | Theory-only |  | SSD/HDD and volume type comparison. |
-| Phase 5 - EC2 Pricing and Storage/EBS | Create EBS Snapshots | Not started | EBS | Not started |  | Snapshot lab with cleanup. |
+| Phase 5A - EC2 Pricing Models | EC2 Savings Plans | Complete | EC2/Pricing | Theory-only | 2026-07-02 | Savings Plans explained as one-year or three-year compute spend commitments; Compute vs EC2 Instance Savings Plans and no-purchase beginner rule documented. |
+| Phase 5A - EC2 Pricing Models | EC2 Spot Instances | Complete | EC2/Pricing | Theory-only | 2026-07-02 | Spot explained as spare EC2 capacity with lower price and interruption risk; safe use cases, unsafe stateful workloads, and observe-only rule documented. |
+| Phase 5A - EC2 Pricing Models | Dedicated Host | Complete | EC2/Pricing | Theory-only | 2026-07-02 | Dedicated Host explained as dedicated physical server capacity with host visibility, BYOL/compliance use cases, and no-allocation beginner rule documented. |
+| Phase 5A - EC2 Pricing Models | Dedicated Instance | Complete | EC2/Pricing | Theory-only | 2026-07-02 | Dedicated Instance explained as account-dedicated hardware without host placement control; Dedicated Host comparison and no-launch beginner rule documented. |
+| Phase 5B - EBS Storage | EC2 Storage Options: EBS, S3, EFS | Complete | EC2/EBS/S3/EFS | Theory-only | 2026-07-02 | EBS as block storage, S3 as object storage, EFS as shared Linux file storage, and instance store as temporary local storage documented. |
+| Phase 5B - EBS Storage | IOPS vs Throughput vs Latency | Complete | Storage Performance | Theory-only | 2026-07-02 | IOPS, throughput, latency, workload matching, queue depth, and EBS performance factors documented. |
+| Phase 5B - EBS Storage | EBS Volumes Hands-on Lab | Complete | EBS | Complete | 2026-07-02 | Created/attached small EBS volume concept documented with same-AZ rule, tagging, CLI commands, cleanup checks, and detach/reattach persistence proof. |
+| Phase 5B - EBS Storage | Format and Mount EBS Volumes in Linux | Complete | EBS/Linux | Complete | 2026-07-02 | Linux disk detection, file-system check, format, mount point, mount verification, fstab safety, reattach without formatting, and unmount cleanup documented. |
+| Phase 5B - EBS Storage | EBS Volume Types | Not started | EBS | Theory-only |  | SSD/HDD and volume type comparison. |
+| Phase 5B - EBS Storage | Create EBS Snapshots | Not started | EBS | Not started |  | Snapshot lab with cleanup. |
 | Phase 6 - VPC and Scalability | VPC and Security Groups | Not started | VPC/EC2 | Not started |  | Default VPC inspection and security group notes. |
 | Phase 6 - VPC and Scalability | Vertical and Horizontal Scalability | Not started | Scalability | Theory-only |  | Scaling concept notes. |
 | Phase 7 - S3 and EC2 Instance Profile | S3 Cloud Storage Hands-on Lab | Not started | S3 | Not started |  | Basic S3 hands-on lab. |

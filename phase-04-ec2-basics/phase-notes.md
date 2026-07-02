@@ -3,7 +3,7 @@
 This phase covers EC2 virtual servers, launching instances, connecting to instances, hosting a website, and EC2 cost control.
 
 Note source:
-- Based on playlist video order/titles, video descriptions, available auto-generated Malayalam transcript context from YouTube, and EC2 lab work in this repo.
+- Based on playlist video order/titles, video descriptions, available auto-generated transcript context from YouTube, and EC2 lab work in this repo.
 - Paraphrased explanatory notes, not verbatim transcripts.
 
 ## 15. Introduction to AWS EC2 Service

@@ -3,7 +3,7 @@
 This phase covered AWS CLI, PowerShell automation, profile switching, identity checks, and converting console actions into commands/scripts.
 
 Note source:
-- Based on playlist video order/titles, available auto-generated Malayalam transcript context from YouTube, and CLI/PowerShell/Python lab work in this repo.
+- Based on playlist video order/titles, available auto-generated transcript context from YouTube, and CLI/PowerShell/Python lab work in this repo.
 - Paraphrased explanatory notes, not verbatim transcripts.
 
 ## 12. How to Use AWS CLI

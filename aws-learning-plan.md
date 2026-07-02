@@ -10,9 +10,9 @@ Last playlist check: `2026-06-29`
 
 Live playlist count at last check: `73 videos`
 
-Current learning position: `Phase 4 - EC2 Basics`
+Current learning position: `Phase 5B - EBS Storage videos 32-33`
 
-Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, and `Phase 4 videos 15-23 watched`
+Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4 videos 15-23`, `Phase 5A videos 24-27`, and `Phase 5B videos 28-31`
 
 ## How To Use This Plan
 
@@ -69,6 +69,8 @@ aws-learning/
 ├── phase-04-ec2-basics/
 │   └── ec2-cli-automation/
 ├── phase-05-ec2-pricing-storage-ebs/
+│   ├── phase-5a-ec2-pricing-models/
+│   └── phase-5b-ebs-storage/
 ├── phase-06-vpc-scalability/
 ├── phase-07-s3-ec2-instance-profile/
 │   ├── phase-7a-s3-basics/
@@ -115,8 +117,9 @@ Each lab `README.md` should answer:
 | 1 | Complete | Account, billing, regions, Free Tier | 1-7, 19, 60 | Account safety docs |
 | 2 | Complete | IAM users, groups, policies, roles | 8-11, 14 | IAM notes and policies |
 | 3 | Complete | AWS CLI, profiles, scripts | 12, 13, 36 | CLI scripts and command notes |
-| 4 | In progress | EC2 basics and safe web server lab | 15-18, 20-23 | EC2 labs and cleanup proof |
-| 5 | Not started | EC2 pricing and EBS storage | 24-33 | EBS labs and pricing notes |
+| 4 | Complete | EC2 basics and safe web server lab | 15-18, 20-23 | EC2 labs and cleanup proof |
+| 5A | Complete | EC2 pricing models | 24-27 | Pricing notes and cost-safety decisions |
+| 5B | In progress | EBS storage | 28-33 | EBS labs, mount workflow, and cleanup proof |
 | 6 | Not started | VPC basics and scalability | 37-38 | Default VPC inspection |
 | 7 | Not started | S3 and EC2 instance profile | 34, 35, 39-57 | S3 labs and IAM access proof |
 | 8 | Not started | Lambda and serverless | 58, 59, 61-69 | Lambda/API/S3 trigger labs |
@@ -131,7 +134,7 @@ Videos:
 
 | Video | Topic |
 |---:|---|
-| 1 | AWS Full Course in Malayalam |
+| 1 | AWS Full Course |
 | 2 | What is Cloud Computing? |
 | 3 | IaaS, PaaS, and SaaS |
 | 4 | Introduction to AWS |
@@ -269,6 +272,10 @@ Do not purchase Savings Plans, Reserved Instances, Dedicated Hosts, or Dedicated
 
 Goal: Understand EC2 pricing models and safely practice EBS storage workflows.
 
+### Phase 5A - EC2 Pricing Models
+
+Goal: Understand EC2 purchasing options without buying any long-term or expensive commitment.
+
 Videos:
 
 | Video | Topic | Hands-on mode |
@@ -277,6 +284,30 @@ Videos:
 | 25 | EC2 Spot Instances | Theory or safe observation |
 | 26 | Dedicated Host | Theory only |
 | 27 | Dedicated Instance | Theory only |
+
+Build:
+
+- Savings Plans theory notes
+- Spot Instances theory notes
+- Dedicated Host theory notes
+- Dedicated Instance theory notes
+- Beginner pricing comparison table
+
+Safety rules:
+
+- Videos 24-27 are required, but do not perform expensive paid hands-on work for them.
+- Do not purchase Savings Plans.
+- Do not create Dedicated Hosts.
+- Do not create Dedicated Instances.
+
+### Phase 5B - EBS Storage
+
+Goal: Learn EC2 storage choices and safely practice EBS volume workflows.
+
+Videos:
+
+| Video | Topic | Hands-on mode |
+|---:|---|---|
 | 28 | EC2 storage options: EBS, S3, EFS | Notes and comparison |
 | 29 | IOPS, throughput, and latency | Notes and comparison |
 | 30 | EBS volumes hands-on lab | Safe lab |
@@ -286,11 +317,6 @@ Videos:
 
 Build:
 
-- EC2 pricing notes
-- Savings Plans theory notes
-- Spot Instances theory notes
-- Dedicated Host theory notes
-- Dedicated Instance theory notes
 - EBS volume lab
 - Format and mount EBS lab
 - EBS volume type notes
@@ -299,10 +325,7 @@ Build:
 
 Safety rules:
 
-- Videos 24-27 are required, but do not perform expensive paid hands-on work for them.
-- Do not purchase Savings Plans.
-- Do not create Dedicated Hosts.
-- Do not create Dedicated Instances.
+- Keep test EBS volumes small.
 - Delete EBS volumes and snapshots after hands-on labs.
 
 ## Phase 6 - VPC And Scalability
@@ -516,79 +539,79 @@ Suggested add-on lab:
 <details>
 <summary>Live playlist snapshot from 2026-06-29</summary>
 
-1. AWS Full Course in Malayalam | Cloud Computing | Beginner Friendly - `PIvHBc1OpzM` - 9:53
-2. What is Cloud Computing? Simple explanation in Malayalam | AWS Tutorial for Beginners in Malayalam - `n7KkgOSVD9U` - 28:02
-3. What is IaaS Paas and SaaS | Different Models of Cloud Computing | AWS Tutorial in malayalam - `QjeP9Y_Wde0` - 7:42
-4. Introduction to AWS - AWS Cloud programing Tutorial for Beginners in Malayalam - `UBAtp_5fk64` - 17:43
-5. Create free tier AWS Account in Malayalam | AWS Cloud Computing tutorial for beginner | AWS Account - `sUJXT_x81Ik` - 40:37
+1. AWS Full Course | Cloud Computing | Beginner Friendly - `PIvHBc1OpzM` - 9:53
+2. What is Cloud Computing? Simple explanation | AWS Tutorial for Beginners - `n7KkgOSVD9U` - 28:02
+3. What is IaaS Paas and SaaS | Different Models of Cloud Computing | AWS Tutorial - `QjeP9Y_Wde0` - 7:42
+4. Introduction to AWS - AWS Cloud programing Tutorial for Beginners - `UBAtp_5fk64` - 17:43
+5. Create free tier AWS Account | AWS Cloud Computing tutorial for beginner | AWS Account - `sUJXT_x81Ik` - 40:37
 6. How to setup MFA to Root user - AWS Cloud programming Tutorial for Beginners - `S3Ql0aGmn5o` - 17:10
 7. AWS Regions and Availability zones - AWS cloud programming Tutorial for beginners - `cQqK3aNpzgU` - 21:22
-8. Introduction to IAM | Identity and Access Management | AWS Tutorial for beginners in Malayalam - `01IqvzULasA` - 30:55
-9. Creating IAM Policies - AWS Cloud computing tutorial for beginners in Malayalam - `NPk6DeP5u0Q` - 1:15:13
-10. Creating IAM User - AWS cloud computing Tutorial for Beginners in Malayalam - `rjiN-mVYaIk` - 32:07
-11. Creating IAM Groups - AWS IAM - AWS cloud computing tutorial for beginners in Malayalam - `XzAVmj3crBA` - 21:45
-12. How to use AWS CLI - AWS cloud computing Tutorial for Beginners in Malayalam - `6FS3cV7Js6s` - 44:09
-13. Simplify AWS Management with the CLI & PowerShell: A Real-World Example - AWS Tutorial in Malayalam - `DeMUHEi-xGM` - 33:00
-14. IAM Roles - AWS Cloud computing Tutorial for beginners in Malayalam - `PQtNTqWb9aw` - 54:05
-15. Introduction to AWS EC2 Service - AWS Tutorial for beginners in Malayalam - Create EC2 Instance - `WbOXSkfhz08` - 43:09
-16. How to create Linux EC2 instance - AWS Cloud Computing Tutorial for beginners in Malayalam - `ZCRcb8MhCo4` - 19:45
-17. Host a simple website in Linux EC2 instance - Step by Step - AWS Tutorial for beginners in Malayalam - `9LNwpADZpPs` - 12:35
-18. Create EC2 Instances using AWS CLI - AWS Tutorial for beginners in Malayalam - AWS Automation - `pV6DlIToTJg` - 24:54
-19. AWS Billing Basics: Manage Costs & Setup zero cost Budget - AWS Tutorial for beginners in Malayalam - `H_aOsSkiu-c` - 20:20
-20. EC2 instance connect - Easy way to connect Linux EC2 instances - AWS Tutorial beginners in Malayalam - `UDe4cNVL5qw` - 5:51
-21. How EC2 instance pricing is calculated - AWS Tutorial for beginners in Malayalam - `r-DBhPrLBDI` - 10:23
-22. How to Choose the Right AWS EC2 Instance | Malayalam | AWS Tutorial Series - `88AMvLN5YnU` - 28:03
-23. Save 90% on AWS EC2 Bills! | Malayalam | AWS Tutorial | AWS Cost Optimization - `oYCpwZpGSPI` - 12:25
-24. AWS EC2 Savings Plans & Save Big | Malayalam Tutorial - `jEXSUR6-Gjw` - 36:24
-25. AWS EC2 Spot Instances Explained | Cost Optimization Malayalam - `8Bkl3ujqtVA` - 14:06
-26. What is an AWS Dedicated Host? | Malayalam Tutorial - `b2k7uiyuHQ0` - 14:26
-27. What is an AWS Dedicated Instance? | Malayalam Tutorial - `0-Q9E-cKiaY` - 8:35
-28. AWS EC2 Storage Options | EBS, S3, EFS | Malayalam | AWS Cloud Computing Tutorial - `i-PQY0q1UcM` - 16:17
-29. AWS Storage Performance: IOPS vs Throughput vs Latency | Malayalam | AWS Cloud Computing Tutorial - `oiaJG-LqoQg` - 12:48
-30. AWS EC2 EBS Volumes Hands-on Lab | Malayalam | AWS Tutorial - `TqwxCivSRR8` - 22:23
-31. How to Format & Mount EBS Volumes in Linux | Malayalam | AWS Tutorial - `GSVZEd_oY6Y` - 17:48
-32. AWS EBS Volume Types: SSD vs HDD Explained | Malayalam | AWS Tutorial - `GKIfQbcbDQA` - 26:17
-33. How to Create EBS Snapshots | Malayalam | AWS Tutorial - `29bblhLqXr8` - 18:40
-34. AWS S3 Cloud Storage Hands-on Lab | Malayalam | AWS Tutorial - `ROiD7_m8qVw` - 31:06
-35. AWS EC2 Instance Profile Hands-on | Malayalam | AWS Tutorial - `K6CSfT_AMOU` - 17:50
-36. Convert AWS Console Actions to CLI Code with AI! | Malayalam | AWS Tutorial | Amazon Q - `Vp2zu5NR7WA` - 7:52
-37. AWS Networking Basics: VPC & Security Groups | Malayalam | AWS Tutorial - `aF9Ydv_xOhw` - 42:54
-38. What is Scalability? Vertical and Horizontal Scalability | AWS Tutorial for beginners in Malayalam - `-HQGNxWzyys` - 14:48
-39. AWS S3 Buckets | Malayalam Tutorial | AWS Data Storage - `JzUFlJv-ARc` - 38:40
-40. AWS S3 CLI Tutorial in Malayalam: Upload, Copy & Manage Buckets - `Wt-glWBk0k4` - 35:48
-41. What are AWS S3 Objects? Malayalam Tutorial for Beginners - `jMCS3-m7PrY` - 24:34
-42. Save 70% on AWS S3! S3 Storage Classes Explained (Malayalam) | AWS Malayalam Tutorial - `t28nI2JXmT0` - 26:35
-43. AWS S3 Standard storage class | S3 cost optimisation | AWS Tutorial for beginners in Malayalam - `-GACt0sTw-A` - 23:10
-44. AWS S3 Express one zone storage class | S3 Cost optimization | AWS Tutorial for Beginners Malayalam - `RYy6cy-lNbw` - 36:34
-45. S3 Directory Buckets AWS Tutorial for beginners in Malayalam - `-L0rZCvSxfk` - 22:18
-46. AWS S3 Standard IA storage class | One Zone IA | AWS Tutorial for beginners in Malayalam - `wCaVgnBQOCY` - 33:26
-47. AWS S3 Glacier Storage Class | Cold Data, Pricing, Demo | AWS Tutorial for beginners in Malayalam - `n_D9gyn62f8` - 36:02
-48. AWS S3 Life cycle Policies | AWS Cloud computing Tutorial for beginners in Malayalam - `iivWM0I_w3s` - 38:52
-49. AWS S3 Intelligent-Tiering Explained + Demo | AWS Tutorial for beginners in Malayalam - `mRpoV1z26xI` - 21:27
-50. S3 Data Protection | S3 Durability | AWS Cloud Computing Tutorial for beginners in Malayalam - `C-UM58DYvrM` - 13:00
-51. Recover Deleted Files in AWS S3: Versioning Lab | Malayalam | AWS Tutorial | Cloud Computing - `SbuXG6wb8lA` - 20:56
-52. AWS S3 Cross-Region Replication Lab | Malayalam | AWS Tutorial | S3 Data Protection - `IcSBuPfdWIg` - 27:10
-53. What is AWS S3 Object Lock? | Malayalam | AWS Tutorial - `450zOQV5hn8` - 29:48
-54. AWS S3 Security | AWS Cloud Tutorial for beginners in Malayalam - `sDXtfgCm05k` - 8:16
-55. How to Control AWS S3 Access: IAM vs Bucket Policies | Malayalam | AWS Tutorial - `FlF1-c-kiyU` - 19:53
-56. How to Secure AWS S3 Buckets with Encryption | Malayalam | AWS Tutorial - `-FsMLHbYA58` - 15:46
-57. AWS S3 Block Public Access Tutorial | S3 Security Malayalam - `BdQMd8XHwo8` - 13:15
-58. What is AWS Lambda Malayalam | AWS Tutorial for beginners in Malayalam - `IhL0OD7S7Jk` - 29:15
-59. Create Serverless Web API using Lambda and API Gateway | AWS Tutorial for beginners in Malayalam - `vjw-Ek_Fp-s` - 25:02
+8. Introduction to IAM | Identity and Access Management | AWS Tutorial for beginners - `01IqvzULasA` - 30:55
+9. Creating IAM Policies - AWS Cloud computing tutorial for beginners - `NPk6DeP5u0Q` - 1:15:13
+10. Creating IAM User - AWS cloud computing Tutorial for Beginners - `rjiN-mVYaIk` - 32:07
+11. Creating IAM Groups - AWS IAM - AWS cloud computing tutorial for beginners - `XzAVmj3crBA` - 21:45
+12. How to use AWS CLI - AWS cloud computing Tutorial for Beginners - `6FS3cV7Js6s` - 44:09
+13. Simplify AWS Management with the CLI & PowerShell: A Real-World Example - AWS Tutorial - `DeMUHEi-xGM` - 33:00
+14. IAM Roles - AWS Cloud computing Tutorial for beginners - `PQtNTqWb9aw` - 54:05
+15. Introduction to AWS EC2 Service - AWS Tutorial for beginners - Create EC2 Instance - `WbOXSkfhz08` - 43:09
+16. How to create Linux EC2 instance - AWS Cloud Computing Tutorial for beginners - `ZCRcb8MhCo4` - 19:45
+17. Host a simple website in Linux EC2 instance - Step by Step - AWS Tutorial for beginners - `9LNwpADZpPs` - 12:35
+18. Create EC2 Instances using AWS CLI - AWS Tutorial for beginners - AWS Automation - `pV6DlIToTJg` - 24:54
+19. AWS Billing Basics: Manage Costs & Setup zero cost Budget - AWS Tutorial for beginners - `H_aOsSkiu-c` - 20:20
+20. EC2 instance connect - Easy way to connect Linux EC2 instances - AWS Tutorial for beginners - `UDe4cNVL5qw` - 5:51
+21. How EC2 instance pricing is calculated - AWS Tutorial for beginners - `r-DBhPrLBDI` - 10:23
+22. How to Choose the Right AWS EC2 Instance | AWS Tutorial Series - `88AMvLN5YnU` - 28:03
+23. Save 90% on AWS EC2 Bills! | AWS Tutorial | AWS Cost Optimization - `oYCpwZpGSPI` - 12:25
+24. AWS EC2 Savings Plans & Save Big - `jEXSUR6-Gjw` - 36:24
+25. AWS EC2 Spot Instances Explained | Cost Optimization - `8Bkl3ujqtVA` - 14:06
+26. What is an AWS Dedicated Host? - `b2k7uiyuHQ0` - 14:26
+27. What is an AWS Dedicated Instance? - `0-Q9E-cKiaY` - 8:35
+28. AWS EC2 Storage Options | EBS, S3, EFS | AWS Cloud Computing Tutorial - `i-PQY0q1UcM` - 16:17
+29. AWS Storage Performance: IOPS vs Throughput vs Latency | AWS Cloud Computing Tutorial - `oiaJG-LqoQg` - 12:48
+30. AWS EC2 EBS Volumes Hands-on Lab | AWS Tutorial - `TqwxCivSRR8` - 22:23
+31. How to Format & Mount EBS Volumes in Linux | AWS Tutorial - `GSVZEd_oY6Y` - 17:48
+32. AWS EBS Volume Types: SSD vs HDD Explained | AWS Tutorial - `GKIfQbcbDQA` - 26:17
+33. How to Create EBS Snapshots | AWS Tutorial - `29bblhLqXr8` - 18:40
+34. AWS S3 Cloud Storage Hands-on Lab | AWS Tutorial - `ROiD7_m8qVw` - 31:06
+35. AWS EC2 Instance Profile Hands-on | AWS Tutorial - `K6CSfT_AMOU` - 17:50
+36. Convert AWS Console Actions to CLI Code with AI! | AWS Tutorial | Amazon Q - `Vp2zu5NR7WA` - 7:52
+37. AWS Networking Basics: VPC & Security Groups | AWS Tutorial - `aF9Ydv_xOhw` - 42:54
+38. What is Scalability? Vertical and Horizontal Scalability | AWS Tutorial for beginners - `-HQGNxWzyys` - 14:48
+39. AWS S3 Buckets | AWS Data Storage - `JzUFlJv-ARc` - 38:40
+40. AWS S3 CLI Tutorial: Upload, Copy & Manage Buckets - `Wt-glWBk0k4` - 35:48
+41. What are AWS S3 Objects? Tutorial for Beginners - `jMCS3-m7PrY` - 24:34
+42. Save 70% on AWS S3! S3 Storage Classes Explained | AWS Tutorial - `t28nI2JXmT0` - 26:35
+43. AWS S3 Standard storage class | S3 cost optimisation | AWS Tutorial for beginners - `-GACt0sTw-A` - 23:10
+44. AWS S3 Express one zone storage class | S3 Cost optimization | AWS Tutorial for Beginners - `RYy6cy-lNbw` - 36:34
+45. S3 Directory Buckets AWS Tutorial for beginners - `-L0rZCvSxfk` - 22:18
+46. AWS S3 Standard IA storage class | One Zone IA | AWS Tutorial for beginners - `wCaVgnBQOCY` - 33:26
+47. AWS S3 Glacier Storage Class | Cold Data, Pricing, Demo | AWS Tutorial for beginners - `n_D9gyn62f8` - 36:02
+48. AWS S3 Life cycle Policies | AWS Cloud computing Tutorial for beginners - `iivWM0I_w3s` - 38:52
+49. AWS S3 Intelligent-Tiering Explained + Demo | AWS Tutorial for beginners - `mRpoV1z26xI` - 21:27
+50. S3 Data Protection | S3 Durability | AWS Cloud Computing Tutorial for beginners - `C-UM58DYvrM` - 13:00
+51. Recover Deleted Files in AWS S3: Versioning Lab | AWS Tutorial | Cloud Computing - `SbuXG6wb8lA` - 20:56
+52. AWS S3 Cross-Region Replication Lab | AWS Tutorial | S3 Data Protection - `IcSBuPfdWIg` - 27:10
+53. What is AWS S3 Object Lock? | AWS Tutorial - `450zOQV5hn8` - 29:48
+54. AWS S3 Security | AWS Cloud Tutorial for beginners - `sDXtfgCm05k` - 8:16
+55. How to Control AWS S3 Access: IAM vs Bucket Policies | AWS Tutorial - `FlF1-c-kiyU` - 19:53
+56. How to Secure AWS S3 Buckets with Encryption | AWS Tutorial - `-FsMLHbYA58` - 15:46
+57. AWS S3 Block Public Access Tutorial | S3 Security - `BdQMd8XHwo8` - 13:15
+58. What is AWS Lambda | AWS Tutorial for beginners - `IhL0OD7S7Jk` - 29:15
+59. Create Serverless Web API using Lambda and API Gateway | AWS Tutorial for beginners - `vjw-Ek_Fp-s` - 25:02
 60. How to create AWS Free tier account in 2026 | Changes in AWS free tier account - `ncIrYtzo6Bo` - 9:39
-61. How to Write & Upload Lambda function | View Cloudwatch logs from Lambda | AWS Tutorial Malayalam - `MdEeK_dp1yE` - 11:21
-62. How lambda cost works | How to improve performance by setting memory | AWS Tutorial Malayalam - `ieIUk8r_1W8` - 17:35
-63. How to Handle Large Files in AWS Lambda | Malayalam | AWS Cloud Tutorial - `1UrmHDr_Asw` - 5:03
-64. Python Coding in AWS Malayalam | Boto3 Tutorial - `4ySMANFcPEk` - 13:49
-65. Build a Complete Serverless Web API | AWS Malayalam Tutorial | API Gateway + Lambda + DynamoDB - `QHFcri7NZ5E` - 19:07
-66. Automate File Processing with S3 & Lambda | Malayalam | S3 Lambda Trigger - `o3RHXJ3DHpk` - 17:22
-67. AWS Lambda Cold Start Explained with Demo | Malayalam | How to Fix & Avoid Cold Start | AWS Tutorial - `7PZKSLQGC6w` - 16:09
-68. Master AWS Lambda Layers | Malayalam | AWS Tutorial for beginners | Cloud Computing - `lATYOmxv93w` - 9:57
-69. How to use sensitive or configuration data in Lambda | Malayalam | AWS Best Practice - `mRdAFj-PGV4` - 6:21
-70. Master AWS DynamoDB | Malayalam | AWS Tutorial | NoSQL Database - `ZYiWxDjtpwQ` - 18:29
-71. AWS DynamoDB Data Types Explained | Malayalam | String, Number, Set, List, Map | AWS Tutorial - `qaUyt8VOu5Y` - 16:35
-72. AWS Dynamo DB Primary Key | Malayalam Tutorial | Partition Key | Sort Key | Composite Primary Key - `nc7Z8fWmF6s` - 10:52
-73. Strong and Eventual Consistency | Malayalam | AWS Tutorial | Distributed System Design - `srxP4YsSL90` - 10:12
+61. How to Write & Upload Lambda function | View Cloudwatch logs from Lambda | AWS Tutorial - `MdEeK_dp1yE` - 11:21
+62. How lambda cost works | How to improve performance by setting memory | AWS Tutorial - `ieIUk8r_1W8` - 17:35
+63. How to Handle Large Files in AWS Lambda | AWS Cloud Tutorial - `1UrmHDr_Asw` - 5:03
+64. Python Coding in AWS | Boto3 Tutorial - `4ySMANFcPEk` - 13:49
+65. Build a Complete Serverless Web API | AWS Tutorial | API Gateway + Lambda + DynamoDB - `QHFcri7NZ5E` - 19:07
+66. Automate File Processing with S3 & Lambda | S3 Lambda Trigger - `o3RHXJ3DHpk` - 17:22
+67. AWS Lambda Cold Start Explained with Demo | How to Fix & Avoid Cold Start | AWS Tutorial - `7PZKSLQGC6w` - 16:09
+68. Master AWS Lambda Layers | AWS Tutorial for beginners | Cloud Computing - `lATYOmxv93w` - 9:57
+69. How to use sensitive or configuration data in Lambda | AWS Best Practice - `mRdAFj-PGV4` - 6:21
+70. Master AWS DynamoDB | AWS Tutorial | NoSQL Database - `ZYiWxDjtpwQ` - 18:29
+71. AWS DynamoDB Data Types Explained | String, Number, Set, List, Map | AWS Tutorial - `qaUyt8VOu5Y` - 16:35
+72. AWS Dynamo DB Primary Key | Partition Key | Sort Key | Composite Primary Key - `nc7Z8fWmF6s` - 10:52
+73. Strong and Eventual Consistency | AWS Tutorial | Distributed System Design - `srxP4YsSL90` - 10:12
 
 </details>
 

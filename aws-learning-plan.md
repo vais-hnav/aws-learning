@@ -12,7 +12,7 @@ Live playlist count at last check: `73 videos`
 
 Current learning position: `Phase 6 - VPC And Scalability`
 
-Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4 videos 15-23`, `Phase 5A videos 24-27`, and `Phase 5B videos 28-33`
+Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4 videos 15-23`, `Phase 5A videos 24-27`, `Phase 5B videos 28-33`, and `Phase 7 videos 34-35`
 
 ## How To Use This Plan
 
@@ -121,7 +121,7 @@ Each lab `README.md` should answer:
 | 5A | Complete | EC2 pricing models | 24-27 | Pricing notes and cost-safety decisions |
 | 5B | Complete | EBS storage | 28-33 | EBS labs, mount workflow, and cleanup proof |
 | 6 | Not started | VPC basics and scalability | 37-38 | Default VPC inspection |
-| 7 | Not started | S3 and EC2 instance profile | 34, 35, 39-57 | S3 labs and IAM access proof |
+| 7 | In progress | S3 and EC2 instance profile | 34, 35, 39-57 | S3 labs and IAM access proof |
 | 8 | Not started | Lambda and serverless | 58, 59, 61-69 | Lambda/API/S3 trigger labs |
 | 9 | Not started | DynamoDB | 70-72 plus update video 73 | DynamoDB data model and CRUD |
 | Final | Not started | Portfolio project | Combined services | Final project docs |

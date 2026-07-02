@@ -1,2 +1,23 @@
-{}
-
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ListLearningBuckets",
+      "Effect": "Allow",
+      "Action": "s3:ListAllMyBuckets",
+      "Resource": "*"
+    },
+    {
+      "Sid": "ListLearningBucketContents",
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::aws-learning-s3-lab-*"
+    },
+    {
+      "Sid": "ReadLearningBucketObjects",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::aws-learning-s3-lab-*/*"
+    }
+  ]
+}

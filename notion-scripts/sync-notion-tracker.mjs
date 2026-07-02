@@ -29,6 +29,7 @@ const requiredDatabaseProperties = {
   Phase: { select: {} },
   'Plan Order': { number: { format: 'number' } },
   'Watched Status': { select: {} },
+  'Playlist Video': { number: { format: 'number' } },
   'AWS Service': { multi_select: {} },
   'Lab Status': { select: {} },
   Date: { date: {} },
@@ -81,6 +82,7 @@ function parseTable(markdown) {
       phase: row.Phase,
       videoTopic: row['Video Topic'],
       watchedStatus: row['Watched Status'],
+      playlistVideo: Number(row['Playlist Video']) || null,
       awsService: row['AWS Service'],
       labStatus: row['Lab Status'],
       date: row.Date,
@@ -262,6 +264,9 @@ function rowToProperties(row) {
     'Watched Status': {
       select: toSelect(row.watchedStatus),
     },
+    'Playlist Video': {
+      number: row.playlistVideo,
+    },
     'AWS Service': {
       multi_select: row.awsService ? toMultiSelectNames(row.awsService) : [],
     },
@@ -290,12 +295,13 @@ async function configureDashboardView() {
   const planOrder = properties['Plan Order'];
   const topic = properties[titlePropertyName];
   const watchedStatus = properties['Watched Status'];
+  const playlistVideo = properties['Playlist Video'];
   const awsService = properties['AWS Service'];
   const labStatus = properties['Lab Status'];
   const date = properties.Date;
   const notes = properties.Notes;
 
-  if (!phase || !planOrder || !topic || !watchedStatus || !awsService || !labStatus || !date || !notes) {
+  if (!phase || !planOrder || !topic || !watchedStatus || !playlistVideo || !awsService || !labStatus || !date || !notes) {
     return;
   }
 
@@ -335,6 +341,7 @@ async function configureDashboardView() {
           { property_id: phase.id, visible: true, width: 260 },
           { property_id: topic.id, visible: true, width: 360 },
           { property_id: watchedStatus.id, visible: true, width: 150 },
+          { property_id: playlistVideo.id, visible: true, width: 120 },
           { property_id: awsService.id, visible: true, width: 220 },
           { property_id: labStatus.id, visible: true, width: 140 },
           { property_id: date.id, visible: true, width: 130 },

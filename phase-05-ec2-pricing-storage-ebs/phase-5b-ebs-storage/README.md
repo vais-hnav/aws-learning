@@ -28,10 +28,9 @@ Completed:
 - Video 29: IOPS, throughput, and latency
 - Video 30: EBS volumes hands-on lab
 - Video 31: Format and mount EBS volumes in Linux
-
-Remaining:
 - Video 32: EBS volume types
 - Video 33: EBS snapshots
+- Extra console exploration: basic Amazon Data Lifecycle Manager features for EBS snapshot automation
 
 ## What Did I Build?
 
@@ -48,6 +47,10 @@ The lab covers:
 - Testing file writes.
 - Detaching the volume from one EC2 instance and attaching it to another instance.
 - Verifying the file is still present after reattachment.
+- Comparing EBS volume types for beginner workload choices.
+- Creating an EBS snapshot as a point-in-time backup.
+- Understanding how a snapshot can restore a new EBS volume.
+- Exploring basic Lifecycle Manager features for scheduled snapshot automation.
 - Cleaning up the mount, volume, and instance safely.
 
 ## Which AWS Service Did I Use?
@@ -69,6 +72,10 @@ The lab covers:
 - Formatting the wrong device can destroy data, so disk identification is the most important step.
 - EBS data persists after detach and reattach as long as the volume is not deleted or reformatted.
 - A detached EBS volume can be attached to another instance in the same Availability Zone.
+- `gp3` is the safest default learning volume type because it balances cost and performance.
+- Snapshots are point-in-time backups of EBS volumes and are incremental after the first snapshot.
+- Snapshot storage can still cost money, so practice snapshots should be deleted after the lab.
+- Amazon Data Lifecycle Manager can automate snapshot creation and retention using lifecycle policies.
 
 ## How Do I Run It?
 
@@ -87,6 +94,8 @@ At minimum:
 - Remove any temporary `/etc/fstab` entry if one was added.
 - Detach the EBS volume.
 - Delete the EBS volume.
+- Delete practice snapshots.
+- Delete any practice Lifecycle Manager policy if one was created.
 - Terminate the EC2 instance if it was only used for this lab.
 
 Safety rules:

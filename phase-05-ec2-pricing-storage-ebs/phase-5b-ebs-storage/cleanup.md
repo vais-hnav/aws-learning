@@ -91,7 +91,27 @@ aws ec2 wait volume-available \
   --volume-ids "$VOLUME_ID"
 ```
 
-## 6. Delete The EBS Volume
+## 6. Delete Practice Snapshots
+
+Check snapshots with your practice tag or description:
+
+```bash
+aws ec2 describe-snapshots \
+  --region "$AWS_REGION" \
+  --owner-ids self \
+  --query "Snapshots[].{SnapshotId:SnapshotId,State:State,VolumeId:VolumeId,Description:Description,StartTime:StartTime}" \
+  --output table
+```
+
+Delete only snapshots created for this lab:
+
+```bash
+aws ec2 delete-snapshot \
+  --region "$AWS_REGION" \
+  --snapshot-id "$SNAPSHOT_ID"
+```
+
+## 7. Delete The EBS Volume
 
 ```bash
 aws ec2 delete-volume \
@@ -99,7 +119,30 @@ aws ec2 delete-volume \
   --volume-id "$VOLUME_ID"
 ```
 
-## 7. Verify No Practice Volumes Are Left
+If you restored a new volume from a snapshot, detach and delete that restored volume too.
+
+## 8. Check Lifecycle Manager Policies
+
+If you only explored Lifecycle Manager without creating a policy, there is nothing to delete.
+
+If you created a practice policy, delete it:
+
+```bash
+aws dlm delete-lifecycle-policy \
+  --region "$AWS_REGION" \
+  --policy-id policy-xxxxxxxxxxxxxxxxx
+```
+
+Then verify:
+
+```bash
+aws dlm get-lifecycle-policies \
+  --region "$AWS_REGION" \
+  --query "Policies[].{PolicyId:PolicyId,Description:Description,State:State}" \
+  --output table
+```
+
+## 9. Verify No Practice Volumes Are Left
 
 ```bash
 aws ec2 describe-volumes \
@@ -115,7 +158,7 @@ Expected result:
 No unused practice EBS volumes.
 ```
 
-## 8. Terminate The EC2 Instance If It Was Only For This Lab
+## 10. Terminate The EC2 Instance If It Was Only For This Lab
 
 ```bash
 aws ec2 terminate-instances \
@@ -131,5 +174,8 @@ aws ec2 terminate-instances \
 - `/etc/fstab` lab entry removed if it was added.
 - EBS volume detached.
 - EBS volume deleted.
+- Practice snapshots deleted.
+- Restored test volumes deleted.
+- Practice Lifecycle Manager policy deleted if one was created.
 - Both EC2 instances terminated if they were only used for this lab.
 - Billing dashboard checked later for unexpected EC2/EBS cost.

@@ -1,6 +1,6 @@
 # Workflow
 
-This workflow covers videos 28-31: EC2 storage options, storage performance, EBS volume creation, and Linux mounting.
+This workflow covers videos 28-33: EC2 storage options, storage performance, EBS volume creation, Linux mounting, EBS volume types, and EBS snapshots.
 
 ## Video 28: EC2 Storage Options
 
@@ -139,6 +139,97 @@ Important:
 If you run mkfs again after reattaching, you can erase the file system and lose the file.
 ```
 
+## Video 32: EBS Volume Types
+
+Concept:
+- EBS volume type controls cost and performance behavior.
+- SSD-backed volumes are better for small random reads/writes and transactional workloads.
+- HDD-backed volumes are better for large sequential throughput workloads.
+- Beginner EC2 labs should usually use `gp3`.
+
+Main volume types:
+
+| Volume type | Category | Good for | Beginner note |
+|---|---|---|---|
+| `gp3` | General Purpose SSD | Boot volumes, development, small apps, balanced workloads | Best default for learning |
+| `gp2` | General Purpose SSD | Older default general purpose workloads | Understand it, but prefer `gp3` for new labs |
+| `io2` / `io1` | Provisioned IOPS SSD | High-performance databases and mission-critical workloads | Advanced and can cost more |
+| `st1` | Throughput Optimized HDD | Large sequential workloads like logs and big data | Not for boot volumes |
+| `sc1` | Cold HDD | Infrequently accessed large data | Lowest-cost HDD option, not for boot volumes |
+
+Simple rule:
+
+```text
+IOPS-heavy or boot volume = SSD.
+Large sequential throughput = HDD.
+Beginner lab = small gp3.
+```
+
+What to avoid for now:
+- Large volumes just for testing.
+- Provisioned IOPS volumes unless a lab specifically needs them.
+- HDD volume types for boot volumes.
+- Changing performance settings without understanding cost.
+
+## Video 33: EBS Snapshots
+
+Concept:
+- An EBS snapshot is a point-in-time backup of an EBS volume.
+- Snapshots are incremental, so later snapshots store changed blocks instead of copying every block again.
+- A snapshot can be used to create a new EBS volume.
+- Snapshots are stored by AWS using S3-backed snapshot storage, but they do not appear as normal objects inside your S3 buckets.
+
+Console workflow:
+
+1. Open EC2.
+2. Go to Elastic Block Store -> Volumes.
+3. Select the EBS volume.
+4. Choose Actions -> Create snapshot.
+5. Add a clear description and tags.
+6. Wait for the snapshot to complete.
+7. Go to Elastic Block Store -> Snapshots.
+8. Select the snapshot.
+9. Choose Actions -> Create volume from snapshot.
+10. Create the restored volume in the Availability Zone where the target EC2 instance runs.
+11. Attach, mount, and verify the restored data if doing a restore test.
+12. Delete practice snapshots and restored volumes after the lab.
+
+Important:
+
+```text
+Deleting an EBS volume does not automatically delete its snapshots.
+Deleting a snapshot does not delete the source EBS volume.
+```
+
+Snapshot use cases:
+- Before risky file system changes.
+- Before application upgrades.
+- Before testing destructive commands.
+- To restore a volume after accidental deletion or corruption.
+- To copy a backup to another Region for disaster recovery.
+
+## Extra Console Exploration: Amazon Data Lifecycle Manager
+
+Amazon Data Lifecycle Manager automates snapshot and AMI lifecycle tasks.
+
+What I explored:
+- Lifecycle Manager lives under the EC2 console.
+- It can create lifecycle policies for EBS snapshots and EBS-backed AMIs.
+- Policies can target resources using tags.
+- Policies can define schedules, retention rules, and deletion behavior.
+- It can reduce manual snapshot cleanup mistakes.
+
+Beginner mental model:
+
+```text
+Manual snapshot = I click backup now.
+Lifecycle Manager policy = AWS creates and retains backups on a schedule.
+```
+
+Safety note:
+- Amazon Data Lifecycle Manager itself has no additional service charge, but the snapshots it creates can still create storage cost.
+- A practice policy should be disabled or deleted after exploration unless intentionally kept.
+
 ## My Hands-On Notes
 
 - Practiced the EBS flow as a small, controlled lab.
@@ -148,8 +239,11 @@ If you run mkfs again after reattaching, you can erase the file system and lose 
 - Created a test file on the EBS volume.
 - Detached the volume from one instance and attached it to another instance.
 - Mounted the existing file system on the second instance and verified the file was still there.
+- Reviewed EBS volume types and kept `gp3` as the default learning choice.
+- Practiced the snapshot mental model: snapshot as backup, restored volume as recovery path.
+- Looked through basic Lifecycle Manager console features for automated snapshot scheduling and retention.
 - Documented both AWS CLI and Linux command versions.
-- Cleanup is mandatory because unattached EBS volumes can still cost money.
+- Cleanup is mandatory because unattached EBS volumes and snapshots can still cost money.
 
 ## Official References
 
@@ -157,3 +251,7 @@ If you run mkfs again after reattaching, you can erase the file system and lose 
 - https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html
 - https://docs.aws.amazon.com/ebs/latest/userguide/ebs-using-volumes.html
 - https://docs.aws.amazon.com/ebs/latest/userguide/ebs-io-characteristics.html
+- https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html
+- https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html
+- https://docs.aws.amazon.com/ebs/latest/userguide/ebs-create-snapshot.html
+- https://docs.aws.amazon.com/ebs/latest/userguide/snapshot-lifecycle.html

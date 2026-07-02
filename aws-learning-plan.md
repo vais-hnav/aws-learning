@@ -10,9 +10,9 @@ Last playlist check: `2026-06-29`
 
 Live playlist count at last check: `73 videos`
 
-Current learning position: `Phase 5B - EBS Storage videos 32-33`
+Current learning position: `Phase 6 - VPC And Scalability`
 
-Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4 videos 15-23`, `Phase 5A videos 24-27`, and `Phase 5B videos 28-31`
+Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4 videos 15-23`, `Phase 5A videos 24-27`, and `Phase 5B videos 28-33`
 
 ## How To Use This Plan
 
@@ -119,7 +119,7 @@ Each lab `README.md` should answer:
 | 3 | Complete | AWS CLI, profiles, scripts | 12, 13, 36 | CLI scripts and command notes |
 | 4 | Complete | EC2 basics and safe web server lab | 15-18, 20-23 | EC2 labs and cleanup proof |
 | 5A | Complete | EC2 pricing models | 24-27 | Pricing notes and cost-safety decisions |
-| 5B | In progress | EBS storage | 28-33 | EBS labs, mount workflow, and cleanup proof |
+| 5B | Complete | EBS storage | 28-33 | EBS labs, mount workflow, and cleanup proof |
 | 6 | Not started | VPC basics and scalability | 37-38 | Default VPC inspection |
 | 7 | Not started | S3 and EC2 instance profile | 34, 35, 39-57 | S3 labs and IAM access proof |
 | 8 | Not started | Lambda and serverless | 58, 59, 61-69 | Lambda/API/S3 trigger labs |

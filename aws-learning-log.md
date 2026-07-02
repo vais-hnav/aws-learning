@@ -16,7 +16,7 @@ Status values:
 - `Pending` means the video was watched, but the matching lab/check is still open.
 - `Theory-only` means no AWS resource lab is expected.
 
-Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, and Phase 5B videos 28-31 are complete. Phase 5B videos 32-33 are next.
+Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, and Phase 5B are complete. Phase 6 is next.
 
 | Phase | Video Topic | Watched Status | AWS Service | Lab Status | Date | Notes |
 |---|---|---|---|---|---|---|
@@ -53,8 +53,8 @@ Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, and Phase 5B video
 | Phase 5B - EBS Storage | IOPS vs Throughput vs Latency | Complete | Storage Performance | Theory-only | 2026-07-02 | IOPS, throughput, latency, workload matching, queue depth, and EBS performance factors documented. |
 | Phase 5B - EBS Storage | EBS Volumes Hands-on Lab | Complete | EBS | Complete | 2026-07-02 | Created/attached small EBS volume concept documented with same-AZ rule, tagging, CLI commands, cleanup checks, and detach/reattach persistence proof. |
 | Phase 5B - EBS Storage | Format and Mount EBS Volumes in Linux | Complete | EBS/Linux | Complete | 2026-07-02 | Linux disk detection, file-system check, format, mount point, mount verification, fstab safety, reattach without formatting, and unmount cleanup documented. |
-| Phase 5B - EBS Storage | EBS Volume Types | Not started | EBS | Theory-only |  | SSD/HDD and volume type comparison. |
-| Phase 5B - EBS Storage | Create EBS Snapshots | Not started | EBS | Not started |  | Snapshot lab with cleanup. |
+| Phase 5B - EBS Storage | EBS Volume Types | Complete | EBS | Theory-only | 2026-07-02 | SSD vs HDD volume categories, gp3 beginner default, io1/io2 advanced use cases, and st1/sc1 throughput/cold-storage use cases documented. |
+| Phase 5B - EBS Storage | Create EBS Snapshots | Complete | EBS | Complete | 2026-07-02 | Snapshot backup/restore flow, incremental backup concept, create-volume-from-snapshot workflow, cleanup rules, and basic Lifecycle Manager console exploration documented. |
 | Phase 6 - VPC and Scalability | VPC and Security Groups | Not started | VPC/EC2 | Not started |  | Default VPC inspection and security group notes. |
 | Phase 6 - VPC and Scalability | Vertical and Horizontal Scalability | Not started | Scalability | Theory-only |  | Scaling concept notes. |
 | Phase 7 - S3 and EC2 Instance Profile | S3 Cloud Storage Hands-on Lab | Not started | S3 | Not started |  | Basic S3 hands-on lab. |

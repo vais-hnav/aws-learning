@@ -169,9 +169,63 @@ Files:
 - `phase-5b-ebs-storage/mistakes.md`
 - `phase-5b-ebs-storage/cleanup.md`
 
+## 32. EBS Volume Types
+
+Concept:
+- EBS volume types are different cost/performance profiles for block storage.
+- SSD-backed volumes are best for transactional workloads with many small reads and writes.
+- HDD-backed volumes are best for large sequential throughput workloads.
+- `gp3` is the best beginner default because it is general purpose and gives predictable baseline behavior.
+
+Video learning:
+- Compares SSD and HDD based EBS volume types.
+- Connects volume type choice to workload needs.
+- Reinforces the earlier IOPS, throughput, and latency concepts.
+- Shows that choosing storage type is a cost and performance decision.
+
+My hands-on:
+- Reviewed volume type options from the EBS create-volume flow.
+- Kept `gp3` as the practice default.
+- Documented why `io1`/`io2`, `st1`, and `sc1` are not beginner defaults.
+
+Files:
+- `phase-5b-ebs-storage/README.md`
+- `phase-5b-ebs-storage/workflow.md`
+- `phase-5b-ebs-storage/mistakes.md`
+
+## 33. EBS Snapshots
+
+Concept:
+- An EBS snapshot is a point-in-time backup of an EBS volume.
+- Snapshots are incremental after the first snapshot.
+- A snapshot can be used to create a new EBS volume.
+- Snapshots are separate from the original volume, so they must be cleaned up separately.
+
+Video learning:
+- Explains snapshots as the backup/recovery path for EBS.
+- Shows snapshot creation from an EBS volume.
+- Connects snapshots to restoring data if a volume is damaged or deleted.
+- Reinforces that backup is different from attach/detach.
+
+My hands-on:
+- Reviewed the snapshot creation and restore flow.
+- Added AWS CLI commands for create snapshot, wait for completion, create volume from snapshot, and delete snapshot.
+- Looked into basic Amazon Data Lifecycle Manager features in the console, including policies, schedules, retention, and tag-based targeting.
+- Documented that Lifecycle Manager can automate snapshot creation and deletion, but snapshots created by policies can still create cost.
+
+Files:
+- `phase-5b-ebs-storage/aws-cli-commands.md`
+- `phase-5b-ebs-storage/workflow.md`
+- `phase-5b-ebs-storage/cleanup.md`
+- `phase-5b-ebs-storage/mistakes.md`
+
 ## Official References
 
 - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Storage.html
 - https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html
 - https://docs.aws.amazon.com/ebs/latest/userguide/ebs-using-volumes.html
 - https://docs.aws.amazon.com/ebs/latest/userguide/ebs-io-characteristics.html
+- https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html
+- https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html
+- https://docs.aws.amazon.com/ebs/latest/userguide/ebs-create-snapshot.html
+- https://docs.aws.amazon.com/ebs/latest/userguide/snapshot-lifecycle.html

@@ -80,3 +80,43 @@ Safer rule:
 ```text
 Use the same AZ for both instances when doing a detach/reattach test.
 ```
+
+## Choosing An Expensive Volume Type For A Small Lab
+
+Provisioned IOPS volumes are powerful, but they are not needed for beginner testing.
+
+Safer rule:
+
+```text
+Use small gp3 volumes for learning unless the lab specifically needs another type.
+```
+
+## Deleting The Volume But Forgetting The Snapshot
+
+Snapshots are separate backup resources. Deleting a volume does not automatically delete snapshots made from it.
+
+Safer rule:
+
+```text
+After snapshot practice, check Snapshots and delete practice snapshots.
+```
+
+## Restoring A Snapshot Into The Wrong Availability Zone
+
+A snapshot is regional, but the restored EBS volume is created in one Availability Zone. To attach the restored volume, it must be in the same AZ as the target instance.
+
+Safer rule:
+
+```text
+Choose the target instance AZ when creating a volume from a snapshot.
+```
+
+## Leaving A Lifecycle Manager Practice Policy Enabled
+
+A lifecycle policy can keep creating snapshots on schedule. That is useful in production, but risky in a learning account if forgotten.
+
+Safer rule:
+
+```text
+If the policy was only for practice, disable or delete it after exploration.
+```

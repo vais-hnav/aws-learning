@@ -9,7 +9,11 @@ The lab covers:
 - Uploading a file as an object.
 - Opening or downloading the object.
 - Listing bucket contents.
+- Listing objects with a prefix.
+- Using `s3api list-objects-v2` with `--fetch-owner` and `--query`.
 - Copying an object inside S3.
+- Copying folders/prefixes recursively.
+- Understanding when to use `cp --recursive` versus `sync`.
 - Deleting objects.
 - Deleting the bucket.
 
@@ -27,6 +31,9 @@ The lab covers:
 - Bucket Region matters and cannot be changed after creation.
 - Block Public Access should stay enabled for beginner private labs.
 - You must empty a bucket before deleting it.
+- S3 "folders" are prefixes in object keys, not real folders.
+- `aws s3 cp --recursive` copies a tree of files/objects.
+- `aws s3 sync` compares source and destination and copies only what is needed to make them match.
 
 ## How Do I Run It?
 
@@ -38,8 +45,10 @@ Recommended beginner flow:
 2. Upload a small test file.
 3. Open or download the object.
 4. Copy the object into a test prefix/folder.
-5. Delete the copied object and original object.
-6. Delete the bucket.
+5. List objects under a prefix using `s3api list-objects-v2`.
+6. Try `cp --recursive` and compare it with `sync`.
+7. Delete the copied object and original object.
+8. Delete the bucket.
 
 ## How Do I Delete It?
 

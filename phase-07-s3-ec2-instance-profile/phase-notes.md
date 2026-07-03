@@ -63,8 +63,72 @@ Files:
 - `phase-7d-ec2-instance-profile-s3/ec2-instance-profile-s3/cleanup.md`
 - `phase-7d-ec2-instance-profile-s3/ec2-instance-profile-s3/mistakes.md`
 
+## 39. S3 Buckets
+
+Concept:
+- Buckets are the top-level containers in S3.
+- Bucket names are globally unique.
+- Buckets are created in a specific AWS Region.
+- Bucket-level settings control public access, encryption, versioning, policies, and other features.
+- S3 uses prefixes to organize object keys in a folder-like way.
+
+Video learning:
+- Focuses on bucket concepts and bucket-level settings.
+- Reinforces that a bucket is not a folder and an object is not a block device.
+- Shows why Region, naming, and public access settings matter.
+
+My hands-on:
+- Continued the private S3 bucket lab.
+- Documented bucket creation, bucket settings, object prefixes, and cleanup.
+- Kept Block Public Access enabled.
+
+Files:
+- `phase-7a-s3-basics/README.md`
+- `phase-7a-s3-basics/basic-s3-lab/README.md`
+- `phase-7a-s3-basics/basic-s3-lab/workflow.md`
+- `phase-7a-s3-basics/basic-s3-lab/mistakes.md`
+
+## 40. S3 CLI Upload, Copy, And Manage Buckets
+
+Concept:
+- `aws s3` provides high-level S3 commands for everyday object operations.
+- `aws s3api` exposes lower-level S3 API-style commands.
+- `--recursive` lets copy/remove/list operations walk through prefixes or local directories.
+- `sync` compares source and destination and copies only missing or changed files.
+
+Video learning:
+- Practices S3 operations through the CLI.
+- Connects console bucket/object concepts to repeatable commands.
+- Shows how CLI commands make upload, copy, list, and delete workflows faster and easier to document.
+
+My hands-on:
+- Ran `s3api list-objects-v2` with a prefix to list objects under `lost/`.
+- Used `--fetch-owner` to include owner data.
+- Used a JMESPath `--query` to display only object key and owner ID.
+- Practiced `cp --recursive`.
+- Compared `cp --recursive` with `sync` and documented the difference.
+
+Command pattern:
+
+```bash
+aws s3api list-objects-v2 \
+  --bucket "$S3_BUCKET" \
+  --prefix "lost/" \
+  --fetch-owner \
+  --query 'Contents[].{Key: Key, OwnerID: Owner.ID}'
+```
+
+Files:
+- `phase-7a-s3-basics/basic-s3-lab/commands.md`
+- `phase-7a-s3-basics/basic-s3-lab/workflow.md`
+- `phase-7a-s3-basics/basic-s3-lab/cleanup.md`
+
 ## Official References
 
 - https://docs.aws.amazon.com/AmazonS3/latest/userguide/GetStartedWithS3.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html
+- https://docs.aws.amazon.com/cli/latest/reference/s3api/list-objects-v2.html
+- https://docs.aws.amazon.com/cli/latest/reference/s3/cp.html
+- https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html
 - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html
 - https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html

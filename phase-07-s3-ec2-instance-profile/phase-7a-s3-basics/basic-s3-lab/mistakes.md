@@ -39,3 +39,34 @@ Safer rule:
 ```text
 Delete objects first, then delete the bucket.
 ```
+
+## Thinking S3 Folders Are Real Folders
+
+The S3 console shows folder-like views, but S3 uses object key prefixes.
+
+Safer rule:
+
+```text
+Think of lost/file.txt as one object key with the prefix lost/.
+```
+
+## Using cp --recursive When sync Is The Better Fit
+
+`cp --recursive` copies a folder tree. It does not make the destination an exact managed mirror by default.
+
+Safer rule:
+
+```text
+Use cp --recursive for bulk copy.
+Use sync when you want source and destination compared.
+```
+
+## Running sync --delete Without Previewing
+
+`sync --delete` can remove files from the destination that do not exist in the source.
+
+Safer rule:
+
+```text
+Run sync with --dryrun before using --delete.
+```

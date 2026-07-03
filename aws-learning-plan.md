@@ -10,9 +10,9 @@ Last playlist check: `2026-06-29`
 
 Live playlist count at last check: `73 videos`
 
-Current learning position: `Phase 7 - S3 remaining videos 39-57`
+Current learning position: `Phase 7A - S3 Objects video 41`
 
-Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4 videos 15-23`, `Phase 5A videos 24-27`, `Phase 5B videos 28-33`, `Phase 6 videos 37-38`, and `Phase 7 videos 34-35`
+Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4 videos 15-23`, `Phase 5A videos 24-27`, `Phase 5B videos 28-33`, `Phase 6 videos 37-38`, and `Phase 7 videos 34-35 and 39-40`
 
 ## How To Use This Plan
 

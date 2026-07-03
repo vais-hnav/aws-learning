@@ -5,8 +5,8 @@ Learn the S3 foundation: buckets, objects, and basic CLI workflows.
 
 Videos:
 - 34. S3 cloud storage hands-on lab - complete
-- 39. S3 buckets
-- 40. S3 CLI upload, copy, and manage buckets
+- 39. S3 buckets - complete
+- 40. S3 CLI upload, copy, and manage buckets - complete
 - 41. S3 objects
 
 Labs:
@@ -19,6 +19,15 @@ What I learned from video 34:
 - Objects can be uploaded, opened/downloaded, copied, and deleted.
 - S3 is not block storage like EBS; it is object storage accessed through the console, CLI, SDKs, or API.
 - Cleanup means deleting objects first, then deleting the bucket.
+
+What I learned from videos 39 and 40:
+- Buckets are the top-level containers in S3.
+- S3 does not use real folders like a local file system; folder-like paths are object key prefixes.
+- `aws s3` commands are high-level convenience commands.
+- `aws s3api` commands map more closely to the underlying S3 API.
+- `list-objects-v2` can filter objects by prefix and return selected fields with `--query`.
+- `cp --recursive` copies a folder/prefix recursively.
+- `sync` compares source and destination and is better when making two locations match.
 
 Safety:
 - Keep S3 Block Public Access enabled unless a lab explicitly teaches public access.

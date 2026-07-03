@@ -7,6 +7,7 @@ Use this checklist after the S3 hands-on lab.
 ```bash
 rm -f s3-lab-test.txt
 rm -f downloaded-s3-lab-test.txt
+rm -rf local-s3-demo
 ```
 
 ## 2. List Bucket Contents
@@ -19,6 +20,14 @@ aws s3 ls "s3://$S3_BUCKET/" --recursive
 
 ```bash
 aws s3 rm "s3://$S3_BUCKET/" --recursive
+```
+
+If you want to delete only a test prefix first:
+
+```bash
+aws s3 rm "s3://$S3_BUCKET/lost/" --recursive
+aws s3 rm "s3://$S3_BUCKET/recursive-copy/" --recursive
+aws s3 rm "s3://$S3_BUCKET/sync-demo/" --recursive
 ```
 
 ## 4. Delete Bucket
@@ -43,6 +52,7 @@ The practice bucket is not listed.
 
 - Test file deleted locally.
 - Downloaded test file deleted locally.
+- Local recursive test folder deleted.
 - Objects deleted from the bucket.
 - Bucket deleted.
 - No public bucket was created.

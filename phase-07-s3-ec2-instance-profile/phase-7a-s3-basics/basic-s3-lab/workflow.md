@@ -43,3 +43,61 @@ Official references:
 - https://docs.aws.amazon.com/AmazonS3/latest/userguide/GetStartedWithS3.html
 - https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html
 - https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html
+
+## Video 39: S3 Buckets
+
+Concept:
+- A bucket is the top-level S3 container.
+- Bucket names must be globally unique.
+- A bucket belongs to one AWS Region.
+- Bucket settings control versioning, encryption, public access, policies, logging, and other behavior.
+
+Important:
+
+```text
+Bucket = container.
+Object = file/data stored inside the bucket.
+Prefix = folder-like part of an object key.
+```
+
+Beginner bucket settings:
+- Keep Block Public Access enabled.
+- Keep default encryption enabled.
+- Use clear temporary names for learning buckets.
+- Delete test buckets after practice.
+
+## Video 40: S3 CLI Upload, Copy, And Manage Buckets
+
+Concept:
+- `aws s3` gives high-level commands such as `cp`, `ls`, `rm`, `mb`, `rb`, and `sync`.
+- `aws s3api` gives lower-level API-style commands such as `list-objects-v2`.
+- `--recursive` makes supported commands work through a whole folder/prefix tree.
+- `sync` compares source and destination before copying.
+
+My extra hands-on:
+- Used `list-objects-v2` with `--prefix "lost/"` to inspect only objects under a prefix.
+- Used `--fetch-owner` to include object owner information.
+- Used `--query 'Contents[].{Key: Key, OwnerID: Owner.ID}'` to display only object key and owner ID.
+- Practiced `cp --recursive`.
+- Compared `cp --recursive` with `sync`.
+
+Practical difference:
+
+| Command | Behavior | Common use |
+|---|---|---|
+| `aws s3 cp file s3://bucket/key` | Copies one file/object | Simple upload/download |
+| `aws s3 cp folder/ s3://bucket/prefix/ --recursive` | Copies a folder/prefix tree | Bulk copy |
+| `aws s3 sync folder/ s3://bucket/prefix/` | Compares and copies missing/changed files | Keeping two locations aligned |
+| `aws s3 sync --delete` | Also removes destination-only files | Mirroring with cleanup |
+
+Safety:
+- Use `--dryrun` before risky sync commands.
+- Be careful with `sync --delete`.
+- Do not assume S3 prefixes are real folders.
+- Delete test prefixes after practice.
+
+Official references:
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html
+- https://docs.aws.amazon.com/cli/latest/reference/s3api/list-objects-v2.html
+- https://docs.aws.amazon.com/cli/latest/reference/s3/cp.html
+- https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html

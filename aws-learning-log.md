@@ -17,7 +17,7 @@ Status values:
 - `Pending` means the video was watched, but the matching lab/check is still open.
 - `Theory-only` means no AWS resource lab is expected.
 
-Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6, and Phase 7 videos 34-35 are complete. Phase 7 remaining videos are next.
+Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6, and Phase 7 videos 34-35 and 39-40 are complete. Phase 7 video 41 is next.
 
 | Phase | Video Topic | Watched Status | Playlist Video | AWS Service | Lab Status | Date | Notes |
 |---|---|---|---:|---|---|---|---|
@@ -59,8 +59,8 @@ Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6,
 | Phase 6 - VPC and Scalability | VPC and Security Groups | Complete | 37 | VPC/EC2 | Complete | 2026-07-03 | Default VPC, subnets, route tables, internet gateway, security groups, and custom SSH inbound rule testing with laptop public IP documented. |
 | Phase 6 - VPC and Scalability | Vertical and Horizontal Scalability | Complete | 38 | Scalability | Theory-only | 2026-07-03 | Vertical scaling as bigger instance and horizontal scaling as more instances documented, with ALB/ASG marked as post-playlist follow-up topics. |
 | Phase 7 - S3 and EC2 Instance Profile | S3 Cloud Storage Hands-on Lab | Complete | 34 | S3 | Complete | 2026-07-03 | Private S3 bucket/object workflow documented: create bucket, upload object, list, download, copy, delete objects, delete bucket, and keep Block Public Access enabled. |
-| Phase 7 - S3 and EC2 Instance Profile | S3 Buckets | Not started | 39 | S3 | Not started |  | Bucket concepts and setup. |
-| Phase 7 - S3 and EC2 Instance Profile | S3 CLI Upload, Copy, and Manage Buckets | Not started | 40 | S3/CLI | Not started |  | S3 CLI workflow. |
+| Phase 7 - S3 and EC2 Instance Profile | S3 Buckets | Complete | 39 | S3 | Complete | 2026-07-04 | Bucket naming, Region, private defaults, prefixes as folder-like object keys, bucket settings, and cleanup documented. |
+| Phase 7 - S3 and EC2 Instance Profile | S3 CLI Upload, Copy, and Manage Buckets | Complete | 40 | S3/CLI | Complete | 2026-07-04 | S3 CLI upload/copy/list workflows, s3api list-objects-v2 with prefix/fetch-owner/query, cp --recursive, and sync comparison documented. |
 | Phase 7 - S3 and EC2 Instance Profile | S3 Objects | Not started | 41 | S3 | Not started |  | Object, key, metadata, and storage basics. |
 | Phase 7 - S3 and EC2 Instance Profile | S3 Storage Classes | Not started | 42 | S3/Pricing | Theory-only |  | Storage class cost comparison. |
 | Phase 7 - S3 and EC2 Instance Profile | S3 Standard Storage Class | Not started | 43 | S3 | Theory-only |  | S3 Standard use cases. |

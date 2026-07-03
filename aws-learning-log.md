@@ -17,7 +17,7 @@ Status values:
 - `Pending` means the video was watched, but the matching lab/check is still open.
 - `Theory-only` means no AWS resource lab is expected.
 
-Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, and Phase 7 videos 34-35 are complete. Phase 6 is next.
+Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6, and Phase 7 videos 34-35 are complete. Phase 7 remaining videos are next.
 
 | Phase | Video Topic | Watched Status | Playlist Video | AWS Service | Lab Status | Date | Notes |
 |---|---|---|---:|---|---|---|---|
@@ -56,8 +56,8 @@ Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, and Phas
 | Phase 5B - EBS Storage | Format and Mount EBS Volumes in Linux | Complete | 31 | EBS/Linux | Complete | 2026-07-02 | Linux disk detection, file-system check, format, mount point, mount verification, fstab safety, reattach without formatting, and unmount cleanup documented. |
 | Phase 5B - EBS Storage | EBS Volume Types | Complete | 32 | EBS | Theory-only | 2026-07-02 | SSD vs HDD volume categories, gp3 beginner default, io1/io2 advanced use cases, and st1/sc1 throughput/cold-storage use cases documented. |
 | Phase 5B - EBS Storage | Create EBS Snapshots | Complete | 33 | EBS | Complete | 2026-07-02 | Snapshot backup/restore flow, incremental backup concept, create-volume-from-snapshot workflow, cleanup rules, and basic Lifecycle Manager console exploration documented. |
-| Phase 6 - VPC and Scalability | VPC and Security Groups | Not started | 37 | VPC/EC2 | Not started |  | Default VPC inspection and security group notes. |
-| Phase 6 - VPC and Scalability | Vertical and Horizontal Scalability | Not started | 38 | Scalability | Theory-only |  | Scaling concept notes. |
+| Phase 6 - VPC and Scalability | VPC and Security Groups | Complete | 37 | VPC/EC2 | Complete | 2026-07-03 | Default VPC, subnets, route tables, internet gateway, security groups, and custom SSH inbound rule testing with laptop public IP documented. |
+| Phase 6 - VPC and Scalability | Vertical and Horizontal Scalability | Complete | 38 | Scalability | Theory-only | 2026-07-03 | Vertical scaling as bigger instance and horizontal scaling as more instances documented, with ALB/ASG marked as post-playlist follow-up topics. |
 | Phase 7 - S3 and EC2 Instance Profile | S3 Cloud Storage Hands-on Lab | Complete | 34 | S3 | Complete | 2026-07-03 | Private S3 bucket/object workflow documented: create bucket, upload object, list, download, copy, delete objects, delete bucket, and keep Block Public Access enabled. |
 | Phase 7 - S3 and EC2 Instance Profile | S3 Buckets | Not started | 39 | S3 | Not started |  | Bucket concepts and setup. |
 | Phase 7 - S3 and EC2 Instance Profile | S3 CLI Upload, Copy, and Manage Buckets | Not started | 40 | S3/CLI | Not started |  | S3 CLI workflow. |

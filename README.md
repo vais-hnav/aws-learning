@@ -22,8 +22,8 @@ A hands-on AWS learning repository built around a video-to-lab workflow. Each ph
 | Phase 4 | EC2 basics | Complete |
 | Phase 5A | EC2 pricing models | Complete |
 | Phase 5B | EBS storage | Complete |
-| Phase 6 | VPC and scalability | Next |
-| Phase 7 | S3 and EC2 instance profile | In progress |
+| Phase 6 | VPC and scalability | Complete |
+| Phase 7 | S3 and EC2 instance profile | In progress / next |
 
 ## Learning Workflow
 

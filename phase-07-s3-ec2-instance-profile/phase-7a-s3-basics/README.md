@@ -7,7 +7,7 @@ Videos:
 - 34. S3 cloud storage hands-on lab - complete
 - 39. S3 buckets - complete
 - 40. S3 CLI upload, copy, and manage buckets - complete
-- 41. S3 objects
+- 41. S3 objects - complete
 
 Labs:
 - `basic-s3-lab/`
@@ -28,6 +28,14 @@ What I learned from videos 39 and 40:
 - `list-objects-v2` can filter objects by prefix and return selected fields with `--query`.
 - `cp --recursive` copies a folder/prefix recursively.
 - `sync` compares source and destination and is better when making two locations match.
+
+What I learned from video 41:
+- An S3 object is the actual data stored in a bucket plus metadata about that data.
+- The object key is the full name used to find the object, including any prefix such as `lost/file-one.txt`.
+- Prefixes make S3 look folder-like, but S3 still stores objects in a flat object namespace.
+- Object properties include size, storage class, encryption details, timestamps, ETag/checksum-related information, tags, and metadata.
+- User-defined metadata can be added when uploading an object, but changing it later usually means copying/replacing the object metadata.
+- Object tags and metadata are useful for organization, automation, lifecycle rules, and cost-management workflows.
 
 Safety:
 - Keep S3 Block Public Access enabled unless a lab explicitly teaches public access.

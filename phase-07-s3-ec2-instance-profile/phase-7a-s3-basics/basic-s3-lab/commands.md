@@ -63,6 +63,55 @@ aws s3 ls "s3://$S3_BUCKET/"
 aws s3 cp "s3://$S3_BUCKET/s3-lab-test.txt" downloaded-s3-lab-test.txt
 ```
 
+## Inspect Object Properties
+
+Use `head-object` when you want object details without downloading the file content.
+
+```bash
+aws s3api head-object \
+  --bucket "$S3_BUCKET" \
+  --key "s3-lab-test.txt"
+```
+
+Useful fields to notice:
+
+| Field | Meaning |
+|---|---|
+| `ContentLength` | Object size in bytes |
+| `ContentType` | File/content type stored with the object |
+| `LastModified` | Last object modification timestamp |
+| `ETag` | Object identifier/checksum-related value for many upload patterns |
+| `ServerSideEncryption` | Encryption applied to the object |
+| `Metadata` | User-defined metadata added during upload |
+
+Download the same object with the lower-level S3 API:
+
+```bash
+aws s3api get-object \
+  --bucket "$S3_BUCKET" \
+  --key "s3-lab-test.txt" \
+  downloaded-with-s3api.txt
+```
+
+## Upload An Object With Metadata
+
+```bash
+aws s3api put-object \
+  --bucket "$S3_BUCKET" \
+  --key "metadata-demo.txt" \
+  --body s3-lab-test.txt \
+  --metadata purpose=aws-learning,phase=phase-7a
+```
+
+Check the metadata:
+
+```bash
+aws s3api head-object \
+  --bucket "$S3_BUCKET" \
+  --key "metadata-demo.txt" \
+  --query 'Metadata'
+```
+
 ## Copy The Object Inside S3
 
 ```bash
@@ -113,6 +162,38 @@ Explanation:
 | `--fetch-owner` | Includes owner information in the response |
 | `--query` | Uses JMESPath to display only selected fields |
 
+List object keys with size, storage class, and modification time:
+
+```bash
+aws s3api list-objects-v2 \
+  --bucket "$S3_BUCKET" \
+  --query 'Contents[].{Key: Key, Size: Size, StorageClass: StorageClass, LastModified: LastModified}'
+```
+
+## Upload With A Storage Class
+
+For beginner labs, use `STANDARD` unless the video or lab specifically asks you to test another class.
+
+```bash
+aws s3 cp s3-lab-test.txt "s3://$S3_BUCKET/storage-class-demo/standard.txt" --storage-class STANDARD
+```
+
+Verify it:
+
+```bash
+aws s3api head-object \
+  --bucket "$S3_BUCKET" \
+  --key "storage-class-demo/standard.txt" \
+  --query '{StorageClass: StorageClass, Size: ContentLength, Encryption: ServerSideEncryption}'
+```
+
+Note:
+
+```text
+S3 Standard is the default storage class for general purpose buckets.
+S3 Express One Zone uses directory buckets and a different workflow, so do not test it casually in this beginner lab.
+```
+
 ## Copy Recursively vs Sync
 
 Copy a local directory to S3 recursively:
@@ -150,10 +231,12 @@ aws s3 sync local-s3-demo/ "s3://$S3_BUCKET/sync-demo/" --delete --dryrun
 
 ```bash
 aws s3 rm "s3://$S3_BUCKET/s3-lab-test.txt"
+aws s3 rm "s3://$S3_BUCKET/metadata-demo.txt"
 aws s3 rm "s3://$S3_BUCKET/copies/s3-lab-test-copy.txt"
 aws s3 rm "s3://$S3_BUCKET/lost/" --recursive
 aws s3 rm "s3://$S3_BUCKET/recursive-copy/" --recursive
 aws s3 rm "s3://$S3_BUCKET/sync-demo/" --recursive
+aws s3 rm "s3://$S3_BUCKET/storage-class-demo/" --recursive
 ```
 
 ## Delete The Bucket

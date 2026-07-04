@@ -10,9 +10,9 @@ Last playlist check: `2026-06-29`
 
 Live playlist count at last check: `73 videos`
 
-Current learning position: `Phase 7A - S3 Objects video 41`
+Current learning position: `Phase 7C - S3 Data Protection and Durability video 50`
 
-Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4 videos 15-23`, `Phase 5A videos 24-27`, `Phase 5B videos 28-33`, `Phase 6 videos 37-38`, and `Phase 7 videos 34-35 and 39-40`
+Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4 videos 15-23`, `Phase 5A videos 24-27`, `Phase 5B videos 28-33`, `Phase 6 videos 37-38`, and `Phase 7 videos 34-35 and 39-49`
 
 ## How To Use This Plan
 

@@ -50,6 +50,46 @@ Safer rule:
 Think of lost/file.txt as one object key with the prefix lost/.
 ```
 
+## Confusing Object Key With File Name Only
+
+In S3, the full key matters. `lost/file-one.txt` is not just `file-one.txt`; the prefix is part of the key.
+
+Safer rule:
+
+```text
+Always copy the full object key before running CLI commands.
+```
+
+## Putting Secrets In Metadata Or Tags
+
+Object metadata and tags are not the right place for passwords, secret keys, tokens, or private notes.
+
+Safer rule:
+
+```text
+Treat object keys, metadata, and tags as operational labels, not secret storage.
+```
+
+## Assuming Objects Can Be Renamed Directly
+
+S3 does not rename objects like a local file system. A rename is usually a copy to a new key followed by deleting the old key.
+
+Safer rule:
+
+```text
+Copy first, verify the new object, then delete the old object.
+```
+
+## Assuming ETag Is Always A Simple File Hash
+
+ETag can be useful, but multipart uploads and encryption can make it different from a simple local MD5 hash.
+
+Safer rule:
+
+```text
+Use explicit checksums when a lab requires strong file integrity verification.
+```
+
 ## Using cp --recursive When sync Is The Better Fit
 
 `cp --recursive` copies a folder tree. It does not make the destination an exact managed mirror by default.

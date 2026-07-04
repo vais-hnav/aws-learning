@@ -17,7 +17,7 @@ Status values:
 - `Pending` means the video was watched, but the matching lab/check is still open.
 - `Theory-only` means no AWS resource lab is expected.
 
-Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6, and Phase 7 videos 34-35 and 39-40 are complete. Phase 7 video 41 is next.
+Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6, and Phase 7 videos 34-35 and 39-49 are complete. Phase 7 video 50 is next.
 
 | Phase | Video Topic | Watched Status | Playlist Video | AWS Service | Lab Status | Date | Notes |
 |---|---|---|---:|---|---|---|---|
@@ -61,15 +61,15 @@ Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6,
 | Phase 7 - S3 and EC2 Instance Profile | S3 Cloud Storage Hands-on Lab | Complete | 34 | S3 | Complete | 2026-07-03 | Private S3 bucket/object workflow documented: create bucket, upload object, list, download, copy, delete objects, delete bucket, and keep Block Public Access enabled. |
 | Phase 7 - S3 and EC2 Instance Profile | S3 Buckets | Complete | 39 | S3 | Complete | 2026-07-04 | Bucket naming, Region, private defaults, prefixes as folder-like object keys, bucket settings, and cleanup documented. |
 | Phase 7 - S3 and EC2 Instance Profile | S3 CLI Upload, Copy, and Manage Buckets | Complete | 40 | S3/CLI | Complete | 2026-07-04 | S3 CLI upload/copy/list workflows, s3api list-objects-v2 with prefix/fetch-owner/query, cp --recursive, and sync comparison documented. |
-| Phase 7 - S3 and EC2 Instance Profile | S3 Objects | Not started | 41 | S3 | Not started |  | Object, key, metadata, and storage basics. |
-| Phase 7 - S3 and EC2 Instance Profile | S3 Storage Classes | Not started | 42 | S3/Pricing | Theory-only |  | Storage class cost comparison. |
-| Phase 7 - S3 and EC2 Instance Profile | S3 Standard Storage Class | Not started | 43 | S3 | Theory-only |  | S3 Standard use cases. |
-| Phase 7 - S3 and EC2 Instance Profile | S3 Express One Zone | Not started | 44 | S3 | Theory-only |  | High-performance S3 storage class notes. |
-| Phase 7 - S3 and EC2 Instance Profile | S3 Directory Buckets | Not started | 45 | S3 | Theory-only |  | Directory bucket concept notes. |
-| Phase 7 - S3 and EC2 Instance Profile | S3 Standard-IA and One Zone-IA | Not started | 46 | S3 | Theory-only |  | Infrequent access storage class notes. |
-| Phase 7 - S3 and EC2 Instance Profile | S3 Glacier Storage Class | Not started | 47 | S3/Glacier | Theory-only |  | Cold storage and retrieval cost notes. |
-| Phase 7 - S3 and EC2 Instance Profile | S3 Lifecycle Policies | Not started | 48 | S3 | Not started |  | Lifecycle policy lab. |
-| Phase 7 - S3 and EC2 Instance Profile | S3 Intelligent-Tiering | Not started | 49 | S3 | Theory-only |  | Intelligent-Tiering behavior and cost notes. |
+| Phase 7 - S3 and EC2 Instance Profile | S3 Objects | Complete | 41 | S3 | Complete | 2026-07-04 | Object key, value/data, metadata, tags, prefixes, storage class, object properties, and head-object inspection documented. |
+| Phase 7 - S3 and EC2 Instance Profile | S3 Storage Classes | Complete | 42 | S3/Pricing | Theory-only | 2026-07-04 | Storage classes compared by access pattern, latency, retrieval behavior, durability/resiliency, minimum duration, and total cost tradeoffs. |
+| Phase 7 - S3 and EC2 Instance Profile | S3 Standard Storage Class | Complete | 43 | S3 | Theory-only | 2026-07-04 | S3 Standard documented as the default beginner-safe class for frequently accessed general-purpose objects. |
+| Phase 7 - S3 and EC2 Instance Profile | S3 Express One Zone | Complete | 44 | S3 | Theory-only | 2026-07-04 | Express One Zone documented as high-performance single-AZ storage for latency-sensitive data; hands-on deferred until directory buckets are covered. |
+| Phase 7 - S3 and EC2 Instance Profile | S3 Directory Buckets | Complete | 45 | S3 | Theory-only | 2026-07-04 | Directory buckets documented for S3 Express One Zone: hierarchical directories, zone-scoped naming, access model, and beginner no-casual-create rule. |
+| Phase 7 - S3 and EC2 Instance Profile | S3 Standard-IA and One Zone-IA | Complete | 46 | S3/Pricing | Theory-only | 2026-07-04 | Standard-IA and One Zone-IA compared for infrequent access, retrieval charges, minimum-duration risk, and multi-AZ versus single-AZ tradeoff. |
+| Phase 7 - S3 and EC2 Instance Profile | S3 Glacier Storage Class | Complete | 47 | S3/Glacier | Theory-only | 2026-07-04 | Glacier Instant Retrieval, Flexible Retrieval, and Deep Archive documented with archive use cases, restore expectations, and cleanup/cost cautions. |
+| Phase 7 - S3 and EC2 Instance Profile | S3 Lifecycle Policies | Complete | 48 | S3 | Complete | 2026-07-04 | Lifecycle transition and expiration rules documented with disabled JSON example, prefix filter, storage-class transitions, and cleanup commands. |
+| Phase 7 - S3 and EC2 Instance Profile | S3 Intelligent-Tiering | Complete | 49 | S3/Pricing | Theory-only | 2026-07-04 | Intelligent-Tiering documented for unknown or changing access patterns, automatic access tiers, monitoring charge, and optional archive tiers. |
 | Phase 7 - S3 and EC2 Instance Profile | S3 Data Protection and Durability | Not started | 50 | S3 | Theory-only |  | Durability and protection concepts. |
 | Phase 7 - S3 and EC2 Instance Profile | Recover Deleted Files with S3 Versioning | Not started | 51 | S3 | Not started |  | Versioning recovery lab. |
 | Phase 7 - S3 and EC2 Instance Profile | S3 Cross-Region Replication Lab | Not started | 52 | S3 | Not started |  | Replication lab with cost awareness. |

@@ -101,3 +101,69 @@ Official references:
 - https://docs.aws.amazon.com/cli/latest/reference/s3api/list-objects-v2.html
 - https://docs.aws.amazon.com/cli/latest/reference/s3/cp.html
 - https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html
+
+## Video 41: S3 Objects
+
+Concept:
+- An S3 object is the stored data plus metadata.
+- The object key is the unique name of the object inside the bucket.
+- A key can include prefixes such as `lost/file-one.txt`.
+- S3 prefixes make organization easier, but they are not real folders.
+- Object properties show useful details such as size, storage class, encryption, tags, timestamps, and metadata.
+
+Object anatomy:
+
+| Part | Simple meaning |
+|---|---|
+| Bucket | Container that holds objects |
+| Key | Full object name/path-like identifier |
+| Value | The actual file/data bytes |
+| Metadata | Extra information about the object |
+| Tags | Key-value labels used for organization and automation |
+| Storage class | Cost/performance tier used for that object |
+| Version ID | Identifier for a specific object version when versioning is enabled |
+
+Hands-on workflow:
+
+1. Upload a small test object.
+2. Open the object in the S3 console.
+3. Review the object properties page.
+4. Check the object key and prefix.
+5. Check size, storage class, encryption, tags, and metadata sections.
+6. Run `head-object` from the CLI to inspect properties without downloading the file.
+7. Upload a second object with user-defined metadata.
+8. List object keys with `list-objects-v2`.
+9. Delete the test objects when finished.
+
+Command examples:
+
+```bash
+aws s3api head-object \
+  --bucket "$S3_BUCKET" \
+  --key "s3-lab-test.txt"
+```
+
+```bash
+aws s3api put-object \
+  --bucket "$S3_BUCKET" \
+  --key "metadata-demo.txt" \
+  --body s3-lab-test.txt \
+  --metadata purpose=aws-learning,phase=phase-7a
+```
+
+What this lab proves:
+- The file name shown in S3 is really the object key.
+- Prefixes are just part of the key name.
+- Object metadata can be inspected separately from the file content.
+- Storage class is selected at the object level, not just at the bucket level.
+
+Safety:
+- Do not store secrets in object keys, metadata, tags, or file names.
+- Keep objects private unless a later security lab intentionally changes access.
+- Delete object experiments after practice.
+
+Official references:
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingObjects.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingMetadata.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/view-object-properties.html

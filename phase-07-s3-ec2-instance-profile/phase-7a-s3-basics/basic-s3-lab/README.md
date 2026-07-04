@@ -9,6 +9,8 @@ The lab covers:
 - Uploading a file as an object.
 - Opening or downloading the object.
 - Listing bucket contents.
+- Inspecting object properties with the CLI.
+- Understanding object keys, prefixes, metadata, tags, and storage class.
 - Listing objects with a prefix.
 - Using `s3api list-objects-v2` with `--fetch-owner` and `--query`.
 - Copying an object inside S3.
@@ -26,7 +28,10 @@ The lab covers:
 
 - S3 stores objects, not traditional folders and disks.
 - A bucket is the top-level container for S3 objects.
-- An object is the uploaded file plus metadata.
+- An object is the uploaded file/data plus metadata.
+- An object key is the full object name, including any prefix.
+- Prefixes make object keys look like folders, but they are still part of the object name.
+- Object properties help me verify size, storage class, encryption, timestamps, tags, and metadata.
 - Bucket names are globally unique.
 - Bucket Region matters and cannot be changed after creation.
 - Block Public Access should stay enabled for beginner private labs.
@@ -45,10 +50,11 @@ Recommended beginner flow:
 2. Upload a small test file.
 3. Open or download the object.
 4. Copy the object into a test prefix/folder.
-5. List objects under a prefix using `s3api list-objects-v2`.
-6. Try `cp --recursive` and compare it with `sync`.
-7. Delete the copied object and original object.
-8. Delete the bucket.
+5. Inspect object properties with `s3api head-object`.
+6. List objects under a prefix using `s3api list-objects-v2`.
+7. Try `cp --recursive` and compare it with `sync`.
+8. Delete the copied object and original object.
+9. Delete the bucket.
 
 ## How Do I Delete It?
 

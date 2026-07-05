@@ -24,6 +24,7 @@ A hands-on AWS learning repository built around a video-to-lab workflow. Each ph
 | Phase 5B | EBS storage | Complete |
 | Phase 6 | VPC and scalability | Complete |
 | Phase 7 | S3 and EC2 instance profile | In progress / video 50 next |
+| Phase 9 | DynamoDB | Open / current videos 70-73 complete out of order |
 
 ## Learning Workflow
 

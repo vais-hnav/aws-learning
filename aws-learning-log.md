@@ -17,7 +17,7 @@ Status values:
 - `Pending` means the video was watched, but the matching lab/check is still open.
 - `Theory-only` means no AWS resource lab is expected.
 
-Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6, and Phase 7 videos 34-35 and 39-49 are complete. Phase 7 video 50 is next.
+Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6, Phase 7 videos 34-35 and 39-49, and current Phase 9 videos 70-73 are complete. Phase 7 video 50 is next on the main path. Phase 9 remains open for future DynamoDB playlist additions.
 
 | Phase | Video Topic | Watched Status | Playlist Video | AWS Service | Lab Status | Date | Notes |
 |---|---|---|---:|---|---|---|---|
@@ -90,7 +90,7 @@ Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6,
 | Phase 8 - Lambda and Serverless | Lambda Cold Start | Not started | 67 | Lambda | Theory-only |  | Cold start concept and mitigation notes. |
 | Phase 8 - Lambda and Serverless | Lambda Layers | Not started | 68 | Lambda | Not started |  | Layer packaging lab. |
 | Phase 8 - Lambda and Serverless | Sensitive Configuration Data in Lambda | Not started | 69 | Lambda/Security | Not started |  | Environment/configuration safety lab. |
-| Phase 9 - DynamoDB | Master AWS DynamoDB | Not started | 70 | DynamoDB | Not started |  | DynamoDB basics and table concepts. |
-| Phase 9 - DynamoDB | DynamoDB Data Types | Not started | 71 | DynamoDB | Theory-only |  | Data type notes. |
-| Phase 9 - DynamoDB | DynamoDB Primary Key | Not started | 72 | DynamoDB | Not started |  | Partition key and sort key lab. |
-| Phase 9 - DynamoDB | Strong and Eventual Consistency | Not started | 73 | DynamoDB | Theory-only |  | Playlist update video; consistency model notes. |
+| Phase 9 - DynamoDB | Master AWS DynamoDB | Complete | 70 | DynamoDB | Complete | 2026-07-06 | DynamoDB as managed NoSQL database documented: tables, items, attributes, schemaless design outside keys, primary key requirement, on-demand table setup, and safe cleanup. |
+| Phase 9 - DynamoDB | DynamoDB Data Types | Complete | 71 | DynamoDB | Theory-only | 2026-07-06 | Scalar, document, and set data types documented with CLI typed-JSON examples, number/string rules, empty-set warning, and item-size awareness. |
+| Phase 9 - DynamoDB | DynamoDB Primary Key | Complete | 72 | DynamoDB | Complete | 2026-07-06 | Partition key, sort key, composite primary key, key schema, query pattern, and beginner table design lab documented. |
+| Phase 9 - DynamoDB | Strong and Eventual Consistency | Complete | 73 | DynamoDB | Theory-only | 2026-07-06 | Eventually consistent reads, strongly consistent reads with ConsistentRead, GSI/stream limitations, global table consistency, and cost tradeoff documented. |

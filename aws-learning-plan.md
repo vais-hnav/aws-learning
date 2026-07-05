@@ -12,7 +12,7 @@ Live playlist count at last check: `73 videos`
 
 Current learning position: `Phase 7C - S3 Data Protection and Durability video 50`
 
-Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4 videos 15-23`, `Phase 5A videos 24-27`, `Phase 5B videos 28-33`, `Phase 6 videos 37-38`, and `Phase 7 videos 34-35 and 39-49`
+Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4 videos 15-23`, `Phase 5A videos 24-27`, `Phase 5B videos 28-33`, `Phase 6 videos 37-38`, `Phase 7 videos 34-35 and 39-49`, and current `Phase 9 videos 70-73 out of order`
 
 ## How To Use This Plan
 
@@ -123,7 +123,7 @@ Each lab `README.md` should answer:
 | 6 | Complete | VPC basics and scalability | 37-38 | Default VPC inspection |
 | 7 | In progress | S3 and EC2 instance profile | 34, 35, 39-57 | S3 labs and IAM access proof |
 | 8 | Not started | Lambda and serverless | 58, 59, 61-69 | Lambda/API/S3 trigger labs |
-| 9 | Not started | DynamoDB | 70-72 plus update video 73 | DynamoDB data model and CRUD |
+| 9 | Open / current videos complete | DynamoDB | 70-73 | DynamoDB data model and CRUD |
 | Final | Not started | Portfolio project | Combined services | Final project docs |
 
 ## Phase 1 - AWS Foundation
@@ -467,6 +467,8 @@ Safety rules:
 
 Goal: Understand NoSQL basics, DynamoDB data modeling, primary keys, and safe CLI/Python operations.
 
+Status: Open for future DynamoDB playlist additions. Current listed videos `70-73` are complete out of order.
+
 Videos:
 
 | Video | Topic |
@@ -474,12 +476,14 @@ Videos:
 | 70 | Master AWS DynamoDB |
 | 71 | DynamoDB data types |
 | 72 | DynamoDB primary key |
+| 73 | Strong and eventual consistency |
 
 Build:
 
 - DynamoDB table notes
 - DynamoDB data types notes
 - Partition key and sort key notes
+- Strong and eventual consistency notes
 - CLI CRUD commands
 - Python boto3 CRUD script
 - DynamoDB cleanup checklist
@@ -517,24 +521,19 @@ Safety rules:
 
 ## Playlist Updates
 
-This section is for playlist drift only. It preserves the original plan while still tracking newly added videos.
+This section is for future playlist drift only. It preserves the phase plan while still leaving room for new videos from the ongoing playlist.
 
 Last checked against the live playlist on `2026-06-29`.
 
-Current live playlist count: `73 videos`.
+Current live playlist count at last check: `73 videos`.
 
-New/unmapped video found:
+Current unmapped videos:
 
-| Video | Title | Recommended placement |
-|---:|---|---|
-| 73 | Strong and Eventual Consistency | Phase 9 DynamoDB add-on after the primary key video |
+```text
+None.
+```
 
-Suggested add-on lab:
-
-- Understand strong consistency vs eventual consistency.
-- Review where consistency matters in read-heavy systems.
-- Use DynamoDB read operations only if the lab can stay low-cost.
-- Delete any test table after practice.
+Video `73`, Strong and Eventual Consistency, is mapped into `Phase 9 - DynamoDB`.
 
 <details>
 <summary>Live playlist snapshot from 2026-06-29</summary>

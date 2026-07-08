@@ -7,7 +7,9 @@ Current progress:
 - Video 34 complete: S3 cloud storage hands-on lab.
 - Video 35 complete: EC2 instance profile hands-on.
 - Videos 39-49 complete: S3 buckets, objects, CLI workflows, storage classes, directory buckets, lifecycle, and Intelligent-Tiering.
-- Video 50 is next: S3 data protection and durability.
+- Videos 50-54 complete: S3 data protection, versioning recovery, replication, Object Lock, and S3 security.
+- Videos 55-57 complete: IAM vs bucket policies, S3 encryption, and S3 Block Public Access.
+- Phase 8 video 58 is next: What is AWS Lambda.
 
 Phase sections:
 - `phase-7a-s3-basics/` - S3 basics and bucket/object workflows.

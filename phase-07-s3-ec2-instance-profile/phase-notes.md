@@ -421,6 +421,262 @@ Files:
 - `phase-7b-s3-storage-lifecycle/lifecycle-lab/workflow.md`
 - `phase-7b-s3-storage-lifecycle/lifecycle-lab/mistakes.md`
 
+## 50. S3 Data Protection And Durability
+
+Concept:
+- S3 durability protects object data against storage hardware failure.
+- Data protection is broader than durability.
+- Data protection includes accidental delete recovery, overwrite recovery, replication, immutable retention, encryption, access control, monitoring, and backup strategy.
+- Versioning, replication, Object Lock, lifecycle rules, encryption, Block Public Access, and IAM policies each protect a different part of the S3 workflow.
+
+Video learning:
+- Introduces S3 data protection as a full set of controls rather than one feature.
+- Separates durability from recovery, security, and compliance.
+- Prepares for versioning, replication, Object Lock, and security videos.
+
+My hands-on:
+- Expanded the Phase 7C security lab.
+- Added a data protection workflow table.
+- Documented when to use versioning, replication, Object Lock, encryption, and security controls.
+- Added cleanup and mistakes notes to avoid cost or undeletable-object surprises.
+
+Files:
+- `phase-7c-s3-data-protection-security/README.md`
+- `phase-7c-s3-data-protection-security/security-lab/README.md`
+- `phase-7c-s3-data-protection-security/security-lab/workflow.md`
+- `phase-7c-s3-data-protection-security/security-lab/mistakes.md`
+
+## 51. Recover Deleted Files With S3 Versioning
+
+Concept:
+- S3 Versioning stores multiple versions of an object in the same bucket.
+- Uploading the same key creates a new version.
+- A normal delete in a versioning-enabled bucket creates a delete marker.
+- The object can appear deleted while old versions still exist.
+- Removing the delete marker can restore visibility of the previous version.
+
+Video learning:
+- Demonstrates how deleted files can be recovered when versioning is enabled.
+- Shows the importance of object version IDs.
+- Explains why cleanup in versioned buckets requires removing old versions and delete markers.
+
+My hands-on:
+- Added versioning CLI commands.
+- Added list-object-versions examples.
+- Added recovery-by-delete-marker workflow.
+- Added cleanup guidance for old versions and delete markers.
+
+Command pattern:
+
+```bash
+aws s3api list-object-versions \
+  --bucket "$S3_BUCKET" \
+  --prefix "versioning-demo/file.txt"
+```
+
+Files:
+- `phase-7c-s3-data-protection-security/security-lab/commands.md`
+- `phase-7c-s3-data-protection-security/security-lab/workflow.md`
+- `phase-7c-s3-data-protection-security/security-lab/cleanup.md`
+- `phase-7c-s3-data-protection-security/security-lab/mistakes.md`
+
+## 52. S3 Cross-Region Replication Lab
+
+Concept:
+- S3 replication copies objects from a source bucket to a destination bucket.
+- Cross-Region Replication copies objects into a different AWS Region.
+- Same-Region Replication copies objects within the same Region.
+- Versioning must be enabled on both source and destination buckets.
+- S3 uses an IAM role to perform replication.
+- Replication is asynchronous.
+
+Video learning:
+- Shows how S3 can keep a second copy of data in another bucket.
+- Connects replication to disaster recovery, compliance, latency, and account/Region separation.
+- Reinforces cost awareness because replication duplicates objects and can add cross-Region transfer cost.
+
+My hands-on:
+- Documented source and destination bucket workflow.
+- Added replication inspection and deletion commands.
+- Added cleanup steps for source and destination test objects.
+- Added warnings that new replication rules do not automatically replicate old objects unless batch replication is planned.
+
+Files:
+- `phase-7c-s3-data-protection-security/security-lab/commands.md`
+- `phase-7c-s3-data-protection-security/security-lab/workflow.md`
+- `phase-7c-s3-data-protection-security/security-lab/cleanup.md`
+- `phase-7c-s3-data-protection-security/security-lab/mistakes.md`
+
+## 53. S3 Object Lock
+
+Concept:
+- S3 Object Lock protects object versions with a write-once-read-many model.
+- It can prevent object versions from being deleted or overwritten for a retention period or legal hold.
+- Object Lock works with S3 Versioning.
+- Governance mode can be bypassed only with special permissions.
+- Compliance mode cannot be bypassed during the retention period.
+
+Video learning:
+- Introduces immutable object protection.
+- Explains retention period, legal hold, governance mode, and compliance mode.
+- Shows why Object Lock is powerful but risky for casual learning buckets.
+
+My hands-on:
+- Added Object Lock safety notes and inspection commands.
+- Documented that Object Lock should not be enabled casually.
+- Added cleanup warnings because Object Lock is intentionally hard to undo.
+
+Beginner rule:
+
+```text
+Learn Object Lock conceptually unless the lab intentionally requires an Object Lock bucket.
+```
+
+Files:
+- `phase-7c-s3-data-protection-security/security-lab/commands.md`
+- `phase-7c-s3-data-protection-security/security-lab/workflow.md`
+- `phase-7c-s3-data-protection-security/security-lab/cleanup.md`
+- `phase-7c-s3-data-protection-security/security-lab/mistakes.md`
+
+## 54. S3 Security
+
+Concept:
+- S3 buckets and objects are private by default.
+- Public access can be introduced through ACLs, bucket policies, access point policies, or object permissions.
+- S3 Block Public Access is a protective control that helps prevent accidental public access.
+- IAM policies grant permissions to identities.
+- Bucket policies grant permissions on bucket resources.
+- Encryption, monitoring, logging, and least privilege are part of the security baseline.
+
+Video learning:
+- Summarizes S3 security controls before the deeper IAM-vs-bucket-policy topic.
+- Reinforces private-by-default thinking.
+- Prepares for bucket policy, encryption, and Block Public Access videos.
+
+My hands-on:
+- Expanded the S3 security lab.
+- Added bucket policy examples for denying insecure transport and allowing read-only access to a specific role.
+- Kept the earlier `user1` read-only IAM policy lab.
+- Added mistakes notes for accidental public access and overbroad permissions.
+
+Files:
+- `phase-7c-s3-data-protection-security/security-lab/README.md`
+- `phase-7c-s3-data-protection-security/security-lab/bucket-policy-examples.json`
+- `phase-7c-s3-data-protection-security/security-lab/user1-s3-read-only-policy.json`
+- `phase-7c-s3-data-protection-security/security-lab/mistakes.md`
+
+## Supplemental Phase 7C Topic: S3 Access Points
+
+Concept:
+- S3 Access Points are named endpoints attached to a bucket or supported FSx file system.
+- For S3 buckets, access points are used for object-level operations.
+- Each access point can have its own policy.
+- Access points help manage access to shared datasets without putting every application rule into one large bucket policy.
+- Access points can be configured for internet access or VPC-only access.
+
+Why this belongs in Phase 7C:
+- It extends the S3 security topic.
+- It prepares for IAM vs bucket policies.
+- It gives a cleaner mental model for large shared buckets and data lake access.
+
+Important permission model:
+- The access point policy must allow the request.
+- The underlying bucket must also allow the request or delegate access control to access points.
+- IAM identity policies can still allow or deny the caller.
+- Block Public Access can still block public access.
+- Access point restrictions apply only to requests made through that access point.
+
+Beginner rule:
+
+```text
+Use normal IAM and bucket policies first. Use S3 Access Points when access needs become app-specific, team-specific, or VPC-specific.
+```
+
+Files:
+- `phase-7c-s3-data-protection-security/security-lab/access-points-notes.md`
+- `phase-7c-s3-data-protection-security/security-lab/workflow.md`
+- `phase-7c-s3-data-protection-security/security-lab/cleanup.md`
+- `phase-7c-s3-data-protection-security/security-lab/mistakes.md`
+
+## 55. IAM Vs Bucket Policies
+
+Concept:
+- IAM policies are identity-based policies attached to users, groups, or roles.
+- Bucket policies are resource-based policies attached to S3 buckets.
+- Both are written in JSON policy language.
+- IAM policies answer: what can this identity do?
+- Bucket policies answer: who can access this bucket and under what conditions?
+- Explicit deny overrides allow.
+
+Video learning:
+- Compares identity-side and bucket-side S3 access control.
+- Explains why bucket policies are useful for bucket ownership, cross-account access, and resource-side guardrails.
+- Prepares for policy troubleshooting: both identity and resource permissions can be involved.
+
+My hands-on:
+- Kept the existing `user1` IAM read-only policy example.
+- Added bucket policy examples for read-only role access and deny-insecure-transport.
+- Added CLI commands to apply, view, and delete bucket policies.
+- Added mistakes notes for explicit deny and identity-vs-resource confusion.
+
+Files:
+- `phase-7c-s3-data-protection-security/security-lab/user1-s3-read-only-policy.json`
+- `phase-7c-s3-data-protection-security/security-lab/bucket-policy-examples.json`
+- `phase-7c-s3-data-protection-security/security-lab/commands.md`
+- `phase-7c-s3-data-protection-security/security-lab/mistakes.md`
+
+## 56. S3 Encryption
+
+Concept:
+- S3 encrypts new objects by default with SSE-S3.
+- SSE-S3 uses S3 managed keys.
+- SSE-KMS uses AWS KMS keys and gives more key control, CloudTrail visibility, and key policy control.
+- SSE-KMS can require extra KMS permissions such as `kms:Decrypt` and `kms:GenerateDataKey`.
+- S3 Bucket Keys can reduce KMS request cost for SSE-KMS workloads.
+- Encryption protects stored data, but it does not replace access control.
+
+Video learning:
+- Explains why encryption is a core S3 security control.
+- Shows the difference between S3-managed encryption and KMS-managed encryption.
+- Reinforces that S3 security combines encryption, permissions, and public-access controls.
+
+My hands-on:
+- Added `get-bucket-encryption` and `put-bucket-encryption` commands.
+- Added SSE-S3 upload and object inspection commands.
+- Added SSE-KMS default encryption example with S3 Bucket Key enabled.
+- Added policy example for denying uploads that do not include server-side encryption.
+
+Files:
+- `phase-7c-s3-data-protection-security/security-lab/commands.md`
+- `phase-7c-s3-data-protection-security/security-lab/bucket-policy-examples.json`
+- `phase-7c-s3-data-protection-security/security-lab/cleanup.md`
+- `phase-7c-s3-data-protection-security/security-lab/mistakes.md`
+
+## 57. S3 Block Public Access
+
+Concept:
+- S3 Block Public Access is a guardrail against accidental public exposure.
+- It can be applied at account, bucket, access point, and organization levels.
+- It can block or ignore public ACLs and public policies.
+- It does not grant access; it only blocks public access paths.
+- Beginner buckets should keep all four Block Public Access settings enabled.
+
+Video learning:
+- Shows the S3 safety layer that prevents public bucket mistakes.
+- Explains why public access can come from multiple places.
+- Reinforces that beginner labs should stay private unless the lab intentionally teaches public hosting.
+
+My hands-on:
+- Added `put-public-access-block` and `get-public-access-block` commands.
+- Added account-level public access block check with `s3control`.
+- Added mistakes notes warning against disabling Block Public Access to solve normal permission errors.
+
+Files:
+- `phase-7c-s3-data-protection-security/security-lab/commands.md`
+- `phase-7c-s3-data-protection-security/security-lab/workflow.md`
+- `phase-7c-s3-data-protection-security/security-lab/cleanup.md`
+- `phase-7c-s3-data-protection-security/security-lab/mistakes.md`
+
 ## Official References
 
 - https://docs.aws.amazon.com/AmazonS3/latest/userguide/GetStartedWithS3.html
@@ -440,6 +696,27 @@ Files:
 - https://docs.aws.amazon.com/AmazonS3/latest/userguide/how-to-set-lifecycle-configuration-intro.html
 - https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering.html
 - https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering-overview.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/data-protection.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeleteMarker.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-requirements.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-managing.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/security-best-practices.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-policy-language-overview.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/security_iam_service-with-iam.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/serv-side-encryption.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-access-points.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-vpc.html
+- https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-naming.html
 - https://docs.aws.amazon.com/cli/latest/reference/s3api/list-objects-v2.html
 - https://docs.aws.amazon.com/cli/latest/reference/s3/cp.html
 - https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html

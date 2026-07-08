@@ -1,1 +1,74 @@
-{}
+{
+  "denyInsecureTransport": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "DenyInsecureTransport",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "s3:*",
+        "Resource": [
+          "arn:aws:s3:::aws-learning-secure-bucket",
+          "arn:aws:s3:::aws-learning-secure-bucket/*"
+        ],
+        "Condition": {
+          "Bool": {
+            "aws:SecureTransport": "false"
+          }
+        }
+      }
+    ]
+  },
+  "readOnlyForSpecificRoleTemplate": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "AllowListBucketForSpecificRole",
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": "arn:aws:iam::111122223333:role/aws-learning-read-only-role"
+        },
+        "Action": "s3:ListBucket",
+        "Resource": "arn:aws:s3:::aws-learning-secure-bucket"
+      },
+      {
+        "Sid": "AllowReadObjectsForSpecificRole",
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": "arn:aws:iam::111122223333:role/aws-learning-read-only-role"
+        },
+        "Action": "s3:GetObject",
+        "Resource": "arn:aws:s3:::aws-learning-secure-bucket/*"
+      }
+    ]
+  },
+  "denyUnencryptedObjectUploads": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "DenyUploadsWithoutServerSideEncryption",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "s3:PutObject",
+        "Resource": "arn:aws:s3:::aws-learning-secure-bucket/*",
+        "Condition": {
+          "Null": {
+            "s3:x-amz-server-side-encryption": "true"
+          }
+        }
+      },
+      {
+        "Sid": "DenyUploadsWithWrongEncryption",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "s3:PutObject",
+        "Resource": "arn:aws:s3:::aws-learning-secure-bucket/*",
+        "Condition": {
+          "StringNotEquals": {
+            "s3:x-amz-server-side-encryption": "AES256"
+          }
+        }
+      }
+    ]
+  }
+}

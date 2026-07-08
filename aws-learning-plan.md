@@ -10,9 +10,9 @@ Last playlist check: `2026-06-29`
 
 Live playlist count at last check: `73 videos`
 
-Current learning position: `Phase 7C - S3 Data Protection and Durability video 50`
+Current learning position: `Phase 8A - What is AWS Lambda video 58`
 
-Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4 videos 15-23`, `Phase 5A videos 24-27`, `Phase 5B videos 28-33`, `Phase 6 videos 37-38`, `Phase 7 videos 34-35 and 39-49`, and current `Phase 9 videos 70-73 out of order`
+Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4 videos 15-23`, `Phase 5A videos 24-27`, `Phase 5B videos 28-33`, `Phase 6 videos 37-38`, `Phase 7 videos 34-35 and 39-57`, and current `Phase 9 videos 70-73 out of order`
 
 ## How To Use This Plan
 
@@ -121,7 +121,7 @@ Each lab `README.md` should answer:
 | 5A | Complete | EC2 pricing models | 24-27 | Pricing notes and cost-safety decisions |
 | 5B | Complete | EBS storage | 28-33 | EBS labs, mount workflow, and cleanup proof |
 | 6 | Complete | VPC basics and scalability | 37-38 | Default VPC inspection |
-| 7 | In progress | S3 and EC2 instance profile | 34, 35, 39-57 | S3 labs and IAM access proof |
+| 7 | Complete | S3 and EC2 instance profile | 34, 35, 39-57 | S3 labs and IAM access proof |
 | 8 | Not started | Lambda and serverless | 58, 59, 61-69 | Lambda/API/S3 trigger labs |
 | 9 | Open / current videos complete | DynamoDB | 70-73 | DynamoDB data model and CRUD |
 | Final | Not started | Portfolio project | Combined services | Final project docs |
@@ -406,6 +406,7 @@ Build:
 - S3 lifecycle lab
 - S3 versioning lab
 - S3 security lab
+- S3 Access Points supplemental notes
 - S3 bucket policy examples
 - EC2 instance profile S3 lab
 - S3 cleanup checklist

@@ -17,7 +17,7 @@ Status values:
 - `Pending` means the video was watched, but the matching lab/check is still open.
 - `Theory-only` means no AWS resource lab is expected.
 
-Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6, Phase 7 videos 34-35 and 39-49, and current Phase 9 videos 70-73 are complete. Phase 7 video 50 is next on the main path. Phase 9 remains open for future DynamoDB playlist additions.
+Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6, Phase 7 videos 34-35 and 39-57, and current Phase 9 videos 70-73 are complete. Phase 8 video 58 is next on the main path. Phase 9 remains open for future DynamoDB playlist additions.
 
 | Phase | Video Topic | Watched Status | Playlist Video | AWS Service | Lab Status | Date | Notes |
 |---|---|---|---:|---|---|---|---|
@@ -70,14 +70,14 @@ Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6,
 | Phase 7 - S3 and EC2 Instance Profile | S3 Glacier Storage Class | Complete | 47 | S3/Glacier | Theory-only | 2026-07-04 | Glacier Instant Retrieval, Flexible Retrieval, and Deep Archive documented with archive use cases, restore expectations, and cleanup/cost cautions. |
 | Phase 7 - S3 and EC2 Instance Profile | S3 Lifecycle Policies | Complete | 48 | S3 | Complete | 2026-07-04 | Lifecycle transition and expiration rules documented with disabled JSON example, prefix filter, storage-class transitions, and cleanup commands. |
 | Phase 7 - S3 and EC2 Instance Profile | S3 Intelligent-Tiering | Complete | 49 | S3/Pricing | Theory-only | 2026-07-04 | Intelligent-Tiering documented for unknown or changing access patterns, automatic access tiers, monitoring charge, and optional archive tiers. |
-| Phase 7 - S3 and EC2 Instance Profile | S3 Data Protection and Durability | Not started | 50 | S3 | Theory-only |  | Durability and protection concepts. |
-| Phase 7 - S3 and EC2 Instance Profile | Recover Deleted Files with S3 Versioning | Not started | 51 | S3 | Not started |  | Versioning recovery lab. |
-| Phase 7 - S3 and EC2 Instance Profile | S3 Cross-Region Replication Lab | Not started | 52 | S3 | Not started |  | Replication lab with cost awareness. |
-| Phase 7 - S3 and EC2 Instance Profile | S3 Object Lock | Not started | 53 | S3 | Theory-only |  | Object Lock concept and deletion impact. |
-| Phase 7 - S3 and EC2 Instance Profile | S3 Security | Not started | 54 | S3/Security | Theory-only |  | S3 security overview. |
-| Phase 7 - S3 and EC2 Instance Profile | IAM vs Bucket Policies | Not started | 55 | S3/IAM | Not started |  | Access control comparison and policy lab. |
-| Phase 7 - S3 and EC2 Instance Profile | S3 Encryption | Not started | 56 | S3/Security | Not started |  | Encryption settings lab. |
-| Phase 7 - S3 and EC2 Instance Profile | S3 Block Public Access | Not started | 57 | S3/Security | Not started |  | Public access safety lab. |
+| Phase 7 - S3 and EC2 Instance Profile | S3 Data Protection and Durability | Complete | 50 | S3 | Theory-only | 2026-07-08 | S3 durability, availability, versioning, replication, Object Lock, backups, encryption, access controls, and delete-protection mindset documented. |
+| Phase 7 - S3 and EC2 Instance Profile | Recover Deleted Files with S3 Versioning | Complete | 51 | S3 | Complete | 2026-07-08 | Versioning recovery workflow documented: enable versioning, upload versions, delete marker behavior, list object versions, recover by removing delete marker, and cleanup all versions. |
+| Phase 7 - S3 and EC2 Instance Profile | S3 Cross-Region Replication Lab | Complete | 52 | S3 | Complete | 2026-07-08 | CRR workflow documented with source/destination buckets, versioning requirement, IAM role concept, prefix/tag rules, asynchronous replication, and cost cleanup. |
+| Phase 7 - S3 and EC2 Instance Profile | S3 Object Lock | Complete | 53 | S3 | Theory-only | 2026-07-08 | Object Lock documented as WORM protection with versioning, retention modes, legal holds, governance versus compliance caution, and no-casual-create rule. |
+| Phase 7 - S3 and EC2 Instance Profile | S3 Security | Complete | 54 | S3/Security | Theory-only | 2026-07-08 | S3 security baseline documented: private by default, Block Public Access, least privilege, bucket policies, IAM policies, encryption, logging/monitoring, and Access Analyzer. |
+| Phase 7 - S3 and EC2 Instance Profile | IAM vs Bucket Policies | Complete | 55 | S3/IAM | Complete | 2026-07-08 | IAM identity policies and S3 bucket resource policies compared, with same-account, cross-account, explicit deny, principal, action, resource, and condition examples documented. |
+| Phase 7 - S3 and EC2 Instance Profile | S3 Encryption | Complete | 56 | S3/Security | Complete | 2026-07-08 | S3 default encryption, SSE-S3, SSE-KMS, KMS permissions, bucket keys, object-level encryption headers, and verification commands documented. |
+| Phase 7 - S3 and EC2 Instance Profile | S3 Block Public Access | Complete | 57 | S3/Security | Complete | 2026-07-08 | S3 Block Public Access documented at account, bucket, and access point levels, including four settings, override behavior, safe checks, and beginner keep-enabled rule. |
 | Phase 7 - S3 and EC2 Instance Profile | EC2 Instance Profile Hands-on | Complete | 35 | IAM/EC2/S3 | Complete | 2026-07-03 | EC2-to-S3 access with IAM role and instance profile documented, including trust policy, read-only S3 policy, temporary credentials, testing, and cleanup. |
 | Phase 8 - Lambda and Serverless | What is AWS Lambda? | Not started | 58 | Lambda | Theory-only |  | Lambda concepts and serverless basics. |
 | Phase 8 - Lambda and Serverless | Serverless Web API using Lambda and API Gateway | Not started | 59 | Lambda/API Gateway | Not started |  | API Gateway and Lambda lab. |

@@ -12,7 +12,7 @@ Live playlist count at last check: `73 videos`
 
 Current learning position: `Phase 8B - Serverless Web API using Lambda and API Gateway video 59`
 
-Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4 videos 15-23`, `Phase 5A videos 24-27`, `Phase 5B videos 28-33`, `Phase 6 videos 37-38`, `Phase 7 videos 34-35 and 39-57`, `Phase 8A videos 58, 61, 62, 67, 68, 69`, and current `Phase 9 videos 70-73 out of order`
+Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4 videos 15-23`, `Phase 5A videos 24-27`, `Phase 5B videos 28-33`, `Phase 6 videos 37-38`, `Phase 7 videos 34-35 and 39-57`, `Phase 8A videos 58, 61, 62, 67, 68, 69`, `Phase 8C videos 63, 64, 66`, and current `Phase 9 videos 70-73 out of order`
 
 ## How To Use This Plan
 
@@ -440,6 +440,8 @@ Goal: Learn Lambda basics, CloudWatch logs, API Gateway, S3 triggers, boto3, and
 | 65 | Complete serverless API with API Gateway, Lambda, and DynamoDB |
 
 ### Phase 8C - Python And File Processing
+
+Status: Complete on 2026-07-11.
 
 | Video | Topic |
 |---:|---|

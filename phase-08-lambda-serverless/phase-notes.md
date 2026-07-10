@@ -193,6 +193,75 @@ Files:
 - `phase-8a-lambda-basics-operations/lambda-performance-layers-config/secrets-manager-notes.md`
 - `phase-8a-lambda-basics-operations/lambda-performance-layers-config/mistakes.md`
 
+## 63. Handle Large Files In Lambda
+
+Concept:
+- Lambda provides temporary disk space at `/tmp` for files needed during an invocation.
+- Ephemeral storage is 512 MB by default and can be configured up to 10 GB.
+- Data in `/tmp` is not durable storage. It may remain available when an execution environment is reused, but the function must not depend on it surviving.
+- Increasing ephemeral storage can add cost, so it should be sized for the workload instead of set to the maximum automatically.
+
+Video learning:
+- Shows where ephemeral storage is configured in a Lambda function.
+- Connects larger temporary storage with ZIP extraction, image/video processing, data processing, machine-learning models, and local caching.
+- Explains that large objects should normally remain in S3 and only the required data should be downloaded or streamed.
+- Reinforces the difference between Lambda memory, deployment package size, and `/tmp` disk space.
+
+My hands-on:
+- Documented a safe S3 file-processing flow that passes the bucket and object key through an event instead of passing the file itself.
+- Kept the sample handler focused on object metadata and CloudWatch logging.
+- Added warnings about loading an entire large file into memory and about relying on `/tmp` as permanent storage.
+
+## 64. Python Coding In AWS With boto3
+
+Concept:
+- boto3 is the official AWS SDK for Python.
+- A boto3 client maps Python method calls to AWS service API operations.
+- API responses are returned as Python dictionaries and lists, so scripts need to read the documented response structure.
+- boto3 uses the normal AWS credential chain, including environment variables, shared AWS CLI profiles, IAM roles, and other supported providers.
+
+Video learning:
+- Shows installing boto3 with `pip`, importing it, and creating a service client.
+- Demonstrates calling an AWS API and reading fields from its response.
+- Uses boto3 documentation to understand method arguments and response keys.
+- Explains that local code needs boto3 installed, while the managed Python Lambda runtime includes the SDK.
+
+My hands-on:
+- Created a repository virtual environment and tracked boto3 in `requirements.txt`.
+- Used `boto3.client("s3")` and `list_buckets()` to list account buckets.
+- Used `get_bucket_location()` to print each bucket's Region.
+- Learned that `LocationConstraint` is `None` for `us-east-1` and normalized that value in the script.
+- Used `AWS_PROFILE` so the script selects credentials without putting access keys in source code.
+
+Command pattern:
+
+```bash
+AWS_PROFILE=user1 python phase-08-lambda-serverless/phase-8c-python-file-processing/s3-file-processor/boto3_s3_buckets.py
+```
+
+## 66. Automate File Processing With S3 And Lambda
+
+Concept:
+- S3 Event Notifications can invoke Lambda when matching events happen in a bucket.
+- Object-created events can include uploads performed with PUT, POST, COPY, or multipart upload completion.
+- The event contains details such as the bucket name, encoded object key, event name, size, and time.
+- Prefix and suffix filters reduce unnecessary invocations by selecting paths or file types.
+
+Video learning:
+- Creates an S3-to-Lambda trigger for uploaded objects.
+- Reads the bucket name and object key from the event's `Records` list.
+- Prints processing information and verifies it in CloudWatch Logs.
+- Demonstrates event-type selection and prefix/suffix filtering.
+
+My hands-on:
+- Added a Python handler that loops over S3 records, URL-decodes each key, and logs the source object.
+- Added least-privilege starter permissions for CloudWatch Logs and `s3:GetObject`.
+- Documented the flow from upload to S3 event, Lambda invocation, and CloudWatch log entry.
+- Added cleanup steps for notifications, Lambda permissions, the function, log group, IAM role, and S3 test data.
+
+Safety note:
+- Avoid writing generated files back into the same watched prefix. That can trigger the function repeatedly and create unexpected cost.
+
 ## References
 
 - AWS Lambda Developer Guide: https://docs.aws.amazon.com/lambda/latest/dg/welcome.html
@@ -204,3 +273,6 @@ Files:
 - Provisioned concurrency: https://docs.aws.amazon.com/lambda/latest/dg/provisioned-concurrency.html
 - AWS Secrets Manager: https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html
 - Secrets Manager with Lambda: https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets_lambda.html
+- Lambda ephemeral storage: https://docs.aws.amazon.com/lambda/latest/dg/configuration-ephemeral-storage.html
+- boto3 S3 `list_buckets`: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3/client/list_buckets.html
+- Lambda with S3: https://docs.aws.amazon.com/lambda/latest/dg/with-s3.html

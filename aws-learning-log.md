@@ -17,7 +17,7 @@ Status values:
 - `Pending` means the video was watched, but the matching lab/check is still open.
 - `Theory-only` means no AWS resource lab is expected.
 
-Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6, Phase 7 videos 34-35 and 39-57, Phase 8A videos 58, 61, 62, 67, 68, 69, and current Phase 9 videos 70-73 are complete. Phase 8B video 59 is next on the main path. Phase 9 remains open for future DynamoDB playlist additions.
+Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6, Phase 7 videos 34-35 and 39-57, Phase 8A videos 58, 61, 62, 67, 68, 69, Phase 8C videos 63, 64, 66, and current Phase 9 videos 70-73 are complete. Phase 8B video 59 is next on the main path. Phase 9 remains open for future DynamoDB playlist additions.
 
 | Phase | Video Topic | Watched Status | Playlist Video | AWS Service | Lab Status | Date | Notes |
 |---|---|---|---:|---|---|---|---|
@@ -87,9 +87,9 @@ Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6,
 | Phase 8 - Lambda and Serverless | Sensitive Configuration Data in Lambda | Complete | 69 | Lambda/Security | Complete | 2026-07-11 | Avoided hardcoded secrets, used environment variables for non-sensitive config, documented Secrets Manager/SSM pattern, IAM permission requirements, and no-secret-logging rule. |
 | Phase 8 - Lambda and Serverless | Serverless Web API using Lambda and API Gateway | Not started | 59 | Lambda/API Gateway | Not started |  | API Gateway and Lambda lab. |
 | Phase 8 - Lambda and Serverless | Complete Serverless API with API Gateway, Lambda, DynamoDB | Not started | 65 | Lambda/API Gateway/DynamoDB | Not started |  | Full serverless API lab. |
-| Phase 8 - Lambda and Serverless | Handle Large Files in Lambda | Not started | 63 | Lambda | Not started |  | Lambda limits and file processing patterns. |
-| Phase 8 - Lambda and Serverless | Python Coding in AWS with boto3 | Not started | 64 | Python/boto3 | Not started |  | boto3 scripting practice. |
-| Phase 8 - Lambda and Serverless | Automate File Processing with S3 and Lambda | Not started | 66 | S3/Lambda | Not started |  | S3 event trigger lab. |
+| Phase 8 - Lambda and Serverless | Handle Large Files in Lambda | Complete | 63 | Lambda | Complete | 2026-07-11 | Lambda ephemeral `/tmp` storage, 512 MB default, configurable storage up to 10 GB, large-file use cases, cost awareness, and safe processing patterns documented. |
+| Phase 8 - Lambda and Serverless | Python Coding in AWS with boto3 | Complete | 64 | Python/boto3 | Complete | 2026-07-11 | boto3 setup, service clients, AWS API responses, S3 bucket listing, bucket Region lookup, profile credentials, and virtual environment workflow practised. |
+| Phase 8 - Lambda and Serverless | Automate File Processing with S3 and Lambda | Complete | 66 | S3/Lambda | Complete | 2026-07-11 | S3 event notifications, object-created events, prefix/suffix filters, object-key extraction, CloudWatch logs, IAM, and cleanup documented. |
 | Phase 9 - DynamoDB | Master AWS DynamoDB | Complete | 70 | DynamoDB | Complete | 2026-07-06 | DynamoDB as managed NoSQL database documented: tables, items, attributes, schemaless design outside keys, primary key requirement, on-demand table setup, and safe cleanup. |
 | Phase 9 - DynamoDB | DynamoDB Data Types | Complete | 71 | DynamoDB | Theory-only | 2026-07-06 | Scalar, document, and set data types documented with CLI typed-JSON examples, number/string rules, empty-set warning, and item-size awareness. |
 | Phase 9 - DynamoDB | DynamoDB Primary Key | Complete | 72 | DynamoDB | Complete | 2026-07-06 | Partition key, sort key, composite primary key, key schema, query pattern, and beginner table design lab documented. |

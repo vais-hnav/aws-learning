@@ -17,7 +17,7 @@ Status values:
 - `Pending` means the video was watched, but the matching lab/check is still open.
 - `Theory-only` means no AWS resource lab is expected.
 
-Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6, Phase 7 videos 34-35 and 39-57, and current Phase 9 videos 70-73 are complete. Phase 8 video 58 is next on the main path. Phase 9 remains open for future DynamoDB playlist additions.
+Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6, Phase 7 videos 34-35 and 39-57, Phase 8A videos 58, 61, 62, 67, 68, 69, and current Phase 9 videos 70-73 are complete. Phase 8B video 59 is next on the main path. Phase 9 remains open for future DynamoDB playlist additions.
 
 | Phase | Video Topic | Watched Status | Playlist Video | AWS Service | Lab Status | Date | Notes |
 |---|---|---|---:|---|---|---|---|
@@ -79,17 +79,17 @@ Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6,
 | Phase 7 - S3 and EC2 Instance Profile | S3 Encryption | Complete | 56 | S3/Security | Complete | 2026-07-08 | S3 default encryption, SSE-S3, SSE-KMS, KMS permissions, bucket keys, object-level encryption headers, and verification commands documented. |
 | Phase 7 - S3 and EC2 Instance Profile | S3 Block Public Access | Complete | 57 | S3/Security | Complete | 2026-07-08 | S3 Block Public Access documented at account, bucket, and access point levels, including four settings, override behavior, safe checks, and beginner keep-enabled rule. |
 | Phase 7 - S3 and EC2 Instance Profile | EC2 Instance Profile Hands-on | Complete | 35 | IAM/EC2/S3 | Complete | 2026-07-03 | EC2-to-S3 access with IAM role and instance profile documented, including trust policy, read-only S3 policy, temporary credentials, testing, and cleanup. |
-| Phase 8 - Lambda and Serverless | What is AWS Lambda? | Not started | 58 | Lambda | Theory-only |  | Lambda concepts and serverless basics. |
+| Phase 8 - Lambda and Serverless | What is AWS Lambda? | Complete | 58 | Lambda | Complete | 2026-07-11 | Lambda vs EC2, event-driven compute, short-lived tasks, scaling behavior, first function demo, and beginner decision rule documented. |
+| Phase 8 - Lambda and Serverless | Write and Upload Lambda Function with CloudWatch Logs | Complete | 61 | Lambda/CloudWatch | Complete | 2026-07-11 | Python handler, inline and ZIP upload paths, test events, print/logging output, CloudWatch log groups, log streams, execution role permissions, and log cleanup documented. |
+| Phase 8 - Lambda and Serverless | Lambda Cost and Memory Performance | Complete | 62 | Lambda/Pricing | Complete | 2026-07-11 | Request pricing, duration pricing, GB-second mental model, memory-to-CPU relationship, memory tuning, billed duration, and cost/performance tradeoff documented. |
+| Phase 8 - Lambda and Serverless | Lambda Cold Start | Complete | 67 | Lambda | Complete | 2026-07-11 | Cold start vs warm start, execution environment initialization, package/runtime/VPC/init-code causes, CloudWatch `Init Duration`, and provisioned concurrency caution documented. |
+| Phase 8 - Lambda and Serverless | Lambda Layers | Complete | 68 | Lambda | Complete | 2026-07-11 | Lambda layer purpose, ZIP structure, `/opt/python` import path, layer versions, sharing dependencies, package-size tradeoffs, and layer cleanup documented. |
+| Phase 8 - Lambda and Serverless | Sensitive Configuration Data in Lambda | Complete | 69 | Lambda/Security | Complete | 2026-07-11 | Avoided hardcoded secrets, used environment variables for non-sensitive config, documented Secrets Manager/SSM pattern, IAM permission requirements, and no-secret-logging rule. |
 | Phase 8 - Lambda and Serverless | Serverless Web API using Lambda and API Gateway | Not started | 59 | Lambda/API Gateway | Not started |  | API Gateway and Lambda lab. |
-| Phase 8 - Lambda and Serverless | Write and Upload Lambda Function with CloudWatch Logs | Not started | 61 | Lambda/CloudWatch | Not started |  | Basic Lambda deployment and log viewing. |
-| Phase 8 - Lambda and Serverless | Lambda Cost and Memory Performance | Not started | 62 | Lambda/Pricing | Theory-only |  | Lambda pricing and memory tuning notes. |
-| Phase 8 - Lambda and Serverless | Handle Large Files in Lambda | Not started | 63 | Lambda | Theory-only |  | Lambda limits and file processing patterns. |
-| Phase 8 - Lambda and Serverless | Python Coding in AWS with boto3 | Not started | 64 | Python/boto3 | Not started |  | boto3 scripting practice. |
 | Phase 8 - Lambda and Serverless | Complete Serverless API with API Gateway, Lambda, DynamoDB | Not started | 65 | Lambda/API Gateway/DynamoDB | Not started |  | Full serverless API lab. |
+| Phase 8 - Lambda and Serverless | Handle Large Files in Lambda | Not started | 63 | Lambda | Not started |  | Lambda limits and file processing patterns. |
+| Phase 8 - Lambda and Serverless | Python Coding in AWS with boto3 | Not started | 64 | Python/boto3 | Not started |  | boto3 scripting practice. |
 | Phase 8 - Lambda and Serverless | Automate File Processing with S3 and Lambda | Not started | 66 | S3/Lambda | Not started |  | S3 event trigger lab. |
-| Phase 8 - Lambda and Serverless | Lambda Cold Start | Not started | 67 | Lambda | Theory-only |  | Cold start concept and mitigation notes. |
-| Phase 8 - Lambda and Serverless | Lambda Layers | Not started | 68 | Lambda | Not started |  | Layer packaging lab. |
-| Phase 8 - Lambda and Serverless | Sensitive Configuration Data in Lambda | Not started | 69 | Lambda/Security | Not started |  | Environment/configuration safety lab. |
 | Phase 9 - DynamoDB | Master AWS DynamoDB | Complete | 70 | DynamoDB | Complete | 2026-07-06 | DynamoDB as managed NoSQL database documented: tables, items, attributes, schemaless design outside keys, primary key requirement, on-demand table setup, and safe cleanup. |
 | Phase 9 - DynamoDB | DynamoDB Data Types | Complete | 71 | DynamoDB | Theory-only | 2026-07-06 | Scalar, document, and set data types documented with CLI typed-JSON examples, number/string rules, empty-set warning, and item-size awareness. |
 | Phase 9 - DynamoDB | DynamoDB Primary Key | Complete | 72 | DynamoDB | Complete | 2026-07-06 | Partition key, sort key, composite primary key, key schema, query pattern, and beginner table design lab documented. |

@@ -10,9 +10,9 @@ Last playlist check: `2026-06-29`
 
 Live playlist count at last check: `73 videos`
 
-Current learning position: `Phase 8A - What is AWS Lambda video 58`
+Current learning position: `Phase 8B - Serverless Web API using Lambda and API Gateway video 59`
 
-Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4 videos 15-23`, `Phase 5A videos 24-27`, `Phase 5B videos 28-33`, `Phase 6 videos 37-38`, `Phase 7 videos 34-35 and 39-57`, and current `Phase 9 videos 70-73 out of order`
+Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4 videos 15-23`, `Phase 5A videos 24-27`, `Phase 5B videos 28-33`, `Phase 6 videos 37-38`, `Phase 7 videos 34-35 and 39-57`, `Phase 8A videos 58, 61, 62, 67, 68, 69`, and current `Phase 9 videos 70-73 out of order`
 
 ## How To Use This Plan
 

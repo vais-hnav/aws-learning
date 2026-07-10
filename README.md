@@ -24,6 +24,9 @@ A hands-on AWS learning repository built around a video-to-lab workflow. Each ph
 | Phase 5B | EBS storage | Complete |
 | Phase 6 | VPC and scalability | Complete |
 | Phase 7 | S3 and EC2 instance profile | Complete |
+| Phase 8A | Lambda basics, logs, cost, cold starts, layers, configuration | Complete |
+| Phase 8B | Serverless API patterns | Next |
+| Phase 8C | Python/boto3 and S3 Lambda triggers | Not started |
 | Phase 9 | DynamoDB | Open / current videos 70-73 complete out of order |
 
 ## Learning Workflow

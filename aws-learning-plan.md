@@ -559,26 +559,6 @@ Next learning sequence:
 The detailed build order, safety gates, and expected repository proof are in
 `post-playlist-plan.md`.
 
-## Playlist Updates
-
-This section is for future playlist drift only. It preserves the phase plan while still leaving room for new videos from the ongoing playlist.
-
-Last checked against the live playlist on `2026-07-12`.
-
-Current live playlist count at last check: `73 videos`.
-
-Current unmapped videos:
-
-```text
-None.
-```
-
-Video `73`, Strong and Eventual Consistency, is mapped into `Phase 9 - DynamoDB`.
-
-All currently published playlist videos are watched and mapped. Phase 9 remains
-open so future DynamoDB additions can be inserted there without closing or
-rewriting the original plan.
-
 <details>
 <summary>Live playlist snapshot from 2026-06-29</summary>
 

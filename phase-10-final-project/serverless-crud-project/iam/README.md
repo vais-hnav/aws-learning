@@ -17,7 +17,7 @@ Attached AWS managed policy:
 - `AWSLambdaBasicExecutionRole` grants the standard CloudWatch Logs permissions
   needed to create log groups/streams and write log events.
 
-Inline policy: `lambda-dynamodb-policy.json`
+Inline policy: `lambda-dynamodb_iam-role-policy.json`
 
 This policy grants the six functions `Scan`, `Query`, `GetItem`, `PutItem`,
 `UpdateItem`, and `DeleteItem` on the `Tasks` table and its indexes. It does not

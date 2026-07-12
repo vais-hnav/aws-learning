@@ -9,6 +9,7 @@ A hands-on AWS learning repository built around a video-to-lab workflow. Each ph
 | Resource | Description |
 |---|---|
 | [`aws-learning-plan.md`](./aws-learning-plan.md) | Phase-wise roadmap, playlist mapping, safety gates, and project plan |
+| [`post-playlist-plan.md`](./post-playlist-plan.md) | Next roadmap for scaling, databases, monitoring, networking, DNS, and infrastructure as code |
 | [`aws-learning-log.md`](./aws-learning-log.md) | Progress log for completed videos, labs, notes, and cleanup |
 | [Notion Dashboard](https://sage-handstand-5f9.notion.site/3860514ccd8e80d6879cfae61295e5cd?v=3860514ccd8e807eaa71000cd24b45a0&source=copy_link) | Live progress tracker synced with the learning log |
 
@@ -25,9 +26,11 @@ A hands-on AWS learning repository built around a video-to-lab workflow. Each ph
 | Phase 6 | VPC and scalability | Complete |
 | Phase 7 | S3 and EC2 instance profile | Complete |
 | Phase 8A | Lambda basics, logs, cost, cold starts, layers, configuration | Complete |
-| Phase 8B | Serverless API patterns | Next |
+| Phase 8B | Serverless API patterns | Complete |
 | Phase 8C | Python/boto3 and S3 Lambda triggers | Complete |
-| Phase 9 | DynamoDB | Open / current videos 70-73 complete out of order |
+| Phase 9 | DynamoDB | Current videos complete; open for additions |
+| Phase 10 | Serverless Tasks CRUD API | Complete |
+| Phase 11 | EC2 application deployment and operations | Next |
 
 ## Learning Workflow
 
@@ -66,10 +69,12 @@ aws-learning/
 │   └── phase-8c-python-file-processing/
 ├── phase-09-dynamodb/
 ├── phase-10-final-project/
+│   └── serverless-crud-project/
 ├── cleanup-guides/
 ├── notion-scripts/
 ├── aws-learning-log.md
-└── aws-learning-plan.md
+├── aws-learning-plan.md
+└── post-playlist-plan.md
 ```
 
 Top-level learning folders are named by phase so the repo matches the roadmap and Notion tracker.

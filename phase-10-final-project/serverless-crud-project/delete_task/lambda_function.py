@@ -1,0 +1,40 @@
+import json
+
+import boto3
+
+from config import TABLE_NAME
+
+
+dynamodb = boto3.resource("dynamodb", region_name="ap-south-2")
+table = dynamodb.Table(TABLE_NAME)
+
+
+def response(status_code, payload):
+    return {
+        "statusCode": status_code,
+        "headers": {"Content-Type": "application/json"},
+        "body": json.dumps(payload, indent=2, default=str),
+    }
+
+
+def lambda_handler(event, context):
+    task_id = (event.get("pathParameters") or {}).get("id")
+    if not task_id:
+        return response(400, {"message": "Task id is required"})
+
+    result = table.delete_item(
+        Key={"id": task_id},
+        ReturnValues="ALL_OLD",
+    )
+    item = result.get("Attributes")
+
+    if item is None:
+        return response(404, {"message": "Task not found"})
+
+    return response(
+        200,
+        {
+            "message": "Task deleted successfully",
+            "item": item,
+        },
+    )

@@ -193,6 +193,59 @@ Files:
 - `phase-8a-lambda-basics-operations/lambda-performance-layers-config/secrets-manager-notes.md`
 - `phase-8a-lambda-basics-operations/lambda-performance-layers-config/mistakes.md`
 
+## 59. Serverless Web API Using Lambda And API Gateway
+
+Concept:
+- API Gateway gives Lambda an HTTP interface with resources, methods, stages,
+  and a public invoke URL.
+- Lambda proxy integration sends request data in `event` and expects a response
+  containing `statusCode`, `headers`, and a string `body`.
+- GET and POST demonstrate reading requests and returning proper JSON responses.
+
+Video learning:
+- Builds a serverless web API from scratch with Lambda and API Gateway.
+- Creates GET and POST operations and connects them to Lambda.
+- Explains the Lambda event and proxy response format.
+- Tests the API with Postman and deploys the REST API.
+- Covers common integration and response-format mistakes.
+
+My hands-on:
+- Used the pattern as the HTTP foundation for the Phase 10 Tasks API.
+- Built `/tasks` and `/tasks/{id}` resources with six methods/functions.
+- Standardized JSON response headers, messages, and status codes.
+- Added direct Lambda test events and curl endpoint tests.
+
+Files:
+- `phase-8b-serverless-app-patterns/phase-notes.md`
+- `phase-8b-serverless-app-patterns/serverless-web-api/workflow.md`
+- `../phase-10-final-project/serverless-crud-project/`
+
+## 65. Complete Serverless API With API Gateway, Lambda, And DynamoDB
+
+Concept:
+- DynamoDB stores data between Lambda invocations.
+- boto3 maps Python calls such as `put_item` to DynamoDB API operations.
+- The Lambda execution role supplies temporary runtime credentials and must be
+  allowed to access the target table.
+
+Video learning:
+- Creates a DynamoDB table and defines its primary key.
+- Configures the IAM role needed for Lambda-to-DynamoDB access.
+- Writes Python boto3 code to store an item with `put_item`.
+- Connects API Gateway, Lambda, and DynamoDB into one request flow.
+
+My hands-on:
+- Created the `Tasks` table with string partition key `id`.
+- Expanded the write example into GET, POST, PUT, PATCH, and DELETE operations.
+- Added a shared Lambda layer for `TABLE_NAME`.
+- Used a Lambda role with CloudWatch Logs and table-level DynamoDB permissions.
+- Used a separate IAM user project policy to create and configure the resources.
+
+Files:
+- `phase-8b-serverless-app-patterns/phase-notes.md`
+- `../phase-10-final-project/serverless-crud-project/project-notes.md`
+- `../phase-10-final-project/serverless-crud-project/iam/README.md`
+
 ## 63. Handle Large Files In Lambda
 
 Concept:

@@ -17,7 +17,7 @@ Status values:
 - `Pending` means the video was watched, but the matching lab/check is still open.
 - `Theory-only` means no AWS resource lab is expected.
 
-Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6, Phase 7 videos 34-35 and 39-57, Phase 8A videos 58, 61, 62, 67, 68, 69, Phase 8C videos 63, 64, 66, and current Phase 9 videos 70-73 are complete. Phase 8B video 59 is next on the main path. Phase 9 remains open for future DynamoDB playlist additions.
+Current status: All 73 currently published playlist videos and the Phase 10 Serverless Tasks CRUD API project are complete. Phase 9 remains open for future DynamoDB playlist additions. Post-playlist Phase 11 is next.
 
 | Phase | Video Topic | Watched Status | Playlist Video | AWS Service | Lab Status | Date | Notes |
 |---|---|---|---:|---|---|---|---|
@@ -85,8 +85,8 @@ Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6,
 | Phase 8 - Lambda and Serverless | Lambda Cold Start | Complete | 67 | Lambda | Complete | 2026-07-11 | Cold start vs warm start, execution environment initialization, package/runtime/VPC/init-code causes, CloudWatch `Init Duration`, and provisioned concurrency caution documented. |
 | Phase 8 - Lambda and Serverless | Lambda Layers | Complete | 68 | Lambda | Complete | 2026-07-11 | Lambda layer purpose, ZIP structure, `/opt/python` import path, layer versions, sharing dependencies, package-size tradeoffs, and layer cleanup documented. |
 | Phase 8 - Lambda and Serverless | Sensitive Configuration Data in Lambda | Complete | 69 | Lambda/Security | Complete | 2026-07-11 | Avoided hardcoded secrets, used environment variables for non-sensitive config, documented Secrets Manager/SSM pattern, IAM permission requirements, and no-secret-logging rule. |
-| Phase 8 - Lambda and Serverless | Serverless Web API using Lambda and API Gateway | Not started | 59 | Lambda/API Gateway | Not started |  | API Gateway and Lambda lab. |
-| Phase 8 - Lambda and Serverless | Complete Serverless API with API Gateway, Lambda, DynamoDB | Not started | 65 | Lambda/API Gateway/DynamoDB | Not started |  | Full serverless API lab. |
+| Phase 8 - Lambda and Serverless | Serverless Web API using Lambda and API Gateway | Complete | 59 | Lambda/API Gateway | Complete | 2026-07-12 | Built the API pattern with REST resources and methods, Lambda proxy events/responses, GET/POST foundations, JSON formatting, deployment-stage testing, and CloudWatch debugging; extended it in the Phase 10 Tasks API. |
+| Phase 8 - Lambda and Serverless | Complete Serverless API with API Gateway, Lambda, DynamoDB | Complete | 65 | Lambda/API Gateway/DynamoDB | Complete | 2026-07-12 | Built a serverless Tasks CRUD API with DynamoDB, six Lambda handlers, boto3 operations, a shared configuration layer, API Gateway routes, a Lambda execution role, and a separate IAM user project policy. |
 | Phase 8 - Lambda and Serverless | Handle Large Files in Lambda | Complete | 63 | Lambda | Complete | 2026-07-11 | Lambda ephemeral `/tmp` storage, 512 MB default, configurable storage up to 10 GB, large-file use cases, cost awareness, and safe processing patterns documented. |
 | Phase 8 - Lambda and Serverless | Python Coding in AWS with boto3 | Complete | 64 | Python/boto3 | Complete | 2026-07-11 | boto3 setup, service clients, AWS API responses, S3 bucket listing, bucket Region lookup, profile credentials, and virtual environment workflow practised. |
 | Phase 8 - Lambda and Serverless | Automate File Processing with S3 and Lambda | Complete | 66 | S3/Lambda | Complete | 2026-07-11 | S3 event notifications, object-created events, prefix/suffix filters, object-key extraction, CloudWatch logs, IAM, and cleanup documented. |
@@ -94,3 +94,4 @@ Current status: Phase 1, Phase 2, Phase 3, Phase 4, Phase 5A, Phase 5B, Phase 6,
 | Phase 9 - DynamoDB | DynamoDB Data Types | Complete | 71 | DynamoDB | Theory-only | 2026-07-06 | Scalar, document, and set data types documented with CLI typed-JSON examples, number/string rules, empty-set warning, and item-size awareness. |
 | Phase 9 - DynamoDB | DynamoDB Primary Key | Complete | 72 | DynamoDB | Complete | 2026-07-06 | Partition key, sort key, composite primary key, key schema, query pattern, and beginner table design lab documented. |
 | Phase 9 - DynamoDB | Strong and Eventual Consistency | Complete | 73 | DynamoDB | Theory-only | 2026-07-06 | Eventually consistent reads, strongly consistent reads with ConsistentRead, GSI/stream limitations, global table consistency, and cost tradeoff documented. |
+| Phase 10 - Final Project | Serverless Tasks CRUD API | Complete |  | API Gateway/Lambda/DynamoDB/IAM/CloudWatch | Complete | 2026-07-12 | Completed a six-function Tasks CRUD API with GET, POST, PUT, PATCH, and DELETE routes, a shared Lambda layer, formatted responses, DynamoDB conditions and pagination, separate runtime/user IAM policies, testing commands, notes, and cleanup guidance. |

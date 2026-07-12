@@ -1,6 +1,7 @@
 .env
 .aws/
 .codex-reference/
+.DS_Store
 *.pem
 .venv/
 __pycache__/

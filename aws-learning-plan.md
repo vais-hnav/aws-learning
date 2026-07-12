@@ -6,13 +6,13 @@ Playlist: https://www.youtube.com/playlist?list=PLoE0WgvMazmwyv78EAM_I39IWZtJ_lh
 
 Notion dashboard: https://sage-handstand-5f9.notion.site/3860514ccd8e80d6879cfae61295e5cd?v=3860514ccd8e807eaa71000cd24b45a0&source=copy_link
 
-Last playlist check: `2026-06-29`
+Last playlist check: `2026-07-12`
 
 Live playlist count at last check: `73 videos`
 
-Current learning position: `Phase 8B - Serverless Web API using Lambda and API Gateway video 59`
+Current learning position: `Post-playlist Phase 11 - EC2 Application Deployment And Operations`
 
-Completed so far: `Phase 1`, `Phase 2`, `Phase 3`, `Phase 4 videos 15-23`, `Phase 5A videos 24-27`, `Phase 5B videos 28-33`, `Phase 6 videos 37-38`, `Phase 7 videos 34-35 and 39-57`, `Phase 8A videos 58, 61, 62, 67, 68, 69`, `Phase 8C videos 63, 64, 66`, and current `Phase 9 videos 70-73 out of order`
+Completed so far: all `73` currently published playlist videos mapped across `Phase 1` through `Phase 9`, plus the `Phase 10` Serverless Tasks CRUD API project. Phase 9 remains open for future DynamoDB videos added to the ongoing playlist.
 
 ## How To Use This Plan
 
@@ -83,9 +83,11 @@ aws-learning/
 │   └── phase-8c-python-file-processing/
 ├── phase-09-dynamodb/
 ├── phase-10-final-project/
+│   └── serverless-crud-project/
 ├── cleanup-guides/
 ├── aws-learning-log.md
-└── aws-learning-plan.md
+├── aws-learning-plan.md
+└── post-playlist-plan.md
 ```
 
 Recommended lab folder shape:
@@ -122,9 +124,9 @@ Each lab `README.md` should answer:
 | 5B | Complete | EBS storage | 28-33 | EBS labs, mount workflow, and cleanup proof |
 | 6 | Complete | VPC basics and scalability | 37-38 | Default VPC inspection |
 | 7 | Complete | S3 and EC2 instance profile | 34, 35, 39-57 | S3 labs and IAM access proof |
-| 8 | Not started | Lambda and serverless | 58, 59, 61-69 | Lambda/API/S3 trigger labs |
+| 8 | Complete | Lambda and serverless | 58, 59, 61-69 | Lambda/API/S3 trigger labs |
 | 9 | Open / current videos complete | DynamoDB | 70-73 | DynamoDB data model and CRUD |
-| Final | Not started | Portfolio project | Combined services | Final project docs |
+| 10 | Complete | Serverless Tasks CRUD API | Combined services | API code, IAM policies, tests, and project docs |
 
 ## Phase 1 - AWS Foundation
 
@@ -499,14 +501,25 @@ Safety rules:
 
 ## Final Project
 
-Goal: Combine the services into portfolio-ready projects with clear GitHub proof.
+Goal: Combine the completed services into a portfolio-ready serverless CRUD API
+with clear GitHub proof.
 
-Project options:
+Active project:
 
-| Project | Services |
-|---|---|
-| Serverless file processing pipeline | S3, Lambda, IAM, CloudWatch |
-| Serverless notes API | API Gateway, Lambda, DynamoDB, IAM, CloudWatch |
+| Project | Services | Status |
+|---|---|---|
+| Serverless Tasks CRUD API | API Gateway, Lambda, Lambda Layers, DynamoDB, IAM, CloudWatch | Complete |
+
+API operations:
+
+| Method | Route | Lambda function |
+|---|---|---|
+| `GET` | `/tasks` | `get_tasks` |
+| `POST` | `/tasks` | `create_task` |
+| `GET` | `/tasks/{id}` | `get_task` |
+| `PUT` | `/tasks/{id}` | `put_task` |
+| `PATCH` | `/tasks/{id}` | `update_task` |
+| `DELETE` | `/tasks/{id}` | `delete_task` |
 
 Final project docs:
 
@@ -519,14 +532,38 @@ Final project docs:
 
 Safety rules:
 
-- Every final project must include a cleanup guide before deployment.
+- The final project must include cleanup instructions before deployment.
 - Do not leave public endpoints, buckets, Lambda functions, or DynamoDB tables running after practice unless intentionally maintained.
+
+## Post-Playlist Roadmap
+
+The currently published playlist is complete. New playlist videos will still be
+added to their existing phase when they appear, without changing the completed
+base plan.
+
+Next learning sequence:
+
+| Phase | Topic | Main proof |
+|---:|---|---|
+| 11 | EC2 application deployment and operations | Nginx, Node application, SSH, and security-group lab |
+| 12 | Load balancing and automatic scaling | ALB, target group, launch template, and Auto Scaling Group |
+| 13 | Deeper VPC networking | Custom VPC with public/private subnets and routing |
+| 14 | S3 application integration | Private file uploader using an IAM role or presigned URLs |
+| 15 | RDS managed databases | Private PostgreSQL/MySQL connection and backup concepts |
+| 16 | SQS and asynchronous processing | Producer, consumer, retry, and dead-letter queue |
+| 17 | CloudWatch monitoring | Metrics, logs, alarms, dashboard, and notifications |
+| 18 | Route 53 and DNS | Records, hosted-zone concepts, and application routing |
+| 19 | Terraform infrastructure as code | Repeatable plan, apply, state, and destroy workflow |
+| 20 | Integrated capstone | Highly available monitored application architecture |
+
+The detailed build order, safety gates, and expected repository proof are in
+`post-playlist-plan.md`.
 
 ## Playlist Updates
 
 This section is for future playlist drift only. It preserves the phase plan while still leaving room for new videos from the ongoing playlist.
 
-Last checked against the live playlist on `2026-06-29`.
+Last checked against the live playlist on `2026-07-12`.
 
 Current live playlist count at last check: `73 videos`.
 
@@ -537,6 +574,10 @@ None.
 ```
 
 Video `73`, Strong and Eventual Consistency, is mapped into `Phase 9 - DynamoDB`.
+
+All currently published playlist videos are watched and mapped. Phase 9 remains
+open so future DynamoDB additions can be inserted there without closing or
+rewriting the original plan.
 
 <details>
 <summary>Live playlist snapshot from 2026-06-29</summary>

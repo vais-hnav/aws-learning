@@ -17,7 +17,7 @@ Status values:
 - `Pending` means the video was watched, but the matching lab/check is still open.
 - `Theory-only` means no AWS resource lab is expected.
 
-Current status: All 73 currently published playlist videos and the Phase 10 Serverless Tasks CRUD API project are complete. Phase 9 remains open for future DynamoDB playlist additions. Post-playlist Phase 11 is next.
+Current status: All 73 currently published playlist videos, the Phase 10 Serverless Tasks CRUD API project, and Post-playlist Phase 11 are complete. Phase 9 remains open for future DynamoDB playlist additions. Post-playlist Phase 12 is next.
 
 | Phase | Video Topic | Watched Status | Playlist Video | AWS Service | Lab Status | Date | Notes |
 |---|---|---|---:|---|---|---|---|
@@ -95,3 +95,4 @@ Current status: All 73 currently published playlist videos and the Phase 10 Serv
 | Phase 9 - DynamoDB | DynamoDB Primary Key | Complete | 72 | DynamoDB | Complete | 2026-07-06 | Partition key, sort key, composite primary key, key schema, query pattern, and beginner table design lab documented. |
 | Phase 9 - DynamoDB | Strong and Eventual Consistency | Complete | 73 | DynamoDB | Theory-only | 2026-07-06 | Eventually consistent reads, strongly consistent reads with ConsistentRead, GSI/stream limitations, global table consistency, and cost tradeoff documented. |
 | Phase 10 - Final Project | Serverless Tasks CRUD API | Complete |  | API Gateway/Lambda/DynamoDB/IAM/CloudWatch | Complete | 2026-07-12 | Completed a six-function Tasks CRUD API with GET, POST, PUT, PATCH, and DELETE routes, a shared Lambda layer, formatted responses, DynamoDB conditions and pagination, separate runtime/user IAM policies, testing commands, notes, and cleanup guidance. |
+| Phase 11 - EC2 Application Deployment | Node App Behind Nginx on EC2 | Complete |  | EC2/Nginx/Node.js/systemd | Complete | 2026-07-19 | Launched an EC2 instance, restricted SSH to laptop IP, installed Nginx and Node.js, ran a private Node app on 127.0.0.1:3000, reverse proxied public HTTP port 80 through Nginx, tested systemd service recovery, tested reboot behavior, and verified cleanup with empty EBS volume and Elastic IP checks. |

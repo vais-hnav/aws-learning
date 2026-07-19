@@ -30,7 +30,7 @@ A hands-on AWS learning repository built around a video-to-lab workflow. Each ph
 | Phase 8C | Python/boto3 and S3 Lambda triggers | Complete |
 | Phase 9 | DynamoDB | Current videos complete; open for additions |
 | Phase 10 | Serverless Tasks CRUD API | Complete |
-| Phase 11 | EC2 application deployment and operations | Next |
+| Phase 11 | EC2 application deployment and operations | Complete |
 
 ## Learning Workflow
 
@@ -70,6 +70,8 @@ aws-learning/
 ├── phase-09-dynamodb/
 ├── phase-10-final-project/
 │   └── serverless-crud-project/
+├── phase-11-ec2-application-deployment/
+│   └── node-nginx-app/
 ├── cleanup-guides/
 ├── notion-scripts/
 ├── aws-learning-log.md

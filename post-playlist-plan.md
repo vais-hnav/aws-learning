@@ -18,6 +18,8 @@ phase plan. They will not replace or reorder this post-playlist roadmap.
 
 ## Phase 11: EC2 Application Deployment And Operations
 
+Status: Complete.
+
 Goal: Move from a static web-server demo to operating a small application on a
 Linux EC2 instance.
 
@@ -212,5 +214,7 @@ short deployment window, and tested cleanup order.
 
 ## Immediate Next Step
 
-Start Phase 11 with a single EC2 instance. Before launching it, prepare the
-architecture, security-group rules, commands, cost limits, and cleanup checklist.
+Start Phase 12 with Application Load Balancer and Auto Scaling. Before creating
+paid resources, prepare the short lab window, cleanup order, target group health
+check settings, and security-group relationship between the load balancer and
+instances.

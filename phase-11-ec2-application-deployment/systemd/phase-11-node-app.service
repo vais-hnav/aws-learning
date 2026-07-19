@@ -1,0 +1,15 @@
+[Unit]
+Description=Phase 11 Node App
+After=network.target
+
+[Service]
+Type=simple
+User=ec2-user
+WorkingDirectory=/home/ec2-user/phase-11-node-app
+ExecStart=/usr/bin/node /home/ec2-user/phase-11-node-app/server.js
+Restart=on-failure
+RestartSec=5
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
